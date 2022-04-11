@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Controlador del login y del dashboard
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('login');
     Route::get('about', 'about')->name('about');
@@ -24,12 +25,13 @@ Route::controller(HomeController::class)->group(function () {
     Route::middleware('auth')->get('admin', 'admin')->name('admin');
 });
 
-
+// Controlador de autenticación
 Route::controller(AuthController::class)->group(function () {
     Route::post('auth', 'authenticate');
     Route::middleware('auth')->get('logout', 'logout');
 });
 
+// Controlador de CRUD de usuarios y lista de usuarios
 Route::controller(UsersController::class)->prefix('users')->group(function () {
     Route::middleware('auth')->get('/', 'index')->name('users');
     Route::middleware('auth')->get('create', 'create')->name('users.create');
@@ -40,6 +42,7 @@ Route::controller(UsersController::class)->prefix('users')->group(function () {
     Route::middleware('auth')->post('{user}/restore', 'restore')->name('users.restore');
 });
 
+// Controlador principal de la aplicación de empleo
 Route::controller(ToolController::class)->prefix('tool')->group(function () {
     Route::middleware('auth')->get('/', 'index')->name('tool');
     Route::middleware('auth')->get('/{site}', 'index')->name('tool');
