@@ -33,8 +33,7 @@ const Login = () => {
       <Head title={appName} />
       <div className="w-full max-w-md">
         <Logo
-          className="block w-full max-w-xs mx-auto text-white fill-current"
-          height={50}
+          className="block w-3/5 max-w-xs mx-auto"
         />
         <form
           onSubmit={handleSubmit}

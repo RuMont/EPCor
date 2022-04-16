@@ -77,7 +77,7 @@ module.exports = {
         800: '#1e40af',
         900: '#1e3a8a'
       },
-      cyan: {
+      indigo: {
         100: '#cffafe',
         200: '#a5f3fc',
         300: '#67e8f9',
@@ -88,7 +88,7 @@ module.exports = {
         800: '#155e75',
         900: '#164e63',
       },
-      indigo: {
+      cyan: {
         100: '#ebf4ff',
         200: '#c3dafe',
         300: '#a3bffa',
