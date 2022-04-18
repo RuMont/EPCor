@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('email')->unique();
             $table->string('password');
+            $table->foreignId('municipio_id')->constrained('municipios');
             $table->boolean('is_admin')->default(false);
             $table->boolean('borrado')->default(false);
             $table->timestamps();
