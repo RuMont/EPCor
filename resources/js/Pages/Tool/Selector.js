@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
-// import { useNavigate} from "react-router-dom";
+import { Inertia } from '@inertiajs/inertia';
+import { usePage } from '@inertiajs/inertia-react';
+import React, { useState } from 'react'
 
 const Selector = () => {
-    const [data, setData] = useState([]);
     const [selected, setSelected] = useState();
-    // const navigate = useNavigate();
+    const { data } = usePage().props.entities;
     
     // Función para poner la primera letra mayus de un string
     function capitalizeFirstLetter(string) {
@@ -15,18 +14,8 @@ const Selector = () => {
     // Cuando se manda el formulario se usa un hook de react para cambiar de ruta
     function handleSubmit(e) {
         e.preventDefault();
-        Inertia.post("/tool/"+ selected.value);
+        Inertia.get("/tool/"+ selected.value);
     }
-
-    // Cuando se muestra el componente se hace la petición 1 vez
-    useEffect(() => {
-        // async function fetchData() {
-        //     const response = await axios.get(`http://localhost:5000/names`);
-        //     const json = await response.data;
-        //     setData(json)
-        // }
-        // fetchData();
-    }, []);
 
     return (
 

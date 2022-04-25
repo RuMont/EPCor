@@ -48,8 +48,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var Login = function Login() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
-    email: "admin@gmail.com",
-    password: "1234",
+    email: "",
+    password: "",
     remember: false
   }),
       _useState2 = _slicedToArray(_useState, 2),

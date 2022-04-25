@@ -7,8 +7,8 @@ import { Inertia } from '@inertiajs/inertia';
 
 const Login = () => {
   const [values, setValues] = useState({
-    email: "admin@gmail.com",
-    password: "1234",
+    email: "",
+    password: "",
     remember: false
   });
 

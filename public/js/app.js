@@ -60855,154 +60855,202 @@ module.exports = function getSideChannel() {
 var map = {
 	"./About": [
 		"./resources/js/Pages/About.js",
+		9,
 		"resources_js_Pages_About_js"
 	],
 	"./About.js": [
 		"./resources/js/Pages/About.js",
+		9,
 		"resources_js_Pages_About_js"
 	],
 	"./Auth/Login": [
 		"./resources/js/Pages/Auth/Login.js",
+		9,
 		"resources_js_Pages_Auth_Login_js"
 	],
 	"./Auth/Login.js": [
 		"./resources/js/Pages/Auth/Login.js",
+		9,
 		"resources_js_Pages_Auth_Login_js"
 	],
 	"./Auth/Login2": [
 		"./resources/js/Pages/Auth/Login2.js",
+		9,
 		"resources_js_Pages_Auth_Login2_js"
 	],
 	"./Auth/Login2.js": [
 		"./resources/js/Pages/Auth/Login2.js",
+		9,
 		"resources_js_Pages_Auth_Login2_js"
 	],
 	"./Contacts/Create": [
 		"./resources/js/Pages/Contacts/Create.js",
+		9,
 		"resources_js_Pages_Contacts_Create_js"
 	],
 	"./Contacts/Create.js": [
 		"./resources/js/Pages/Contacts/Create.js",
+		9,
 		"resources_js_Pages_Contacts_Create_js"
 	],
 	"./Contacts/Edit": [
 		"./resources/js/Pages/Contacts/Edit.js",
+		9,
 		"resources_js_Pages_Contacts_Edit_js"
 	],
 	"./Contacts/Edit.js": [
 		"./resources/js/Pages/Contacts/Edit.js",
+		9,
 		"resources_js_Pages_Contacts_Edit_js"
 	],
 	"./Contacts/Index": [
 		"./resources/js/Pages/Contacts/Index.js",
+		9,
 		"resources_js_Pages_Contacts_Index_js"
 	],
 	"./Contacts/Index.js": [
 		"./resources/js/Pages/Contacts/Index.js",
+		9,
 		"resources_js_Pages_Contacts_Index_js"
 	],
 	"./Dashboard/Index": [
 		"./resources/js/Pages/Dashboard/Index.js",
+		9,
 		"resources_js_Pages_Dashboard_Index_js"
 	],
 	"./Dashboard/Index.js": [
 		"./resources/js/Pages/Dashboard/Index.js",
+		9,
 		"resources_js_Pages_Dashboard_Index_js"
 	],
 	"./Dashboard2": [
 		"./resources/js/Pages/Dashboard2.js",
+		9,
 		"resources_js_Pages_Dashboard2_js"
 	],
 	"./Dashboard2.js": [
 		"./resources/js/Pages/Dashboard2.js",
+		9,
 		"resources_js_Pages_Dashboard2_js"
 	],
 	"./Error": [
 		"./resources/js/Pages/Error.js",
+		9,
 		"resources_js_Pages_Error_js"
 	],
 	"./Error.js": [
 		"./resources/js/Pages/Error.js",
+		9,
 		"resources_js_Pages_Error_js"
 	],
 	"./Organizations/Create": [
 		"./resources/js/Pages/Organizations/Create.js",
+		9,
 		"resources_js_Pages_Organizations_Create_js"
 	],
 	"./Organizations/Create.js": [
 		"./resources/js/Pages/Organizations/Create.js",
+		9,
 		"resources_js_Pages_Organizations_Create_js"
 	],
 	"./Organizations/Edit": [
 		"./resources/js/Pages/Organizations/Edit.js",
+		9,
 		"resources_js_Pages_Organizations_Edit_js"
 	],
 	"./Organizations/Edit.js": [
 		"./resources/js/Pages/Organizations/Edit.js",
+		9,
 		"resources_js_Pages_Organizations_Edit_js"
 	],
 	"./Organizations/Index": [
 		"./resources/js/Pages/Organizations/Index.js",
+		9,
 		"resources_js_Pages_Organizations_Index_js"
 	],
 	"./Organizations/Index.js": [
 		"./resources/js/Pages/Organizations/Index.js",
+		9,
 		"resources_js_Pages_Organizations_Index_js"
 	],
 	"./Reports/Index": [
 		"./resources/js/Pages/Reports/Index.js",
+		9,
 		"resources_js_Pages_Reports_Index_js"
 	],
 	"./Reports/Index.js": [
 		"./resources/js/Pages/Reports/Index.js",
+		9,
 		"resources_js_Pages_Reports_Index_js"
+	],
+	"./Tool/Carousel": [
+		"./resources/js/Pages/Tool/Carousel.js",
+		7,
+		"resources_js_Pages_Tool_Carousel_js"
+	],
+	"./Tool/Carousel.js": [
+		"./resources/js/Pages/Tool/Carousel.js",
+		7,
+		"resources_js_Pages_Tool_Carousel_js"
 	],
 	"./Tool/Index": [
 		"./resources/js/Pages/Tool/Index.js",
+		9,
 		"resources_js_Pages_Tool_Index_js"
 	],
 	"./Tool/Index.js": [
 		"./resources/js/Pages/Tool/Index.js",
+		9,
 		"resources_js_Pages_Tool_Index_js"
 	],
 	"./Tool/ListDisplay": [
 		"./resources/js/Pages/Tool/ListDisplay.js",
+		9,
 		"resources_js_Pages_Tool_ListDisplay_js"
 	],
 	"./Tool/ListDisplay.js": [
 		"./resources/js/Pages/Tool/ListDisplay.js",
+		9,
 		"resources_js_Pages_Tool_ListDisplay_js"
 	],
 	"./Tool/Selector": [
 		"./resources/js/Pages/Tool/Selector.js",
+		9,
 		"resources_js_Pages_Tool_Selector_js"
 	],
 	"./Tool/Selector.js": [
 		"./resources/js/Pages/Tool/Selector.js",
+		9,
 		"resources_js_Pages_Tool_Selector_js"
 	],
 	"./Users/Create": [
 		"./resources/js/Pages/Users/Create.js",
+		9,
 		"resources_js_Pages_Users_Create_js"
 	],
 	"./Users/Create.js": [
 		"./resources/js/Pages/Users/Create.js",
+		9,
 		"resources_js_Pages_Users_Create_js"
 	],
 	"./Users/Edit": [
 		"./resources/js/Pages/Users/Edit.js",
+		9,
 		"resources_js_Pages_Users_Edit_js"
 	],
 	"./Users/Edit.js": [
 		"./resources/js/Pages/Users/Edit.js",
+		9,
 		"resources_js_Pages_Users_Edit_js"
 	],
 	"./Users/Index": [
 		"./resources/js/Pages/Users/Index.js",
+		9,
 		"resources_js_Pages_Users_Index_js"
 	],
 	"./Users/Index.js": [
 		"./resources/js/Pages/Users/Index.js",
+		9,
 		"resources_js_Pages_Users_Index_js"
 	]
 };
@@ -61016,8 +61064,8 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return __webpack_require__.e(ids[1]).then(() => {
-		return __webpack_require__(id);
+	return __webpack_require__.e(ids[2]).then(() => {
+		return __webpack_require__.t(id, ids[1] | 16)
 	});
 }
 webpackAsyncContext.keys = () => (Object.keys(map));
@@ -61124,6 +61172,36 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/create fake namespace object */
+/******/ 	(() => {
+/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
+/******/ 		var leafPrototypes;
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 16: return value when it's Promise-like
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__webpack_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if(typeof value === 'object' && value) {
+/******/ 				if((mode & 4) && value.__esModule) return value;
+/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
+/******/ 			}
+/******/ 			var ns = Object.create(null);
+/******/ 			__webpack_require__.r(ns);
+/******/ 			var def = {};
+/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
+/******/ 			}
+/******/ 			def['default'] = () => (value);
+/******/ 			__webpack_require__.d(ns, def);
+/******/ 			return ns;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -61154,7 +61232,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_About_js":1,"resources_js_Pages_Auth_Login_js":1,"resources_js_Pages_Auth_Login2_js":1,"resources_js_Pages_Contacts_Create_js":1,"resources_js_Pages_Contacts_Edit_js":1,"resources_js_Pages_Contacts_Index_js":1,"resources_js_Pages_Dashboard_Index_js":1,"resources_js_Pages_Dashboard2_js":1,"resources_js_Pages_Error_js":1,"resources_js_Pages_Organizations_Create_js":1,"resources_js_Pages_Organizations_Edit_js":1,"resources_js_Pages_Organizations_Index_js":1,"resources_js_Pages_Reports_Index_js":1,"resources_js_Pages_Tool_Index_js":1,"resources_js_Pages_Tool_ListDisplay_js":1,"resources_js_Pages_Tool_Selector_js":1,"resources_js_Pages_Users_Create_js":1,"resources_js_Pages_Users_Edit_js":1,"resources_js_Pages_Users_Index_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_About_js":1,"resources_js_Pages_Auth_Login_js":1,"resources_js_Pages_Auth_Login2_js":1,"resources_js_Pages_Contacts_Create_js":1,"resources_js_Pages_Contacts_Edit_js":1,"resources_js_Pages_Contacts_Index_js":1,"resources_js_Pages_Dashboard_Index_js":1,"resources_js_Pages_Dashboard2_js":1,"resources_js_Pages_Error_js":1,"resources_js_Pages_Organizations_Create_js":1,"resources_js_Pages_Organizations_Edit_js":1,"resources_js_Pages_Organizations_Index_js":1,"resources_js_Pages_Reports_Index_js":1,"resources_js_Pages_Tool_Carousel_js":1,"resources_js_Pages_Tool_Index_js":1,"resources_js_Pages_Tool_ListDisplay_js":1,"resources_js_Pages_Tool_Selector_js":1,"resources_js_Pages_Users_Create_js":1,"resources_js_Pages_Users_Edit_js":1,"resources_js_Pages_Users_Index_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

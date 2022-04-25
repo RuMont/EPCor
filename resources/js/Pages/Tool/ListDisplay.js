@@ -1,47 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const ListDisplay = () => {
-    const [data, setData] = useState();
-    const params = useParams();
-    const navigate = useNavigate();
-
-    // Cuando se muestra el componente se hace la petición 1 vez
-    useEffect(() => {
-        async function fetchData() {
-            const response = await axios.get(`http://localhost:5000/${params.id}`);
-            const json = await response.data;
-            setData(json)
-        }
-        fetchData()
-    }, []);
-
-    function goBack() {
-        navigate(-1);
-    }
-
+const ListDisplay = ({ ads }) => {
     return (
         <div>
-            <h1>Anuncios</h1>
-            <button onClick={() => goBack()}>Volver</button>
-            <ul>
+            <ul className='flex flex-row flex-wrap'>
                 {
-                    data ? data.map((ad, i) => {
-                        return <div key={i} style={{listStyleType:"none"}}>
-                            <li>Título: {ad.attributes.title}</li>
-                            <li>Descripción: {ad.attributes.description}</li>
-                            <li>Emitido por: undefined</li>
-                            <li>Fecha inicio: {ad.attributes["start-date"]}</li>
-                            <li>Fecha fin: {ad.attributes["end-date"]}</li>
-                            <li>Acceder al texto íntegro del anuncio: undefined</li>
-                            </div>
-                    }) : <li style={{listStyleType:"none"}} key={-1}>Loading...</li>
+                    ads ? ads.map((ad, i) => {
+                        return (
+                            <a key={i} href="#" className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 my-4 mr-4">
+                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{ad.attributes.title}</h5>
+                                <p className="font-normal text-gray-700 dark:text-gray-400">{ad.attributes.description}</p>
+                                <p className="font-normal text-gray-700 dark:text-gray-400 mt-4">Desde el {ad.attributes["start-date"]} hasta el {ad.attributes["end-date"]}</p>
+                            </a>
+                        );
+                    }) : ''
                 }
             </ul>
 
         </div>
     )
+}
+
+ListDisplay.propTypes = {
+    ads: PropTypes.array
 }
 
 export default ListDisplay
