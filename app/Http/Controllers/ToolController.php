@@ -54,6 +54,7 @@ class ToolController extends Controller
 
             return Inertia::render('Tool/Index', [
                 'entities' => json_decode($response),
+                'entity' => $entity,
                 'loadDocs' => json_decode($response2)
             ]);
         }

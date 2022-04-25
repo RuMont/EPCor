@@ -912,8 +912,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .overflow-y-auto {
   overflow-y: auto;
 }
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .whitespace-nowrap {
   white-space: nowrap;
+}
+.break-words {
+  overflow-wrap: break-word;
 }
 .rounded {
   border-radius: 0.25rem;
@@ -961,6 +969,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(237 242 247 / var(--tw-border-opacity));
+}
+.border-indigo-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(14 116 144 / var(--tw-border-opacity));
 }
 .bg-indigo-800 {
   --tw-bg-opacity: 1;
@@ -1197,6 +1209,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(203 213 224 / var(--tw-text-opacity));
 }
+.text-indigo-700 {
+  --tw-text-opacity: 1;
+  color: rgb(14 116 144 / var(--tw-text-opacity));
+}
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(26 32 44 / var(--tw-text-opacity));
@@ -1251,14 +1267,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .carousel-item {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 200px;
+    /* align-items: center;
+    justify-content: center; */
+    height: 300px;
 }
 
 .indicators {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .focus-within\:bg-gray-100:focus-within {
@@ -1455,6 +1471,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+@media (min-width: 640px) {
+
+  .sm\:max-w-sm {
+    max-width: 24rem;
+  }
+}
+
 @media (min-width: 768px) {
 
   .md\:ml-2 {
@@ -1479,6 +1502,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:w-56 {
     width: 14rem;
+  }
+
+  .md\:max-w-md {
+    max-width: 28rem;
   }
 
   .md\:flex-shrink-0 {
@@ -1513,5 +1540,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:w-1\/2 {
     width: 50%;
+  }
+
+  .lg\:max-w-2xl {
+    max-width: 42rem;
+  }
+
+  .lg\:max-w-4xl {
+    max-width: 56rem;
   }
 }

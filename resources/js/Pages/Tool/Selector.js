@@ -41,7 +41,7 @@ const Selector = () => {
                                 })
                             }
                         </select>
-                        <button className="px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-500" type="submit">Enviar</button>
+                        <button className="px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-500" type="submit">Buscar</button>
                     </form>
                 )
             }

@@ -83,7 +83,7 @@ var Selector = function Selector() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
         className: "px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-500",
         type: "submit",
-        children: "Enviar"
+        children: "Buscar"
       })]
     })
   });
