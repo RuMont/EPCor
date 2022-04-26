@@ -202,15 +202,21 @@ var Tool = function Tool() {
       loadDocs = _usePage$props.loadDocs,
       entity = _usePage$props.entity;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h1", {
+    children: [entity ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h1", {
       className: "mb-8 text-3xl font-bold",
-      children: ["Buscador", entity ? " / ".concat(entity) : '']
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.InertiaLink, {
+        href: "/tool",
+        className: "text-indigo-600 hover:text-indigo-700",
+        children: "Buscador"
+      }), " / ".concat(entity)]
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
+      className: "mb-8 text-3xl font-bold",
+      children: "Buscador"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Selector__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
         className: "flex flex-row flex-wrap",
         children: loadDocs !== null && loadDocs !== void 0 && loadDocs.data.length ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Carousel__WEBPACK_IMPORTED_MODULE_4__["default"], {
           children: loadDocs.data.map(function (ad, i) {
-            console.log(ad);
             return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Carousel__WEBPACK_IMPORTED_MODULE_4__.CarouselItem, {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
                 href: "#",
@@ -292,7 +298,9 @@ var Selector = function Selector() {
       selected = _useState2[0],
       setSelected = _useState2[1];
 
-  var data = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.entities.data; // Función para poner la primera letra mayus de un string
+  var _usePage$props$entiti = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.entities,
+      data = _usePage$props$entiti.data,
+      errors = _usePage$props$entiti.errors; // Función para poner la primera letra mayus de un string
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -301,12 +309,13 @@ var Selector = function Selector() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.get("/tool/" + selected.value);
+    var title = document.querySelector("[value^=".concat(selected.value, "]")).innerText;
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.get("/tool/" + selected.value + "?title=" + title);
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    children: data.error ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-      children: data.error
+    children: errors ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      children: errors[0].detail ? 'Web en mantenimiento, en breves estaremos operativos.' : ''
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
       onSubmit: function onSubmit(e) {
         return handleSubmit(e);
@@ -326,7 +335,7 @@ var Selector = function Selector() {
           value: "false",
           children: "Seleccione una entidad"
         }), // Se devuelve una etiqueta option por cada entity que nos manda la api
-        data.map(function (entity, i) {
+        data === null || data === void 0 ? void 0 : data.map(function (entity, i) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
             value: "".concat(entity.id),
             children: capitalizeFirstLetter(entity.attributes.description)
@@ -897,18 +906,6 @@ function MainMenu(_ref) {
       text: "Buscador",
       link: "/tool",
       icon: "book"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      text: "Empresas",
-      link: "/organizations",
-      icon: "office"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      text: "Contactos",
-      link: "/contacts",
-      icon: "users"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      text: "Informes",
-      link: "/reports",
-      icon: "printer"
     })]
   });
 }

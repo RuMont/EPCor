@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 
 const Selector = () => {
     const [selected, setSelected] = useState();
-    const { data } = usePage().props.entities;
+    const { data, errors } = usePage().props.entities;
     
     // Función para poner la primera letra mayus de un string
     function capitalizeFirstLetter(string) {
@@ -14,22 +14,23 @@ const Selector = () => {
     // Cuando se manda el formulario se usa un hook de react para cambiar de ruta
     function handleSubmit(e) {
         e.preventDefault();
-        Inertia.get("/tool/"+ selected.value);
+        const title = document.querySelector(`[value^=${selected.value}]`).innerText;
+        Inertia.get("/tool/"+ selected.value+"?title="+title);
     }
 
     return (
 
         <div>
             {
-                data.error ? (
-                    <p>{data.error}</p>
+                errors ? (
+                    <p>{errors[0].detail ? 'Web en mantenimiento, en breves estaremos operativos.' : ''}</p>
                 ) : (
                     <form onSubmit={(e) => handleSubmit(e) } method="post" className='flex flex-wrap'>
                         <select className="form-select w-1/3 mr-2" onChange={(e) => setSelected({value: e.target.value}) } name="id" id="selector">
                             <option value="false">Seleccione una entidad</option>
                             {
                                 // Se devuelve una etiqueta option por cada entity que nos manda la api
-                                data.map((entity, i) => {
+                                data?.map((entity, i) => {
                                     return (
                                         <option
                                             key={i}

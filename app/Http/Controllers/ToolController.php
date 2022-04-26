@@ -12,6 +12,7 @@ class ToolController extends Controller
 {
     public function index(mixed $entity = false)
     {
+        
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -54,7 +55,7 @@ class ToolController extends Controller
 
             return Inertia::render('Tool/Index', [
                 'entities' => json_decode($response),
-                'entity' => $entity,
+                'entity' => $_GET["title"],
                 'loadDocs' => json_decode($response2)
             ]);
         }

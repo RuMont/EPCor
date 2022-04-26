@@ -692,18 +692,6 @@ function MainMenu(_ref) {
       text: "Buscador",
       link: "/tool",
       icon: "book"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      text: "Empresas",
-      link: "/organizations",
-      icon: "office"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      text: "Contactos",
-      link: "/contacts",
-      icon: "users"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      text: "Informes",
-      link: "/reports",
-      icon: "printer"
     })]
   });
 }

@@ -21,34 +21,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var Dashboard = function Dashboard() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
       className: "mb-8 text-3xl font-bold",
       children: "Tablero"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
-      className: "mb-12 leading-normal",
-      children: ["Hey there! Welcome to Ping CRM, a demo app designed to help illustrate how", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-        className: "mx-1 text-indigo-600 underline hover:text-orange-500",
-        href: "https://inertiajs.com",
-        children: "Inertia.js"
-      }), "works with", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-        className: "ml-1 text-indigo-600 underline hover:text-orange-500",
-        href: "https://reactjs.org/",
-        children: "React"
-      }), "."]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
-        className: "mr-1 px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-500",
-        href: "/500",
-        children: "500 error"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
-        className: "px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-500",
-        href: "/404",
-        children: "404 error"
-      })]
-    })]
+    })
   });
 }; // Persistent layout
 // Docs: https://inertiajs.com/pages#persistent-layouts
@@ -617,18 +595,6 @@ function MainMenu(_ref) {
       text: "Buscador",
       link: "/tool",
       icon: "book"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      text: "Empresas",
-      link: "/organizations",
-      icon: "office"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      text: "Contactos",
-      link: "/contacts",
-      icon: "users"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      text: "Informes",
-      link: "/reports",
-      icon: "printer"
     })]
   });
 }

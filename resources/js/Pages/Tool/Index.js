@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '../../Shared/Layout';
 import Selector from './Selector';
-import { usePage } from '@inertiajs/inertia-react';
+import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 
 import Carousel, { CarouselItem } from './Carousel';
 
@@ -10,7 +10,12 @@ const Tool = () => {
 
     return (
         <div>
-            <h1 className="mb-8 text-3xl font-bold">Buscador{entity ? ` / ${entity}` : ''}</h1>
+            {entity ? (
+                <h1 className="mb-8 text-3xl font-bold"><InertiaLink href="/tool" className="text-indigo-600 hover:text-indigo-700">Buscador</InertiaLink>{` / ${entity}`}</h1>
+            ) : (
+                <h1 className="mb-8 text-3xl font-bold">Buscador</h1>
+            )}
+            
             <Selector />
             <div>
                 <ul className='flex flex-row flex-wrap'>
@@ -18,7 +23,6 @@ const Tool = () => {
                         loadDocs?.data.length ? (
                             <Carousel>
                                 {loadDocs.data.map((ad, i) => {
-                                    console.log(ad)
                                     return (
                                         <CarouselItem key={i}>
                                             <a href="#" className="block p-6 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-4xl bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 my-4 mr-4">

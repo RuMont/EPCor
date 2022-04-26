@@ -60853,14 +60853,6 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./About": [
-		"./resources/js/Pages/About.js",
-		"resources_js_Pages_About_js"
-	],
-	"./About.js": [
-		"./resources/js/Pages/About.js",
-		"resources_js_Pages_About_js"
-	],
 	"./Auth/Login": [
 		"./resources/js/Pages/Auth/Login.js",
 		"resources_js_Pages_Auth_Login_js"
@@ -60868,38 +60860,6 @@ var map = {
 	"./Auth/Login.js": [
 		"./resources/js/Pages/Auth/Login.js",
 		"resources_js_Pages_Auth_Login_js"
-	],
-	"./Auth/Login2": [
-		"./resources/js/Pages/Auth/Login2.js",
-		"resources_js_Pages_Auth_Login2_js"
-	],
-	"./Auth/Login2.js": [
-		"./resources/js/Pages/Auth/Login2.js",
-		"resources_js_Pages_Auth_Login2_js"
-	],
-	"./Contacts/Create": [
-		"./resources/js/Pages/Contacts/Create.js",
-		"resources_js_Pages_Contacts_Create_js"
-	],
-	"./Contacts/Create.js": [
-		"./resources/js/Pages/Contacts/Create.js",
-		"resources_js_Pages_Contacts_Create_js"
-	],
-	"./Contacts/Edit": [
-		"./resources/js/Pages/Contacts/Edit.js",
-		"resources_js_Pages_Contacts_Edit_js"
-	],
-	"./Contacts/Edit.js": [
-		"./resources/js/Pages/Contacts/Edit.js",
-		"resources_js_Pages_Contacts_Edit_js"
-	],
-	"./Contacts/Index": [
-		"./resources/js/Pages/Contacts/Index.js",
-		"resources_js_Pages_Contacts_Index_js"
-	],
-	"./Contacts/Index.js": [
-		"./resources/js/Pages/Contacts/Index.js",
-		"resources_js_Pages_Contacts_Index_js"
 	],
 	"./Dashboard/Index": [
 		"./resources/js/Pages/Dashboard/Index.js",
@@ -60909,14 +60869,6 @@ var map = {
 		"./resources/js/Pages/Dashboard/Index.js",
 		"resources_js_Pages_Dashboard_Index_js"
 	],
-	"./Dashboard2": [
-		"./resources/js/Pages/Dashboard2.js",
-		"resources_js_Pages_Dashboard2_js"
-	],
-	"./Dashboard2.js": [
-		"./resources/js/Pages/Dashboard2.js",
-		"resources_js_Pages_Dashboard2_js"
-	],
 	"./Error": [
 		"./resources/js/Pages/Error.js",
 		"resources_js_Pages_Error_js"
@@ -60924,38 +60876,6 @@ var map = {
 	"./Error.js": [
 		"./resources/js/Pages/Error.js",
 		"resources_js_Pages_Error_js"
-	],
-	"./Organizations/Create": [
-		"./resources/js/Pages/Organizations/Create.js",
-		"resources_js_Pages_Organizations_Create_js"
-	],
-	"./Organizations/Create.js": [
-		"./resources/js/Pages/Organizations/Create.js",
-		"resources_js_Pages_Organizations_Create_js"
-	],
-	"./Organizations/Edit": [
-		"./resources/js/Pages/Organizations/Edit.js",
-		"resources_js_Pages_Organizations_Edit_js"
-	],
-	"./Organizations/Edit.js": [
-		"./resources/js/Pages/Organizations/Edit.js",
-		"resources_js_Pages_Organizations_Edit_js"
-	],
-	"./Organizations/Index": [
-		"./resources/js/Pages/Organizations/Index.js",
-		"resources_js_Pages_Organizations_Index_js"
-	],
-	"./Organizations/Index.js": [
-		"./resources/js/Pages/Organizations/Index.js",
-		"resources_js_Pages_Organizations_Index_js"
-	],
-	"./Reports/Index": [
-		"./resources/js/Pages/Reports/Index.js",
-		"resources_js_Pages_Reports_Index_js"
-	],
-	"./Reports/Index.js": [
-		"./resources/js/Pages/Reports/Index.js",
-		"resources_js_Pages_Reports_Index_js"
 	],
 	"./Tool/Carousel": [
 		"./resources/js/Pages/Tool/Carousel.js",
@@ -61154,7 +61074,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_About_js":1,"resources_js_Pages_Auth_Login_js":1,"resources_js_Pages_Auth_Login2_js":1,"resources_js_Pages_Contacts_Create_js":1,"resources_js_Pages_Contacts_Edit_js":1,"resources_js_Pages_Contacts_Index_js":1,"resources_js_Pages_Dashboard_Index_js":1,"resources_js_Pages_Dashboard2_js":1,"resources_js_Pages_Error_js":1,"resources_js_Pages_Organizations_Create_js":1,"resources_js_Pages_Organizations_Edit_js":1,"resources_js_Pages_Organizations_Index_js":1,"resources_js_Pages_Reports_Index_js":1,"resources_js_Pages_Tool_Carousel_js":1,"resources_js_Pages_Tool_Index_js":1,"resources_js_Pages_Tool_Selector_js":1,"resources_js_Pages_Users_Create_js":1,"resources_js_Pages_Users_Edit_js":1,"resources_js_Pages_Users_Index_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Auth_Login_js":1,"resources_js_Pages_Dashboard_Index_js":1,"resources_js_Pages_Error_js":1,"resources_js_Pages_Tool_Carousel_js":1,"resources_js_Pages_Tool_Index_js":1,"resources_js_Pages_Tool_Selector_js":1,"resources_js_Pages_Users_Create_js":1,"resources_js_Pages_Users_Edit_js":1,"resources_js_Pages_Users_Index_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
