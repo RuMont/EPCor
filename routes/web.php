@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('login');
     Route::get('about', 'about')->name('about');
+    Route::get('error/{status}', 'status')->name('about');
     Route::middleware('auth')->get('dashboard', 'dashboard')->name('dashboard');
     Route::middleware('auth')->get('admin', 'admin')->name('admin');
 });

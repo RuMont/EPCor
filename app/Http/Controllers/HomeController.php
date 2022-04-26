@@ -39,4 +39,8 @@ class HomeController extends Controller
 
         return Inertia::render('About');
     }
+
+    public function status($status) {
+        return Inertia::render('Error', ['status' => $status]);
+    }
 }

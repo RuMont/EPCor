@@ -22,6 +22,11 @@ Hacemos un build de los cambios que hay para cachearlos
 npm run dev
 ```
 
+Instalamos dusk para poder generar el token
+```sh
+php artisan dusk:install
+```
+
 Generamos el token de la api
 ```sh
 composer gen-token
