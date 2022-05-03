@@ -12,7 +12,7 @@ class Users extends Authenticatable
 
     protected $table = 'users';
     protected $primaryKey = "id";
-    protected $fillable = ['nombre', 'email', 'password'];
+    protected $fillable = ['nombre', 'email', 'password', 'avatar', 'external_id', 'external_auth'];
 
     /**
      * Devuelve usuarios no borrados por defecto. Los resultados se pueden
@@ -64,7 +64,7 @@ class Users extends Authenticatable
      */
     public function insertarUsuario(array $data)
     {
-        dd($data);
+        
         return DB::table($this->table)
             ->insert($data);
     }

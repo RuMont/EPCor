@@ -1,10 +1,13 @@
 <?php
 
+use App\Models\Users;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ToolController;
 use App\Http\Controllers\UsersController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,4 +52,33 @@ Route::controller(UsersController::class)->prefix('users')->group(function () {
 Route::controller(ToolController::class)->prefix('tool')->group(function () {
     Route::middleware('auth')->get('/', 'index')->name('tool');
     Route::middleware('auth')->get('/{site}', 'index')->name('tool');
+});
+
+// Google authentication
+
+Route::get('/login-google', function () {
+    return Socialite::driver('google')->redirect();
+});
+ 
+Route::get('/google-callback', function () {
+
+    $user = Socialite::driver('google')->user();
+
+    $userExists = Users::where('external_id', $user->id)->where('external_auth', 'google')->first();
+
+    if($userExists) {
+        Auth::login($userExists);
+    } else {
+        $userNew = Users::create([
+            'nombre' => $user->name,
+            'email' => $user->email,
+            'avatar' => $user->avatar,
+            'external_id' => $user->id,
+            'external_auth' => 'google',
+        ]);
+        Auth::login($userNew);
+    }
+
+    return redirect()->route('dashboard');
+    
 });
