@@ -17,14 +17,6 @@ class HomeController extends Controller
         return Inertia::render('Auth/Login');
     }
 
-    public function about()
-    {
-        if (Auth::user())
-        return Inertia::render('About', ['user' => Auth::user()]);
-
-        return Inertia::render('About');
-    }
-
     public function dashboard()
     {
         // Al pasarle el user debemos controlar que en las vistas de admin (si
@@ -33,9 +25,19 @@ class HomeController extends Controller
         return Inertia::render('Dashboard/Index', ['user' => Auth::user()]);
     }
 
+    public function home()
+    {
+        return Inertia::render('Home/Index');
+    }
+
+    public function register()
+    {
+        return Inertia::render('Auth/Register');
+    }
+
     public function admin()
     {
-        if (Auth::user()->is_admin == 0) return back();
+        if (Auth::user()->is_admin == 0) return $this->status(403);
 
         return Inertia::render('About');
     }
