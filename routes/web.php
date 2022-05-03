@@ -19,9 +19,11 @@ use Illuminate\Support\Facades\Route;
 
 // Controlador del login y del dashboard
 Route::controller(HomeController::class)->group(function () {
-    Route::get('/', 'index')->name('login');
+    Route::get('/', 'home')->name('home');
     Route::get('about', 'about')->name('about');
-    Route::get('error/{status}', 'status')->name('about');
+    Route::get('register', 'register')->name('register');
+    Route::get('login', 'index')->name('login');
+    Route::get('error/{status}', 'status');
     Route::middleware('auth')->get('dashboard', 'dashboard')->name('dashboard');
     Route::middleware('auth')->get('admin', 'admin')->name('admin');
 });

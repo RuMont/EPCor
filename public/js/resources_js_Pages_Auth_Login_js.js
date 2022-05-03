@@ -78,7 +78,11 @@ var Login = function Login() {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "w-full max-w-md",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Shared_Logo__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        className: "block w-3/5 max-w-xs mx-auto"
+        className: "block w-3/5 max-w-xs mx-auto",
+        style: {
+          width: "40%",
+          height: "auto"
+        }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
         onSubmit: handleSubmit,
         className: "mt-8 overflow-hidden bg-white rounded-lg shadow-xl",
