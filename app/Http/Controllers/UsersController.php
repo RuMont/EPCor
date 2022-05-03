@@ -18,7 +18,7 @@ class UsersController extends Controller
     // TODO: Completar las funciones
     public function index(Request $request)
     {
-        if (Auth::user()->is_admin == 0) return back();
+        if (Auth::user()->is_admin == 0) return $this->status(403);
         return Inertia::render('Users/Index', [
             'filters' => $request->all('nombre', 'is_admin', 'borrado'),
             'users' => $this->usersModel->obtenerUsuarios(

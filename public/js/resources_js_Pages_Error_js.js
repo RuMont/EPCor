@@ -22,16 +22,16 @@ __webpack_require__.r(__webpack_exports__);
 function Error() {
   var status = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.status;
   var title = {
-    503: '503: Service Unavailable',
-    500: '500: Server Error',
-    404: '404: Page Not Found',
-    403: '403: Forbidden'
+    503: '503: Servicio no disponible',
+    500: '500: Error de servidor',
+    404: '404: Página no encontrada',
+    403: '403: No tienes suficientes permisos'
   }[status];
   var description = {
-    503: 'Sorry, we are doing some maintenance. Please check back soon.',
-    500: 'Whoops, something went wrong on our servers.',
-    404: 'Sorry, the page you are looking for could not be found.',
-    403: 'Sorry, you are forbidden from accessing this page.'
+    503: 'Servicio en mantenimiento, por favor, inténtalo más tarde.',
+    500: 'Ha habido un fallo en nuestro servidor.',
+    404: 'Lo sentimos, la página que buscabas no existe.',
+    403: 'Lo sentimos, no estás autorizado a ver esta página.'
   }[status];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "flex items-center justify-center min-h-screen p-5 text-indigo-100 bg-indigo-800",
