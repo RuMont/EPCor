@@ -14,7 +14,7 @@ class HomeController extends Controller
         // Funciona con sesiones
         if (Auth::user()) return redirect()->route('dashboard');
 
-        return Inertia::render('Auth/Login');
+        return Inertia::render('Auth/Login', ['client_id' => env('GOOGLE_CLIENT_ID')]);
     }
 
     public function dashboard()

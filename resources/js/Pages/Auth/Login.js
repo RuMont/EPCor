@@ -13,7 +13,7 @@ const Login = () => {
         remember: false,
     });
 
-    const { appName } = usePage().props;
+    const { appName, client_id } = usePage().props;
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -92,7 +92,7 @@ const Login = () => {
 						
 						
                             <GoogleLogin
-								clientId={process.env.GOOGLE_CLIENT_ID}
+								clientId={client_id}
 								buttonText="Iniciar sesión con Google"
 								onSuccess={handleLogin}
 								onFailure={handleFailure}
