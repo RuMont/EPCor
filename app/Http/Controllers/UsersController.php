@@ -35,7 +35,8 @@ class UsersController extends Controller
     }
 
     public function store(Request $request)
-    {
+    {   
+        
         if (Hash::needsRehash($request->password))
             Hash::make($request->password);
         $this->usersModel->insertarUsuario($request->all());
