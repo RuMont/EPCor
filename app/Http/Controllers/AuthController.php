@@ -18,7 +18,7 @@ class AuthController extends Controller
         // Validadores del lado del servidor
         $credentials = $request->validate([
             'email' => 'required',
-            'password' => 'required',
+            'password' => 'required' ,
         ]);
         
         // Si consigue logear al usuario regenera la sesión
