@@ -15,7 +15,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/Layout */ "./resources/js/Shared/Layout.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Shared_GoogleChart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Shared/GoogleChart */ "./resources/js/Shared/GoogleChart.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
@@ -23,86 +26,243 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Dashboard = function Dashboard() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    "class": "bg-success",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
       className: "mb-8 text-3xl font-bold",
       children: "Tablero"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "mt-10",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
         className: "text-lg font-medium text-gray-900",
         children: "Ultimas noticias"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "mt-5 grid grid-cols-1 md:grid-cols-2 gap-5",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: "flex flex-col",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
             className: "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              className: "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200 shadow-lg p-3 mb-5 bg-white rounded",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("table", {
                 className: "min-w-full divide-y divide-gray-200",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("thead", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+                      className: "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
+                      children: "Autor"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
                       className: "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
                       children: "Titulo"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-                      className: "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
-                      children: "Fecha"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
                       className: "px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
                       children: "Categoria"
                     })]
                   })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tbody", {
                   className: "bg-white divide-y divide-gray-200",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tr", {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
                       className: "px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                         className: "flex items-center",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                           className: "flex-shrink-0 h-10 w-10",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
                             className: "h-10 w-10 rounded-full",
                             src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
                             alt: ""
                           })
                         })
                       })
-                    })
-                  })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                        className: "text-sm leading-5 text-gray-900",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                          href: "#",
+                          className: "font-medium text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150",
+                          children: "Noticia 1"
+                        })
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                      className: "px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                        className: "flex items-center",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                          className: "flex-shrink-0 h-10 w-10",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+                            className: "text-xs leading-5 text-gray-900",
+                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+                              className: "px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800",
+                              children: ["Actualidad ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                                className: "ml-1",
+                                children: "\u2022"
+                              })]
+                            })
+                          })
+                        })
+                      })
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                      className: "px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                        className: "flex items-center",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                          className: "flex-shrink-0 h-10 w-10",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+                            className: "h-10 w-10 rounded-full",
+                            src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+                            alt: ""
+                          })
+                        })
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                        className: "text-sm leading-5 text-gray-900",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                          href: "#",
+                          className: "font-medium text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150",
+                          children: "Noticia 2"
+                        })
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                      className: "px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                        className: "flex items-center",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                          className: "flex-shrink-0 h-10 w-10",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+                            className: "text-xs leading-5 text-gray-900",
+                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+                              className: "px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800",
+                              children: ["Informacion ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                                className: "ml-1",
+                                children: "\u2022"
+                              })]
+                            })
+                          })
+                        })
+                      })
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                      className: "px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                        className: "flex items-center",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                          className: "flex-shrink-0 h-10 w-10",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+                            className: "h-10 w-10 rounded-full",
+                            src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+                            alt: ""
+                          })
+                        })
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                        className: "text-sm leading-5 text-gray-900",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                          href: "#",
+                          className: "font-medium text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150",
+                          children: "Noticia 3"
+                        })
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                      className: "px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                        className: "flex items-center",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                          className: "flex-shrink-0 h-10 w-10",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+                            className: "text-xs leading-5 text-gray-900",
+                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+                              className: "px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800",
+                              children: ["Informacion ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                                className: "ml-1",
+                                children: "\u2022"
+                              })]
+                            })
+                          })
+                        })
+                      })
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                      className: "px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                        className: "flex items-center",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                          className: "flex-shrink-0 h-10 w-10",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+                            className: "h-10 w-10 rounded-full",
+                            src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+                            alt: ""
+                          })
+                        })
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                        className: "text-sm leading-5 text-gray-900",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                          href: "#",
+                          className: "font-medium text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150",
+                          children: "Noticia 2"
+                        })
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                      className: "px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                        className: "flex items-center",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                          className: "flex-shrink-0 h-10 w-10",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+                            className: "text-xs leading-5 text-gray-900",
+                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+                              className: "px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800",
+                              children: ["Informacion ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                                className: "ml-1",
+                                children: "\u2022"
+                              })]
+                            })
+                          })
+                        })
+                      })
+                    })]
+                  })]
                 })]
               })
             })
           })
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "shadow-lg p-3 mb-5 bg-white rounded",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Shared_GoogleChart__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+        })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "mt-10",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-        className: "text-lg font-medium text-gray-900",
-        children: "Lo mas hot"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "mt-10 ",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+        className: "text-lg font-medium text-gray-900 font-weight-bold",
+        children: "LO MAS HOT"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "mt-5 grid grid-cols-1 md:grid-cols-2 gap-5",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "flex flex-col",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
             className: "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               className: "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                 className: "bg-white overflow-hidden shadow-lg rounded-lg",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
                   className: "m-2 text-lg font-medium text-gray-900",
                   children: "Titulo"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
                   className: "m-2 text-base text-gray-500",
                   children: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quisquam."
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   className: "m-2",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
                     href: "/dashboard/posts/[id]",
                     className: "text-sm font-medium text-blue-600 hover:text-blue-500",
                     children: "Ver m\xE1s"
@@ -110,8 +270,105 @@ var Dashboard = function Dashboard() {
                 })]
               })
             })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 mt-4",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                className: "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                  className: "bg-white overflow-hidden shadow-lg rounded-lg",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+                    className: "m-2 text-lg font-medium text-gray-900",
+                    children: "Titulo 2"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+                    className: "m-2 text-base text-gray-500",
+                    children: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quisquam."
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                    className: "m-2",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+                      href: "/dashboard/posts/[id]",
+                      className: "text-sm font-medium text-blue-600 hover:text-blue-500",
+                      children: "Ver m\xE1s"
+                    })
+                  })]
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 mt-4",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                className: "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                  className: "bg-white overflow-hidden shadow-lg rounded-lg",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+                    className: "m-2 text-lg font-medium text-gray-900",
+                    children: "Titulo 3"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+                    className: "m-2 text-base text-gray-500",
+                    children: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quisquam."
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                    className: "m-2",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+                      href: "/dashboard/posts/[id]",
+                      className: "text-sm font-medium text-blue-600 hover:text-blue-500",
+                      children: "Ver m\xE1s"
+                    })
+                  })]
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 mt-4",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                className: "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                  className: "bg-white overflow-hidden shadow-lg rounded-lg",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+                    className: "m-2 text-lg font-medium text-gray-900",
+                    children: "Titulo 4"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+                    className: "m-2 text-base text-gray-500",
+                    children: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quisquam."
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                    className: "m-2",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+                      href: "/dashboard/posts/[id]",
+                      className: "text-sm font-medium text-blue-600 hover:text-blue-500",
+                      children: "Ver m\xE1s"
+                    })
+                  })]
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 mt-4",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                className: "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                  className: "bg-white overflow-hidden shadow-lg rounded-lg",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+                    className: "m-2 text-lg font-medium text-gray-900",
+                    children: "Titulo 5"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+                    className: "m-2 text-base text-gray-500",
+                    children: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quisquam."
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                    className: "m-2",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+                      href: "/dashboard/posts/[id]",
+                      className: "text-sm font-medium text-blue-600 hover:text-blue-500",
+                      children: "Ver m\xE1s"
+                    })
+                  })]
+                })
+              })
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: " shadow-lg p-3 mb-5 bg-white rounded",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+            className: "m-3",
+            src: "https://ps.w.org/custom-twitter-feeds/assets/screenshot-1.png?rev=1804720",
+            alt: ""
           })
-        })
+        })]
       })]
     })]
   });
@@ -120,7 +377,7 @@ var Dashboard = function Dashboard() {
 
 
 Dashboard.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Shared_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: "Buscador",
     children: page
   });
@@ -358,6 +615,96 @@ function FlashMessages() {
   });
 }
 ;
+
+/***/ }),
+
+/***/ "./resources/js/Shared/GoogleChart.js":
+/*!********************************************!*\
+  !*** ./resources/js/Shared/GoogleChart.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_google_charts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-google-charts */ "./node_modules/react-google-charts/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var data = [['Mes', 'Córdoba', 'Huelva', 'Málaga', 'Sevilla', 'Cádiz', 'Almería', 'Granada', 'Jaén', 'Average'], ['2021', 165, 938, 522, 998, 450, 614.6, 673.5, 609.4, 629.2], ['2022', 135, 1120, 599, 1268, 288, 682, 728.3, 692.0, 787.3]];
+
+var GoogleChart = /*#__PURE__*/function (_Component) {
+  _inherits(GoogleChart, _Component);
+
+  var _super = _createSuper(GoogleChart);
+
+  function GoogleChart(props) {
+    _classCallCheck(this, GoogleChart);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(GoogleChart, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "container",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_google_charts__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          width: '600px',
+          height: '350px',
+          chartType: "ComboChart",
+          loader: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            children: "Loading Chart"
+          }),
+          data: data,
+          options: {
+            vAxis: {
+              title: 'Puestos ofertados'
+            },
+            hAxis: {
+              title: 'Año'
+            },
+            seriesType: 'bars'
+          },
+          rootProps: {
+            'data-testid': '1'
+          }
+        })
+      });
+    }
+  }]);
+
+  return GoogleChart;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GoogleChart);
 
 /***/ }),
 
@@ -2007,6 +2354,790 @@ exports.typeOf = typeOf;
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/react-is/cjs/react-is.development.js");
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/react-google-charts/dist/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-google-charts/dist/index.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Chart": () => (/* binding */ Chart$1),
+/* harmony export */   "GoogleDataTableColumnRoleType": () => (/* binding */ GoogleDataTableColumnRoleType),
+/* harmony export */   "default": () => (/* binding */ Chart)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+
+/**
+ * Hook to load external script.
+ * @param src - Source url to load.
+ * @param onLoad - Success callback.
+ * @param onError - Error callback.
+ */ function useLoadScript(src, onLoad, onError) {
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(()=>{
+        if (!document) {
+            return;
+        }
+        // Find script tag with same src in DOM.
+        const foundScript = document.querySelector("script[src=\"".concat(src, "\"]"));
+        // Call onLoad if script marked as loaded.
+        if (foundScript === null || foundScript === void 0 ? void 0 : foundScript.dataset.loaded) {
+            onLoad === null || onLoad === void 0 ? void 0 : onLoad();
+            return;
+        }
+        // Create or get existed tag.
+        const script = foundScript || document.createElement("script");
+        // Set src if no script was found.
+        if (!foundScript) {
+            script.src = src;
+        }
+        // Mark script as loaded on load event.
+        const onLoadWithMarker = ()=>{
+            script.dataset.loaded = "1";
+            onLoad === null || onLoad === void 0 ? void 0 : onLoad();
+        };
+        script.addEventListener("load", onLoadWithMarker);
+        if (onError) {
+            script.addEventListener("error", onError);
+        }
+        // Add to DOM if not yet added.
+        if (!foundScript) {
+            document.head.append(script);
+        }
+        return ()=>{
+            script.removeEventListener("load", onLoadWithMarker);
+            if (onError) {
+                script.removeEventListener("error", onError);
+            }
+        };
+    }, []);
+}
+
+/**
+ * Hook to load Google Charts JS API.
+ * @param params - Load parameters.
+ * @param [params.chartVersion] - Chart version to load.
+ * @param [params.chartPackages] - Packages to load.
+ * @param [params.chartLanguage] - Languages to load.
+ * @param [params.mapsApiKey] - Google Maps api key.
+ * @returns
+ */ function useLoadGoogleCharts(param) {
+    let { chartVersion ="current" , chartPackages =[
+        "corechart",
+        "controls"
+    ] , chartLanguage ="en" , mapsApiKey  } = param;
+    const [googleCharts, setGoogleCharts] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    const [failed, setFailed] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    useLoadScript("https://www.gstatic.com/charts/loader.js", ()=>{
+        // @ts-expect-error Getting object from global namespace.
+        const google = window === null || window === void 0 ? void 0 : window.google;
+        if (!google) {
+            return;
+        }
+        google.charts.load(chartVersion, {
+            packages: chartPackages,
+            language: chartLanguage,
+            mapsApiKey
+        });
+        google.charts.setOnLoadCallback(()=>{
+            setGoogleCharts(google);
+        });
+    }, ()=>{
+        setFailed(true);
+    });
+    return [
+        googleCharts,
+        failed
+    ];
+}
+/**
+ * Wrapper around useLoadGoogleCharts to use in legacy components.
+ */ function LoadGoogleCharts(param) {
+    let { onLoad , onError , ...params } = param;
+    const [googleCharts, failed] = useLoadGoogleCharts(params);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(()=>{
+        if (googleCharts && onLoad) {
+            onLoad(googleCharts);
+        }
+    }, [
+        googleCharts
+    ]);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(()=>{
+        if (failed && onError) {
+            onError();
+        }
+    }, [
+        failed
+    ]);
+    return null;
+}
+
+const chartDefaultProps = {
+    // <DEPRECATED_PROPS>
+    legend_toggle: false,
+    // </DEPRECATED_PROPS>
+    options: {},
+    legendToggle: false,
+    getChartWrapper: ()=>{},
+    spreadSheetQueryParameters: {
+        headers: 1,
+        gid: 1
+    },
+    rootProps: {},
+    chartWrapperParams: {}
+};
+
+let uniqueID = 0;
+const generateUniqueID = ()=>{
+    uniqueID += 1;
+    return "reactgooglegraph-".concat(uniqueID);
+};
+
+const DEFAULT_CHART_COLORS = [
+    "#3366CC",
+    "#DC3912",
+    "#FF9900",
+    "#109618",
+    "#990099",
+    "#3B3EAC",
+    "#0099C6",
+    "#DD4477",
+    "#66AA00",
+    "#B82E2E",
+    "#316395",
+    "#994499",
+    "#22AA99",
+    "#AAAA11",
+    "#6633CC",
+    "#E67300",
+    "#8B0707",
+    "#329262",
+    "#5574A6",
+    "#3B3EAC"
+];
+
+const loadDataTableFromSpreadSheet = async function(googleViz, spreadSheetUrl) {
+    let urlParams = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+    return new Promise((resolve, reject)=>{
+        const headers = "".concat(urlParams.headers ? "headers=".concat(urlParams.headers) : "headers=0");
+        const queryString = "".concat(urlParams.query ? "&tq=".concat(encodeURIComponent(urlParams.query)) : "");
+        const gid = "".concat(urlParams.gid ? "&gid=".concat(urlParams.gid) : "");
+        const sheet = "".concat(urlParams.sheet ? "&sheet=".concat(urlParams.sheet) : "");
+        const access_token = "".concat(urlParams.access_token ? "&access_token=".concat(urlParams.access_token) : "");
+        const urlQueryString = "".concat(headers).concat(gid).concat(sheet).concat(queryString).concat(access_token);
+        const urlToSpreadSheet = "".concat(spreadSheetUrl, "/gviz/tq?").concat(urlQueryString); //&tq=${queryString}`;
+        const query = new googleViz.visualization.Query(urlToSpreadSheet);
+        query.send((response)=>{
+            if (response.isError()) {
+                reject("Error in query:  ".concat(response.getMessage(), " ").concat(response.getDetailedMessage()));
+            } else {
+                resolve(response.getDataTable());
+            }
+        });
+    });
+};
+
+const { Provider , Consumer  } = /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createContext(chartDefaultProps);
+const ContextProvider = (param)=>{
+    let { children , value  } = param;
+    return(/*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement(Provider, {
+        value: value
+    }, children));
+};
+const ContextConsumer = (param)=>{
+    let { render  } = param;
+    return(/*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement(Consumer, null, (context)=>{
+        return render(context);
+    }));
+};
+
+const GRAY_COLOR = "#CCCCCC";
+class GoogleChartDataTableInner extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+    componentDidMount() {
+        this.draw(this.props);
+        window.addEventListener("resize", this.onResize);
+        if (this.props.legend_toggle || this.props.legendToggle) {
+            this.listenToLegendToggle();
+        }
+    }
+    componentWillUnmount() {
+        const { google , googleChartWrapper  } = this.props;
+        window.removeEventListener("resize", this.onResize);
+        google.visualization.events.removeAllListeners(googleChartWrapper);
+        if (googleChartWrapper.getChartType() === "Timeline") {
+            googleChartWrapper.getChart() && googleChartWrapper.getChart().clearChart();
+        }
+    }
+    componentDidUpdate() {
+        this.draw(this.props);
+    }
+    render() {
+        return null;
+    }
+    constructor(...args){
+        super(...args);
+        this.state = {
+            hiddenColumns: []
+        };
+        this.listenToLegendToggle = ()=>{
+            const { google , googleChartWrapper  } = this.props;
+            google.visualization.events.addListener(googleChartWrapper, "select", ()=>{
+                const chart = googleChartWrapper.getChart();
+                const selection = chart.getSelection();
+                const dataTable = googleChartWrapper.getDataTable();
+                if (selection.length === 0 || // We want to listen to when a whole row is selected. This is the case only when row === null
+                selection[0].row || !dataTable) {
+                    return;
+                }
+                const columnIndex = selection[0].column;
+                const columnID = this.getColumnID(dataTable, columnIndex);
+                if (this.state.hiddenColumns.includes(columnID)) {
+                    this.setState((state)=>({
+                            ...state,
+                            hiddenColumns: [
+                                ...state.hiddenColumns.filter((colID)=>colID !== columnID
+                                ), 
+                            ]
+                        })
+                    );
+                } else {
+                    this.setState((state)=>({
+                            ...state,
+                            hiddenColumns: [
+                                ...state.hiddenColumns,
+                                columnID
+                            ]
+                        })
+                    );
+                }
+            });
+        };
+        this.applyFormatters = (dataTable, formatters)=>{
+            const { google  } = this.props;
+            for (let formatter of formatters){
+                switch(formatter.type){
+                    case "ArrowFormat":
+                        {
+                            const vizFormatter = new google.visualization.ArrowFormat(formatter.options);
+                            vizFormatter.format(dataTable, formatter.column);
+                            break;
+                        }
+                    case "BarFormat":
+                        {
+                            const vizFormatter = new google.visualization.BarFormat(formatter.options);
+                            vizFormatter.format(dataTable, formatter.column);
+                            break;
+                        }
+                    case "ColorFormat":
+                        {
+                            const vizFormatter = new google.visualization.ColorFormat(formatter.options);
+                            const { ranges  } = formatter;
+                            for (let range of ranges){
+                                vizFormatter.addRange(...range);
+                            }
+                            vizFormatter.format(dataTable, formatter.column);
+                            break;
+                        }
+                    case "DateFormat":
+                        {
+                            const vizFormatter = new google.visualization.DateFormat(formatter.options);
+                            vizFormatter.format(dataTable, formatter.column);
+                            break;
+                        }
+                    case "NumberFormat":
+                        {
+                            const vizFormatter = new google.visualization.NumberFormat(formatter.options);
+                            vizFormatter.format(dataTable, formatter.column);
+                            break;
+                        }
+                    case "PatternFormat":
+                        {
+                            const vizFormatter = new google.visualization.PatternFormat(formatter.options);
+                            vizFormatter.format(dataTable, formatter.column);
+                            break;
+                        }
+                }
+            }
+        };
+        this.getColumnID = (dataTable, columnIndex)=>{
+            return dataTable.getColumnId(columnIndex) || dataTable.getColumnLabel(columnIndex);
+        };
+        this.draw = async (param)=>{
+            let { data , diffdata , rows , columns , options , legend_toggle , legendToggle , chartType , formatters , spreadSheetUrl , spreadSheetQueryParameters  } = param;
+            const { google , googleChartWrapper  } = this.props;
+            let dataTable;
+            let chartDiff = null;
+            if (diffdata) {
+                const oldData = google.visualization.arrayToDataTable(diffdata.old);
+                const newData = google.visualization.arrayToDataTable(diffdata.new);
+                chartDiff = google.visualization[chartType].prototype.computeDiff(oldData, newData);
+            }
+            if (data !== null) {
+                if (Array.isArray(data)) {
+                    dataTable = google.visualization.arrayToDataTable(data);
+                } else {
+                    dataTable = new google.visualization.DataTable(data);
+                }
+            } else if (rows && columns) {
+                dataTable = google.visualization.arrayToDataTable([
+                    columns,
+                    ...rows
+                ]);
+            } else if (spreadSheetUrl) {
+                dataTable = await loadDataTableFromSpreadSheet(google, spreadSheetUrl, spreadSheetQueryParameters);
+            } else {
+                dataTable = google.visualization.arrayToDataTable([]);
+            }
+            const columnCount = dataTable.getNumberOfColumns();
+            for(let i = 0; i < columnCount; i += 1){
+                const columnID = this.getColumnID(dataTable, i);
+                if (this.state.hiddenColumns.includes(columnID)) {
+                    const previousColumnLabel = dataTable.getColumnLabel(i);
+                    const previousColumnID = dataTable.getColumnId(i);
+                    const previousColumnType = dataTable.getColumnType(i);
+                    dataTable.removeColumn(i);
+                    dataTable.addColumn({
+                        label: previousColumnLabel,
+                        id: previousColumnID,
+                        type: previousColumnType
+                    });
+                }
+            }
+            const chart = googleChartWrapper.getChart();
+            if (googleChartWrapper.getChartType() === "Timeline") {
+                chart && chart.clearChart();
+            }
+            googleChartWrapper.setChartType(chartType);
+            googleChartWrapper.setOptions(options || {});
+            googleChartWrapper.setDataTable(dataTable);
+            googleChartWrapper.draw();
+            if (this.props.googleChartDashboard !== null) {
+                this.props.googleChartDashboard.draw(dataTable);
+            }
+            if (chartDiff) {
+                googleChartWrapper.setDataTable(chartDiff);
+                googleChartWrapper.draw();
+            }
+            if (formatters) {
+                this.applyFormatters(dataTable, formatters);
+                googleChartWrapper.setDataTable(dataTable);
+                googleChartWrapper.draw();
+            }
+            if (legendToggle === true || legend_toggle === true) {
+                this.grayOutHiddenColumns({
+                    options
+                });
+            }
+            return;
+        };
+        this.grayOutHiddenColumns = (param)=>{
+            let { options  } = param;
+            const { googleChartWrapper  } = this.props;
+            const dataTable = googleChartWrapper.getDataTable();
+            if (!dataTable) return;
+            const columnCount = dataTable.getNumberOfColumns();
+            const hasAHiddenColumn = this.state.hiddenColumns.length > 0;
+            if (hasAHiddenColumn === false) return;
+            const colors = Array.from({
+                length: columnCount - 1
+            }).map((dontcare, i)=>{
+                const columnID = this.getColumnID(dataTable, i + 1);
+                if (this.state.hiddenColumns.includes(columnID)) {
+                    return GRAY_COLOR;
+                } else if (options && options.colors) {
+                    return options.colors[i];
+                } else {
+                    return DEFAULT_CHART_COLORS[i];
+                }
+            });
+            googleChartWrapper.setOptions({
+                ...options,
+                colors
+            });
+            googleChartWrapper.draw();
+        };
+        this.onResize = ()=>{
+            const { googleChartWrapper  } = this.props;
+            googleChartWrapper.draw();
+        };
+    }
+}
+class GoogleChartDataTable extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+    componentDidMount() {}
+    componentWillUnmount() {}
+    shouldComponentUpdate() {
+        return false;
+    }
+    render() {
+        const { google , googleChartWrapper , googleChartDashboard  } = this.props;
+        return(/*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement(ContextConsumer, {
+            render: (props)=>{
+                return(/*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement(GoogleChartDataTableInner, Object.assign({}, props, {
+                    google: google,
+                    googleChartWrapper: googleChartWrapper,
+                    googleChartDashboard: googleChartDashboard
+                })));
+            }
+        }));
+    }
+}
+
+class GoogleChartEvents extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+    shouldComponentUpdate() {
+        return false;
+    }
+    listenToEvents(param) {
+        let { chartEvents , google , googleChartWrapper  } = param;
+        if (!chartEvents) {
+            return;
+        }
+        google.visualization.events.removeAllListeners(googleChartWrapper);
+        for (let event of chartEvents){
+            var _this = this;
+            const { eventName , callback  } = event;
+            google.visualization.events.addListener(googleChartWrapper, eventName, function() {
+                for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+                    args[_key] = arguments[_key];
+                }
+                callback({
+                    chartWrapper: googleChartWrapper,
+                    props: _this.props,
+                    google: google,
+                    eventArgs: args
+                });
+            });
+        }
+    }
+    render() {
+        const { google , googleChartWrapper  } = this.props;
+        return(/*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement(ContextConsumer, {
+            render: (propsFromContext)=>{
+                this.listenToEvents({
+                    chartEvents: propsFromContext.chartEvents || null,
+                    google,
+                    googleChartWrapper
+                });
+                return null;
+            }
+        }));
+    }
+}
+
+let controlCounter = 0;
+class GoogleChart extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+    componentDidMount() {
+        const { options , google , chartType , chartWrapperParams , toolbarItems , getChartEditor , getChartWrapper ,  } = this.props;
+        const chartConfig = {
+            chartType,
+            options,
+            containerId: this.getGraphID(),
+            ...chartWrapperParams
+        };
+        const googleChartWrapper = new google.visualization.ChartWrapper(chartConfig);
+        googleChartWrapper.setOptions(options || {});
+        if (getChartWrapper) {
+            getChartWrapper(googleChartWrapper, google);
+        }
+        const googleChartDashboard = new google.visualization.Dashboard(this.dashboard_ref);
+        const googleChartControls = this.addControls(googleChartWrapper, googleChartDashboard);
+        if (toolbarItems) {
+            google.visualization.drawToolbar(this.toolbar_ref.current, toolbarItems);
+        }
+        let googleChartEditor = null;
+        if (getChartEditor) {
+            googleChartEditor = new google.visualization.ChartEditor();
+            getChartEditor({
+                chartEditor: googleChartEditor,
+                chartWrapper: googleChartWrapper,
+                google
+            });
+        }
+        this.setState({
+            googleChartEditor,
+            googleChartControls: googleChartControls,
+            googleChartDashboard: googleChartDashboard,
+            googleChartWrapper,
+            isReady: true
+        });
+    }
+    componentDidUpdate() {
+        if (!this.state.googleChartWrapper) return;
+        if (!this.state.googleChartDashboard) return;
+        if (!this.state.googleChartControls) return;
+        const { controls  } = this.props;
+        if (controls) {
+            for(let i = 0; i < controls.length; i += 1){
+                const { controlType , options , controlWrapperParams  } = controls[i];
+                if (controlWrapperParams && "state" in controlWrapperParams) {
+                    this.state.googleChartControls[i].control.setState(controlWrapperParams["state"]);
+                }
+                this.state.googleChartControls[i].control.setOptions(options);
+                this.state.googleChartControls[i].control.setControlType(controlType);
+            }
+        }
+    }
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.state.isReady !== nextState.isReady || nextProps.controls !== this.props.controls;
+    }
+    render() {
+        const { width , height , options , style  } = this.props;
+        const divStyle = {
+            height: height || options && options.height,
+            width: width || options && options.width,
+            ...style
+        };
+        if (this.props.render) {
+            return(/*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+                ref: this.dashboard_ref,
+                style: divStyle
+            }, /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+                ref: this.toolbar_ref,
+                id: "toolbar"
+            }), this.props.render({
+                renderChart: this.renderChart,
+                renderControl: this.renderControl,
+                renderToolbar: this.renderToolBar
+            })));
+        } else {
+            return(/*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+                ref: this.dashboard_ref,
+                style: divStyle
+            }, this.renderControl((param)=>{
+                let { controlProp  } = param;
+                return controlProp.controlPosition !== "bottom";
+            }), this.renderChart(), this.renderControl((param)=>{
+                let { controlProp  } = param;
+                return controlProp.controlPosition === "bottom";
+            }), this.renderToolBar()));
+        }
+    }
+    constructor(...args1){
+        var _this1;
+        super(), _this1 = this;
+        this.state = {
+            googleChartWrapper: null,
+            googleChartDashboard: null,
+            googleChartControls: null,
+            googleChartEditor: null,
+            isReady: false
+        };
+        this.graphID = null;
+        this.dashboard_ref = /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        this.toolbar_ref = /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createRef();
+        this.getGraphID = ()=>{
+            const { graphID , graph_id  } = this.props;
+            let instanceGraphID;
+            if (!graphID && !graph_id) {
+                if (!this.graphID) {
+                    instanceGraphID = generateUniqueID();
+                } else {
+                    instanceGraphID = this.graphID;
+                }
+            } else if (graphID && !graph_id) {
+                instanceGraphID = graphID;
+            } else if (graph_id && !graphID) {
+                instanceGraphID = graph_id;
+            } else {
+                instanceGraphID = graphID;
+            }
+            this.graphID = instanceGraphID;
+            return this.graphID;
+        };
+        this.getControlID = (id, index)=>{
+            controlCounter += 1;
+            let controlID;
+            if (typeof id === "undefined") {
+                controlID = "googlechart-control-".concat(index, "-").concat(controlCounter);
+            } else {
+                controlID = id;
+            }
+            return controlID;
+        };
+        this.addControls = (googleChartWrapper, googleChartDashboard)=>{
+            const { google , controls  } = this.props;
+            const googleChartControls = !controls ? null : controls.map((control, i)=>{
+                const { controlID: controlIDMaybe , controlType , options: controlOptions , controlWrapperParams ,  } = control;
+                const controlID = this.getControlID(controlIDMaybe, i);
+                return {
+                    controlProp: control,
+                    control: new google.visualization.ControlWrapper({
+                        containerId: controlID,
+                        controlType,
+                        options: controlOptions,
+                        ...controlWrapperParams
+                    })
+                };
+            });
+            if (!googleChartControls) {
+                return null;
+            }
+            googleChartDashboard.bind(googleChartControls.map((param)=>{
+                let { control  } = param;
+                return control;
+            }), googleChartWrapper);
+            for (let chartControl of googleChartControls){
+                const { control , controlProp  } = chartControl;
+                const { controlEvents =[]  } = controlProp;
+                for (let event of controlEvents){
+                    var _this = this;
+                    const { callback , eventName  } = event;
+                    google.visualization.events.removeListener(control, eventName, callback);
+                    google.visualization.events.addListener(control, eventName, function() {
+                        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+                            args[_key] = arguments[_key];
+                        }
+                        callback({
+                            chartWrapper: googleChartWrapper,
+                            controlWrapper: control,
+                            props: _this.props,
+                            google: google,
+                            eventArgs: args
+                        });
+                    });
+                }
+            }
+            return googleChartControls;
+        };
+        this.renderChart = ()=>{
+            const { width , height , options , style , className , rootProps , google  } = this.props;
+            const divStyle = {
+                height: height || options && options.height,
+                width: width || options && options.width,
+                ...style
+            };
+            return(/*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", Object.assign({
+                id: this.getGraphID(),
+                style: divStyle,
+                className: className
+            }, rootProps), this.state.isReady && this.state.googleChartWrapper !== null ? /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement(GoogleChartDataTable, {
+                googleChartWrapper: this.state.googleChartWrapper,
+                google: google,
+                googleChartDashboard: this.state.googleChartDashboard
+            }), /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement(GoogleChartEvents, {
+                googleChartWrapper: this.state.googleChartWrapper,
+                google: google
+            })) : null));
+        };
+        this.renderControl = function() {
+            let filter = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : (param)=>{
+                return true;
+            };
+            return _this1.state.isReady && _this1.state.googleChartControls !== null ? /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, _this1.state.googleChartControls.filter((param)=>{
+                let { controlProp , control  } = param;
+                return filter({
+                    control,
+                    controlProp
+                });
+            }).map((param)=>{
+                let { control , controlProp  } = param;
+                return(/*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+                    key: control.getContainerId(),
+                    id: control.getContainerId()
+                }));
+            })) : null;
+        };
+        this.renderToolBar = ()=>{
+            if (!this.props.toolbarItems) return null;
+            return(/*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+                ref: this.toolbar_ref
+            }));
+        };
+    }
+}
+
+class Chart$1 extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+    render() {
+        const { chartLanguage , chartPackages , chartVersion , mapsApiKey , loader , errorElement ,  } = this.props;
+        return(/*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement(ContextProvider, {
+            value: this.props
+        }, this.state.loadingStatus === "ready" && this.state.google !== null ? /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement(GoogleChart, Object.assign({}, this.props, {
+            google: this.state.google
+        })) : this.state.loadingStatus === "errored" && errorElement ? errorElement : loader, /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement(LoadGoogleCharts, {
+            chartLanguage: chartLanguage,
+            chartPackages: chartPackages,
+            chartVersion: chartVersion,
+            mapsApiKey: mapsApiKey,
+            onLoad: this.onLoad,
+            onError: this.onError
+        })));
+    }
+    componentDidMount() {
+        this._isMounted = true;
+    }
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+    isFullyLoaded(google) {
+        const { controls , toolbarItems , getChartEditor  } = this.props;
+        return google && google.visualization && google.visualization.ChartWrapper && google.visualization.Dashboard && (!controls || google.visualization.ChartWrapper) && (!getChartEditor || google.visualization.ChartEditor) && (!toolbarItems || google.visualization.drawToolbar);
+    }
+    constructor(...args){
+        super(...args);
+        this._isMounted = false;
+        this.state = {
+            loadingStatus: "loading",
+            google: null
+        };
+        this.onLoad = (google1)=>{
+            if (this.props.onLoad) {
+                this.props.onLoad(google1);
+            }
+            if (this.isFullyLoaded(google1)) {
+                this.onSuccess(google1);
+            } else {
+                // IE11: window.google is not fully set, we have to wait
+                const id = setInterval(()=>{
+                    const google = window.google;
+                    if (this._isMounted) {
+                        if (google && this.isFullyLoaded(google)) {
+                            clearInterval(id);
+                            this.onSuccess(google);
+                        }
+                    } else {
+                        clearInterval(id);
+                    }
+                }, 1000);
+            }
+        };
+        this.onSuccess = (google)=>{
+            this.setState({
+                loadingStatus: "ready",
+                google
+            });
+        };
+        this.onError = ()=>{
+            this.setState({
+                loadingStatus: "errored"
+            });
+        };
+    }
+}
+Chart$1.defaultProps = chartDefaultProps;
+
+var GoogleDataTableColumnRoleType;
+(function(GoogleDataTableColumnRoleType) {
+    GoogleDataTableColumnRoleType["annotation"] = "annotation";
+    GoogleDataTableColumnRoleType["annotationText"] = "annotationText";
+    GoogleDataTableColumnRoleType["certainty"] = "certainty";
+    GoogleDataTableColumnRoleType["emphasis"] = "emphasis";
+    GoogleDataTableColumnRoleType["interval"] = "interval";
+    GoogleDataTableColumnRoleType["scope"] = "scope";
+    GoogleDataTableColumnRoleType["style"] = "style";
+    GoogleDataTableColumnRoleType["tooltip"] = "tooltip";
+    GoogleDataTableColumnRoleType["domain"] = "domain";
+})(GoogleDataTableColumnRoleType || (GoogleDataTableColumnRoleType = {}));
+
+var Chart = Chart$1;
+
+
+//# sourceMappingURL=index.js.map
 
 
 /***/ })
