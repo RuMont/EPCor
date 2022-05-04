@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('nombre')->nullable();
             $table->string('password')->nullable()->change();
             $table->string('avatar')->nullable();
             $table->string('external_id')->nullable();
