@@ -59,14 +59,15 @@ Route::controller(ToolController::class)->prefix('tool')->group(function () {
 Route::get('/login-google', function () {
     return Socialite::driver('google')->redirect();
 });
- 
+
 Route::get('/google-callback', function () {
 
+    
     $user = Socialite::driver('google')->user();
-
+    
     $userExists = Users::where('external_id', $user->id)->where('external_auth', 'google')->first();
 
-    if($userExists) {
+    if ($userExists) {
         Auth::login($userExists);
     } else {
         $userNew = Users::create([
@@ -80,5 +81,5 @@ Route::get('/google-callback', function () {
     }
 
     return redirect()->route('dashboard');
-    
+
 });

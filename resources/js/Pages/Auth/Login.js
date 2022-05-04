@@ -35,6 +35,7 @@ const Login = () => {
 
 	const handleLogin = (googleData) => {
 		console.log(googleData);
+        
 	}
 
     return (
@@ -98,6 +99,8 @@ const Login = () => {
 								onFailure={handleFailure}
 								cookiePolicy={'single_host_origin'}
 							/>
+
+                            
 
                         </div>
                     </div>
