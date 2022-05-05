@@ -46,7 +46,7 @@ php artisan db:seed
 
 Lanzamos el servidor
 ```sh
-php artisan serve
+php artisan serve --host=localhost --port=8080
 ```
 <hr>
 
