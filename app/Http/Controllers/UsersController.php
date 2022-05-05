@@ -15,10 +15,9 @@ class UsersController extends Controller
         $this->usersModel = $user;
     }
 
-    // TODO: Completar las funciones
     public function index(Request $request)
     {
-        if (Auth::user()->is_admin == 0) return $this->status(403);
+        if (Auth::user()->is_admin == 0) return redirect()->route('status', ['status' => 403]);
         return Inertia::render('Users/Index', [
             'filters' => $request->all('nombre', 'is_admin', 'borrado'),
             'users' => $this->usersModel->obtenerUsuarios(

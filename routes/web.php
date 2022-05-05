@@ -1,13 +1,10 @@
 <?php
 
-use App\Models\Users;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ToolController;
 use App\Http\Controllers\UsersController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +23,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('about', 'about')->name('about');
     Route::get('register', 'register')->name('register');
     Route::get('login', 'index')->name('login');
-    Route::get('error/{status}', 'status');
+    Route::get('error/{status}', 'status')->name('status');
     Route::middleware('auth')->get('dashboard', 'dashboard')->name('dashboard');
     Route::middleware('auth')->get('admin', 'admin')->name('admin');
 });
@@ -35,6 +32,9 @@ Route::controller(HomeController::class)->group(function () {
 Route::controller(AuthController::class)->group(function () {
     Route::post('auth', 'authenticate');
     Route::middleware('auth')->get('logout', 'logout');
+    // Google auth
+    Route::get('login-google', 'loginGoogle');
+    Route::get('google-callback', 'googleCallback');
 });
 
 // Controlador de CRUD de usuarios y lista de usuarios
@@ -52,32 +52,4 @@ Route::controller(UsersController::class)->prefix('users')->group(function () {
 Route::controller(ToolController::class)->prefix('tool')->group(function () {
     Route::middleware('auth')->get('/', 'index')->name('tool');
     Route::middleware('auth')->get('/{site}', 'index')->name('tool');
-});
-
-// Google authentication
-
-Route::get('/login-google', function () {
-    return Socialite::driver('google')
-        ->scopes(['profile', 'email'])
-        ->redirect();
-});
-
-Route::get('/google-callback', function () {
-
-    $googleUser = Socialite::driver('google')->stateless()->user();
-
-    $user = Users::updateOrCreate(
-        ['email' => $googleUser->email],
-        [
-            'nombre' => $googleUser->name,
-            'avatar' => $googleUser->avatar,
-            'external_id' => $googleUser->id,
-            'external_auth' => 'google',
-        ]
-    );
-
-    Auth::login($user);
-
-    return redirect()->route('dashboard');
-    
 });

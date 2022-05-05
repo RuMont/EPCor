@@ -45,6 +45,15 @@ function Error() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
         className: "mt-3 text-lg leading-tight",
         children: description
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        className: "mt-6 flex flex-row align-bottom",
+        onClick: function onClick() {
+          return history.back();
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+          className: "text-lg underline",
+          children: ["\u21AA", ' ', "Volver"]
+        })
       })]
     })]
   });

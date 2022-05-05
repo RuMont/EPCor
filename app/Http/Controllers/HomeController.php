@@ -37,7 +37,7 @@ class HomeController extends Controller
 
     public function admin()
     {
-        if (Auth::user()->is_admin == 0) return $this->status(403);
+        if (Auth::user()->is_admin == 0) return redirect()->route('status', ['status' => 403]);
 
         return Inertia::render('About');
     }
