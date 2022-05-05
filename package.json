@@ -25,12 +25,16 @@
         "@inertiajs/inertia": "^0.11.0",
         "@inertiajs/inertia-react": "^0.8.0",
         "@inertiajs/progress": "^0.2.7",
+        "chart.js": "^3.7.1",
         "classnames": "^2.2.6",
+        "google-auth-library": "^8.0.2",
         "prop-types": "^15.8.1",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
         "react-google-button": "^0.7.2",
+        "react-google-charts": "^4.0.0",
         "react-google-login": "^5.2.2",
-        "react-swipeable": "^6.2.1"
+        "react-swipeable": "^6.2.1",
+        "rss-combiner": "^0.0.5"
     }
 }
