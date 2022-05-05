@@ -1,8 +1,9 @@
 import React from "react";
 import { InertiaLink } from "@inertiajs/inertia-react";
 import Layout from "../../Shared/Layout";
-import Chart from "../../Shared/GoogleChart";
+
 import GoogleChart from "../../Shared/GoogleChart";
+import Feed from "../../Shared/Feed";
 
 
 const Dashboard = () => {
@@ -303,11 +304,18 @@ const Dashboard = () => {
 				</div>
 				<div className=" shadow-lg p-3 mb-5 bg-white rounded">
 					<img className="m-3"src="https://ps.w.org/custom-twitter-feeds/assets/screenshot-1.png?rev=1804720" alt=""/>
+					
 				</div>
-				</div>
+
+				<Feed />
 				
-				</div>
+				
+				
 				{/* Social media */}
+
+				<div>
+
+				</div>
 				
 					
 
@@ -317,6 +325,8 @@ const Dashboard = () => {
 
 
 		
+	</div>
+	</div>
 	</div>
 	
     );
