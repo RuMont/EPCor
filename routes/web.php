@@ -57,27 +57,26 @@ Route::controller(ToolController::class)->prefix('tool')->group(function () {
 // Google authentication
 
 Route::get('/login-google', function () {
-    return Socialite::driver('google')->redirect();
+    return Socialite::driver('google')
+        ->scopes(['profile', 'email'])
+        ->redirect();
 });
- 
+
 Route::get('/google-callback', function () {
 
-    $user = Socialite::driver('google')->user();
+    $googleUser = Socialite::driver('google')->stateless()->user();
 
-    $userExists = Users::where('external_id', $user->id)->where('external_auth', 'google')->first();
-
-    if($userExists) {
-        Auth::login($userExists);
-    } else {
-        $userNew = Users::create([
-            'nombre' => $user->name,
-            'email' => $user->email,
-            'avatar' => $user->avatar,
-            'external_id' => $user->id,
+    $user = Users::updateOrCreate(
+        ['email' => $googleUser->email],
+        [
+            'nombre' => $googleUser->name,
+            'avatar' => $googleUser->avatar,
+            'external_id' => $googleUser->id,
             'external_auth' => 'google',
-        ]);
-        Auth::login($userNew);
-    }
+        ]
+    );
+
+    Auth::login($user);
 
     return redirect()->route('dashboard');
     
