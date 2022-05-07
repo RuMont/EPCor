@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import { Head, useForm, usePage } from "@inertiajs/inertia-react";
+import { Head, usePage } from "@inertiajs/inertia-react";
 import Logo from "../../Shared/Logo";
 import TextInput from "../../Shared/TextInput";
 import LoadingButton from "../../Shared/LoadingButton";
@@ -13,7 +14,9 @@ const Login = () => {
         remember: false,
     });
 
-    const { appName } = usePage().props;
+    const props = usePage().props;
+
+    console.log(props)
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -31,7 +34,7 @@ const Login = () => {
 
     return (
         <div className="flex items-center justify-center min-h-screen p-6 bg-indigo-900">
-            <Head title={appName} />
+            <Head title={props.appName} />
             <div className="w-full max-w-md">
                 <Logo
                     className="block w-3/5 max-w-xs mx-auto"
@@ -65,6 +68,7 @@ const Login = () => {
                             value={values.password}
                             onChange={handleChange}
                         />
+                        {props.errors && <span className="text-red-600">{Object.values(props.errors)[0]}</span>}
                         <label
                             className="flex items-center mt-6 select-none"
                             htmlFor="remember"

@@ -8,24 +8,32 @@ import twitter from '../../../imgs/icon-twitter.svg';
 import youtube from '../../../imgs/icon-youtube.svg';
 import facebook from '../../../imgs/icon-facebook.svg';
 import josema from '../../../imgs/josema.png';
+import ruben from '../../../imgs/ruben.png';
+import Form from './Form';
 import { Link } from '@inertiajs/inertia-react';
 
 const Index = () => {
 
     return (
         <div>
-            <nav className=" bg-indigo-700 mx-auto p-6">
-                <div className="flex items-center justify-between">
+            <nav className=" bg-white container mx-auto p-6 px-5">
+                <div className="flex items-center">
                     <div className="pt-2">
                         <Logo style={{
                             width: "20%",
                             height: "auto"
                         }} />
+                        <h1 className="text-black">Tridymite S.L</h1>
                     </div>
-
                     <Link href="./login"
-                        className="hidden md:block p-3 px-6 pt-2 text-white bg-orange-500 rounded-full baseline font-bold hover:bg-orange-400">
-                        Ingresar
+                        style={{ marginRight: "1%", marginLeft: "60%" }}
+
+                        className="hidden md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400">
+                        Login
+                    </Link>
+                    <Link href="./register"
+                        className="hidden md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400">
+                        Register
                     </Link>
 
                 </div>
@@ -56,9 +64,6 @@ const Index = () => {
                         <h2 className="max-w-md text-4xl font-bold text-center md:text-left">
                             ¿Qué encontrarás en nuestra plataforma?
                         </h2>
-                        {/* <p className="max-w-sm text-center text-black md:text-left">
-                    Un buscador de ofertas de empleo público
-                </p> */}
                         <div className="md:w-1/2">
                             <img src={imagen2} alt="" />
                         </div>
@@ -141,13 +146,13 @@ const Index = () => {
                             <h5 className="text-lg font-bold">Antonio Villalba</h5>
                             <p className="text-sm text-black">
                                 “Tiene experiencia de manera autodidacta con todo lo relacionado con el diseño, además,
-                                de haber cursado un grado medio de “Explotación de sistemas informáticos.”
+                                de haber cursado un grado medio de “Explotación de sistemas informáticos”.”
                             </p>
                         </div>
 
                         <div className="hidden md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
-                            <img src={imagenyo} style={{
-                                width: '70%',
+                            <img src={ruben} style={{
+                                width: '33%',
                                 height: 'auto'
                             }} />
                             <h5 className="text-lg font-bold">Ruben Montoro</h5>
@@ -155,6 +160,7 @@ const Index = () => {
                                 ”Además de los conocimientos informáticos, tiene conocimientos sobre creación de empresas
                                 ya que cursó el Grado de Turismo donde se adquiere conocimiento sobre el mundo empresarial,
                                 gestión de personal y de equipos.”
+                                .”
                             </p>
                         </div>
 
@@ -168,7 +174,7 @@ const Index = () => {
                                 “Tiene conocimiento sobre todo lo relacionado con el hardware
                                 por tanto, al principio de la empresa podrá encargarse de la gestión de las
                                 máquinas que se encarga de montar todo el sistema que tenemos en mente,
-                                ahorrándonos el coste de personal extra.”
+                                ahorrándonos el coste de personal extra..”
                             </p>
                         </div>
                         <div className="hidden md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
@@ -181,7 +187,8 @@ const Index = () => {
                                 “Tiene conocimientos sobre telecomunicaciones, hardware y ha tratado con
                                 software de distintos sistemas operativos, ya que cursó el grado superior
                                 en “Sistemas de Telecomunicaciones e informáticos”, además de autoaprendizaje
-                                por interés propio en manipulación de smartphones.”
+                                por interés propio en manipulación de smartphones.“
+                                ”
                             </p>
                         </div>
                     </div>
@@ -189,36 +196,7 @@ const Index = () => {
             </section>
 
             <section id="cta" className="bg-gray-500 padding mt-16 ">
-                <div
-                    className="container flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0">
-                    <div className="max-w-2xl py-2 px-5 m-auto w-full mt-4">
-
-                        <div className="text-3xl mb-6 text-center ">
-                            <h1 className="text-4xl font-bold text-center">Sugerencias</h1>
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-4 max-w-xl m-auto">
-
-                            <div className="col-span-2 lg:col-span-1">
-                                <input type="text" className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg" placeholder="Name" />
-                            </div>
-
-                            <div className="col-span-2 lg:col-span-1">
-                                <input type="text" className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg" placeholder="Email Address" />
-                            </div>
-
-                            <div className="col-span-2">
-                                <textarea cols="30" rows="8" className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg" placeholder="Message"></textarea>
-                            </div>
-
-                            <div className="col-span-2 text-right">
-                                <button className="py-3 px-6 bg-indigo-700 text-white rounded-full font-bold w-full sm:w-32 hover:bg-indigo-500">
-                                    Send
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Form/>
             </section>
 
             <footer className="bg-indigo-700">

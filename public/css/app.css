@@ -693,22 +693,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .m-auto {
   margin: auto;
 }
-.m-0 {
-  margin: 0px;
-}
-.m-4 {
-  margin: 1rem;
-}
-.m-6 {
-  margin: 1.5rem;
-}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .-my-2 {
   margin-top: -0.5rem;
@@ -726,16 +717,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-.my-auto {
-  margin-top: auto;
-  margin-bottom: auto;
-}
 .mt-3 {
   margin-top: 0.75rem;
+}
+.mt-6 {
+  margin-top: 1.5rem;
 }
 .mt-1 {
   margin-top: 0.25rem;
@@ -770,9 +756,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-1 {
   margin-bottom: 0.25rem;
 }
-.mt-6 {
-  margin-top: 1.5rem;
-}
 .-mb-1 {
   margin-bottom: -0.25rem;
 }
@@ -787,6 +770,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-10 {
   margin-top: 2.5rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 .mt-5 {
   margin-top: 1.25rem;
@@ -809,9 +795,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-16 {
   margin-top: 4rem;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
 .-mb-8 {
   margin-bottom: -2rem;
 }
@@ -823,9 +806,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .ml-2 {
   margin-left: 0.5rem;
-}
-.ml-8 {
-  margin-left: 2rem;
 }
 .block {
   display: block;
@@ -866,25 +846,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-screen {
   height: 100vh;
 }
-.h-10 {
-  height: 2.5rem;
-}
 .h-8 {
   height: 2rem;
 }
+.h-10 {
+  height: 2.5rem;
+}
 .h-3 {
   height: 0.75rem;
-}
-.h-full {
-  height: 100%;
-}
-.h-fit {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.h-12 {
-  height: 3rem;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -919,6 +888,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-24 {
   width: 6rem;
 }
+.w-8 {
+  width: 2rem;
+}
 .w-10 {
   width: 2.5rem;
 }
@@ -930,20 +902,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-px {
   width: 1px;
-}
-.w-1\/12 {
-  width: 8.333333%;
-}
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.w-8 {
-  width: 2rem;
-}
-.w-12 {
-  width: 3rem;
 }
 .min-w-full {
   min-width: 100%;
@@ -957,17 +915,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-w-xs {
   max-width: 20rem;
 }
-.max-w-sm {
-  max-width: 24rem;
-}
-.max-w-6xl {
-  max-width: 72rem;
-}
 .max-w-2xl {
   max-width: 42rem;
 }
 .max-w-xl {
   max-width: 36rem;
+}
+.max-w-sm {
+  max-width: 24rem;
+}
+.max-w-6xl {
+  max-width: 72rem;
 }
 .max-w-lg {
   max-width: 32rem;
@@ -1042,15 +1000,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-4 {
   gap: 1rem;
 }
-.space-y-0 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0px * var(--tw-space-y-reverse));
-}
 .space-y-12 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(3rem * var(--tw-space-y-reverse));
+}
+.space-y-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0px * var(--tw-space-y-reverse));
 }
 .space-y-8 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -1205,9 +1163,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(246 224 94 / var(--tw-bg-opacity));
 }
-.bg-indigo-500 {
+.bg-blue-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(6 182 212 / var(--tw-bg-opacity));
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 .bg-gray-100 {
   --tw-bg-opacity: 1;
@@ -1221,17 +1179,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(240 255 244 / var(--tw-bg-opacity));
 }
-.bg-orange-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(237 137 54 / var(--tw-bg-opacity));
-}
 .bg-gray-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(160 174 192 / var(--tw-bg-opacity));
-}
-.bg-blue-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
@@ -1263,11 +1213,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-6 {
   padding: 1.5rem;
 }
-.p-8 {
-  padding: 2rem;
-}
 .p-1 {
   padding: 0.25rem;
+}
+.p-8 {
+  padding: 2rem;
 }
 .py-2 {
   padding-top: 0.5rem;
@@ -1317,13 +1267,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
+}
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 .py-10 {
   padding-top: 2.5rem;
@@ -1594,24 +1544,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(247 250 252 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-indigo-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(14 116 144 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-orange-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(237 137 54 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-orange-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(246 173 85 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-indigo-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(6 182 212 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-orange-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 173 85 / var(--tw-bg-opacity));
 }
 
 .hover\:fill-cyan-500:hover {
@@ -1889,28 +1834,28 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-right: 1.5rem;
   }
 
-  .md\:py-1 {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-  }
-
   .md\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+
+  .md\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
   }
 
   .md\:text-left {
     text-align: left;
   }
 
-  .md\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 

@@ -60885,6 +60885,14 @@ var map = {
 		"./resources/js/Pages/Error.js",
 		"resources_js_Pages_Error_js"
 	],
+	"./Home/Form": [
+		"./resources/js/Pages/Home/Form.js",
+		"resources_js_Pages_Home_Form_js"
+	],
+	"./Home/Form.js": [
+		"./resources/js/Pages/Home/Form.js",
+		"resources_js_Pages_Home_Form_js"
+	],
 	"./Home/Index": [
 		"./resources/js/Pages/Home/Index.js",
 		"resources_js_Pages_Home_Index_js"
@@ -61090,7 +61098,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Auth_Login_js":1,"resources_js_Pages_Auth_Register_js":1,"resources_js_Pages_Dashboard_Index_js":1,"resources_js_Pages_Error_js":1,"resources_js_Pages_Home_Index_js":1,"resources_js_Pages_Tool_Carousel_js":1,"resources_js_Pages_Tool_Index_js":1,"resources_js_Pages_Tool_Selector_js":1,"resources_js_Pages_Users_Create_js":1,"resources_js_Pages_Users_Edit_js":1,"resources_js_Pages_Users_Index_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Auth_Login_js":1,"resources_js_Pages_Auth_Register_js":1,"resources_js_Pages_Dashboard_Index_js":1,"resources_js_Pages_Error_js":1,"resources_js_Pages_Home_Form_js":1,"resources_js_Pages_Home_Index_js":1,"resources_js_Pages_Tool_Carousel_js":1,"resources_js_Pages_Tool_Index_js":1,"resources_js_Pages_Tool_Selector_js":1,"resources_js_Pages_Users_Create_js":1,"resources_js_Pages_Users_Edit_js":1,"resources_js_Pages_Users_Index_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

@@ -30,6 +30,7 @@ Route::controller(HomeController::class)->group(function () {
 
 // Controlador de autenticación
 Route::controller(AuthController::class)->group(function () {
+    Route::post('created', 'storeFromRegister');
     Route::post('auth', 'authenticate');
     Route::middleware('auth')->get('logout', 'logout');
     // Google auth
@@ -41,7 +42,7 @@ Route::controller(AuthController::class)->group(function () {
 Route::controller(UsersController::class)->prefix('users')->group(function () {
     Route::middleware('auth')->get('/', 'index')->name('users');
     Route::middleware('auth')->get('create', 'create')->name('users.create');
-    Route::middleware('auth')->post('/', 'store')->name('users.store');
+    Route::middleware('auth')->post('/', 'storeFromUsers')->name('users.store');
     Route::middleware('auth')->get('{user}/edit', 'edit')->name('users.edit');
     Route::middleware('auth')->post('{user}/update', 'update')->name('users.update');
     Route::middleware('auth')->post('{user}/destroy', 'destroy')->name('users.destroy');

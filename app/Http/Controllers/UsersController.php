@@ -33,9 +33,8 @@ class UsersController extends Controller
         return Inertia::render('Users/Create');
     }
 
-    public function store(Request $request)
-    {   
-        
+    public function storeFromUsers(Request $request)
+    {
         if (Hash::needsRehash($request->password))
             Hash::make($request->password);
         $this->usersModel->insertarUsuario($request->all());

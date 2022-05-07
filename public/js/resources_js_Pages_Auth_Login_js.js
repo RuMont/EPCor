@@ -38,6 +38,7 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+/* eslint-disable react/prop-types */
 
 
 
@@ -58,7 +59,8 @@ var Login = function Login() {
       values = _useState2[0],
       setValues = _useState2[1];
 
-  var appName = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.appName;
+  var props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props;
+  console.log(props);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -76,7 +78,7 @@ var Login = function Login() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "flex items-center justify-center min-h-screen p-6 bg-indigo-900",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
-      title: appName
+      title: props.appName
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "w-full max-w-md",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Shared_Logo__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -109,6 +111,9 @@ var Login = function Login() {
             type: "password",
             value: values.password,
             onChange: handleChange
+          }), props.errors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            className: "text-red-600",
+            children: Object.values(props.errors)[0]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("label", {
             className: "flex items-center mt-6 select-none",
             htmlFor: "remember",
@@ -474,8 +479,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 
 
-
-var TextInput = function TextInput(_ref) {
+var TextInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().forwardRef(function (_ref, ref) {
   var label = _ref.label,
       name = _ref.name,
       className = _ref.className,
@@ -489,13 +493,14 @@ var TextInput = function TextInput(_ref) {
       children: [label, ":"]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", _objectSpread(_objectSpread({
       id: name,
-      name: name
+      name: name,
+      ref: ref
     }, props), {}, {
       className: "form-input"
     }))]
   });
-};
-
+});
+TextInput.displayName = 'TextInput';
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextInput);
 
 /***/ }),

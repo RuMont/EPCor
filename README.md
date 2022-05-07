@@ -7,50 +7,29 @@ Clonamos el repositorio del proyecto dentro de nuestra carpeta
 git clone https://github.com/RuMont/tfg.git .
 ```
 
-Instalamos dependencias de composer
+Instalamos el vendor
 ```sh
-composer install
+composer set
 ```
 
-Instalamos dependencias de node.js
+Instalamos node-modules
 ```sh
-npm install
+npm run set
 ```
 
-Hacemos un build de los cambios que hay para cachearlos
-```sh
-npm run dev
-```
+En este punto hay que crear la base de datos en MySQL/XAMPP, la base de datos se debe de llamar como ponga en el .env; se puede cambiar.
 
-Instalamos dusk para poder generar el token
+Activamos la base de datos
 ```sh
-php artisan dusk:install
-```
-
-Generamos el token de la api
-```sh
-composer gen-token
-```
-
-En este punto hay que crear la base de datos en el XAMPP, la base de datos se debe de llamar como ponga en el .env; se puede cambiar.
-
-Migramos las tablas
-```sh
-php artisan migrate
-```
-
-Metemos los datos por defecto en las tablas
-```sh
-php artisan db:seed
+composer db-up
 ```
 
 Lanzamos el servidor
 ```sh
-php artisan serve --host=localhost --port=8080
+composer serve
 ```
-<hr>
 
-Si queremos tocar tailwind o react debemos poner el siguiente comando
+Si queremos tocar tailwind o react debemos poner el siguiente comando en una consola aparte
 ```sh
 npm run watch
 ```

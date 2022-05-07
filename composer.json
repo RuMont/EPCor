@@ -54,7 +54,19 @@
             "@php -r \"copy('.env.example', '.env');\"",
             "@php artisan key:generate",
             "@php artisan dusk"
-        ]
+        ],
+        "set" : [
+            "@php -r \"echo 'Este proceso puede tardar unos minutos... No canceles la operación mientras se instalan las dependencias.'\"",
+            "@composer install",
+            "@php artisan dusk:install",
+            "@composer gen-token"
+        ],
+        "db-up": [
+            "@php artisan migrate",
+            "@php artisan db:seed"
+        ],
+        "serve": [
+            "@php artisan serve --host=localhost --port=8080"]
     },
     "extra": {
         "laravel": {

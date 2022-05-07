@@ -5,10 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Laravel\Socialite\Facades\Socialite;
+use Throwable;
 
 class AuthController extends Controller
 {
+    public function __construct(Users $user)
+    {
+        $this->usersModel = $user;
+    }
     /**
      * Intenta logear al usuario contra la base de datos
      *
@@ -95,5 +102,27 @@ class AuthController extends Controller
         Auth::login($user);
 
         return redirect()->route('dashboard');
+    }
+
+    public function storeFromRegister(Request $request)
+    {
+        unset($request["confirmPassword"]);
+        if (Hash::needsRehash($request->password))
+            Hash::make($request->password);
+        try {
+            $id = $this->usersModel->insertarUsuario($request->all());
+            if (Auth::login($this->usersModel->obtenerUsuarioPorId($id))) {
+                $request->session()->regenerate();
+                return Redirect::route('dashboard')->with('success', 'Usuario creado');
+            }
+        } catch (Throwable $th) {
+            if ($th->errorInfo[0] == '23000') {
+                return back()->withErrors([
+                    'email' => 'Ya existe una cuenta con ese correo',
+                ]);
+            }
+        }
+
+        return Redirect::route('login');
     }
 }

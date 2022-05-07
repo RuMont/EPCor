@@ -45,13 +45,16 @@ class Users extends Authenticatable
                         $query->where($key, $value);
                     }
                 }
-            })->get();;
+            })->get();
         }
         return DB::table($this->table)
             ->where('borrado', 0)
             ->get();
     }
 
+    /**
+     * Devuelve un usuario buscado por ID
+     */
     public function obtenerUsuarioPorId(int $id)
     {
         return DB::table($this->table)
@@ -64,9 +67,8 @@ class Users extends Authenticatable
      */
     public function insertarUsuario(array $data)
     {
-        
         return DB::table($this->table)
-            ->insert($data);
+            ->insertGetId($data);
     }
 
     /**
@@ -79,6 +81,9 @@ class Users extends Authenticatable
             ->update($data);
     }
 
+    /**
+     * Hace un soft delete casero a un usuario
+     */
     public function borrarUsuario(int $id)
     {
         return DB::table($this->table)
@@ -86,6 +91,9 @@ class Users extends Authenticatable
             ->update(['borrado' => 1]);
     }
 
+    /**
+     * Restaura el usuario del soft delete
+     */
     public function restaurarUsuario(int $id)
     {
         return DB::table($this->table)

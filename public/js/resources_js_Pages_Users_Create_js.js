@@ -827,8 +827,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 
 
-
-var TextInput = function TextInput(_ref) {
+var TextInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().forwardRef(function (_ref, ref) {
   var label = _ref.label,
       name = _ref.name,
       className = _ref.className,
@@ -842,13 +841,14 @@ var TextInput = function TextInput(_ref) {
       children: [label, ":"]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", _objectSpread(_objectSpread({
       id: name,
-      name: name
+      name: name,
+      ref: ref
     }, props), {}, {
       className: "form-input"
     }))]
   });
-};
-
+});
+TextInput.displayName = 'TextInput';
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextInput);
 
 /***/ }),
