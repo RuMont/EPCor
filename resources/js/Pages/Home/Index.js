@@ -9,6 +9,7 @@ import youtube from '../../../imgs/icon-youtube.svg';
 import facebook from '../../../imgs/icon-facebook.svg';
 import josema from '../../../imgs/josema.png';
 import ruben from '../../../imgs/ruben.png';
+import juanan from '../../../imgs/juanan.png';
 import Form from './Form';
 import { Link } from '@inertiajs/inertia-react';
 
@@ -165,11 +166,11 @@ const Index = () => {
                         </div>
 
                         <div className="hidden md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
-                            <img src={imagenyo} style={{
-                                width: '70%',
+                            <img src={juanan} style={{
+                                width: '48%',
                                 height: 'auto'
                             }} />
-                            <h5 className="text-lg font-bold">Juanan Antonio</h5>
+                            <h5 className="text-lg font-bold">Juan Antonio Torres</h5>
                             <p className="text-sm text-black">
                                 “Tiene conocimiento sobre todo lo relacionado con el hardware
                                 por tanto, al principio de la empresa podrá encargarse de la gestión de las
