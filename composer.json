@@ -56,7 +56,7 @@
             "@php artisan dusk"
         ],
         "set" : [
-            "@php -r \"echo 'Este proceso puede tardar unos minutos... No canceles la operación mientras se instalan las dependencias.'\"",
+            "echo Este proceso puede tardar unos minutos... No canceles la operación mientras se instalan las dependencias.",
             "@composer install",
             "@php artisan dusk:install",
             "@composer gen-token"
