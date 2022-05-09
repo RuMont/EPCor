@@ -23,6 +23,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('about', 'about')->name('about');
     Route::get('register', 'register')->name('register');
     Route::get('login', 'index')->name('login');
+    Route::get('faqs', 'faqs')->name('faqs');
     Route::get('error/{status}', 'status')->name('status');
     Route::middleware('auth')->get('dashboard', 'dashboard')->name('dashboard');
     Route::middleware('auth')->get('admin', 'admin')->name('admin');

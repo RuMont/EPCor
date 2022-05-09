@@ -7,6 +7,7 @@ export default function MainMenu ({ className }) {
     <div className={className}>
       <MainMenuItem text="Tablero" link="/dashboard" icon="dashboard" />
       <MainMenuItem text="Buscador" link="/tool" icon="book" />
+      <MainMenuItem text="Preguntas frecuentes" link="/faqs" icon="printer" />
     </div>
   );
 };

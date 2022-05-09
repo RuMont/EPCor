@@ -1176,6 +1176,10 @@ function MainMenu(_ref) {
       text: "Buscador",
       link: "/tool",
       icon: "book"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      text: "Preguntas frecuentes",
+      link: "/faqs",
+      icon: "printer"
     })]
   });
 }

@@ -1,180 +1,9 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_Tool_Index_js"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_faqs_faqs_js"],{
 
-/***/ "./resources/js/Pages/Tool/Carousel.js":
-/*!*********************************************!*\
-  !*** ./resources/js/Pages/Tool/Carousel.js ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CarouselItem": () => (/* binding */ CarouselItem),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_swipeable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-swipeable */ "./node_modules/react-swipeable/dist/react-swipeable.umd.js");
-/* harmony import */ var react_swipeable__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_swipeable__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-/**
- * Items del carousel
- * @param {JSX.Element} children
- * @returns 
- */
-
-
-
-var CarouselItem = function CarouselItem(_ref) {
-  var children = _ref.children,
-      width = _ref.width;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "carousel-item",
-    style: {
-      width: width
-    },
-    children: children
-  });
-};
-CarouselItem.propTypes = {
-  children: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().node),
-  width: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string)
-};
-/**
- * Componente del carousel
- * @param {JSX.Element} children 
- * @returns 
- */
-
-var Carousel = function Carousel(_ref2) {
-  var children = _ref2.children;
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState2 = _slicedToArray(_useState, 2),
-      activeIndex = _useState2[0],
-      setActiveIndex = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      _useState4 = _slicedToArray(_useState3, 2),
-      paused = _useState4[0],
-      setPaused = _useState4[1]; // Indices para la "paginación"
-
-
-  var updateIndex = function updateIndex(newIndex) {
-    if (newIndex < 0) {
-      newIndex = react__WEBPACK_IMPORTED_MODULE_0___default().Children.count(children) - 1;
-    } else if (newIndex >= react__WEBPACK_IMPORTED_MODULE_0___default().Children.count(children)) {
-      newIndex = 0;
-    }
-
-    setActiveIndex(newIndex);
-  }; // En el useEffect se establece la animación para pasar entre cartas
-
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var interval = setInterval(function () {
-      if (!paused) {
-        updateIndex(activeIndex + 1);
-      }
-    }, 6000);
-    return function () {
-      // Se activa cuando activamos un evento que pausa el intervalo
-      if (interval) {
-        clearInterval(interval);
-      }
-    };
-  }); // Eventos para ir hacia atrás o hacia adelante
-
-  var handlers = (0,react_swipeable__WEBPACK_IMPORTED_MODULE_3__.useSwipeable)({
-    onSwipedLeft: function onSwipedLeft() {
-      return updateIndex(activeIndex + 1);
-    },
-    onSwipedRight: function onSwipedRight() {
-      return updateIndex(activeIndex - 1);
-    }
-  });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", _objectSpread(_objectSpread({}, handlers), {}, {
-    className: "carousel",
-    onMouseEnter: function onMouseEnter() {
-      return setPaused(true);
-    },
-    onMouseLeave: function onMouseLeave() {
-      return setPaused(false);
-    },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "inner",
-      style: {
-        transform: "translateX(-".concat(activeIndex * 100, "%)")
-      },
-      children: react__WEBPACK_IMPORTED_MODULE_0___default().Children.map(children, function (child, index) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().cloneElement(child, {
-          width: "100%"
-        });
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "indicators flex flex-wrap",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-        className: "mt-2 mr-1 px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-50",
-        onClick: function onClick() {
-          updateIndex(activeIndex - 1);
-        },
-        children: "Atr\xE1s"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "hidden md:block",
-        children: react__WEBPACK_IMPORTED_MODULE_0___default().Children.map(children, function (child, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-            className: "".concat(index === activeIndex ? "active" : "", " mt-2 mr-1 px-6 py-3 rounded border border-indigo-700 text-indigo-700 text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-500"),
-            onClick: function onClick() {
-              updateIndex(index);
-            },
-            children: index + 1
-          });
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-        className: "mt-2 mr-1 px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-500",
-        onClick: function onClick() {
-          updateIndex(activeIndex + 1);
-        },
-        children: "Adelante"
-      })]
-    })]
-  }));
-};
-
-Carousel.propTypes = {
-  children: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().node)
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Carousel);
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Tool/Index.js":
-/*!******************************************!*\
-  !*** ./resources/js/Pages/Tool/Index.js ***!
-  \******************************************/
+/***/ "./resources/js/Pages/faqs/faqs.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/faqs/faqs.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -185,172 +14,215 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Shared/Layout */ "./resources/js/Shared/Layout.js");
-/* harmony import */ var _Selector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Selector */ "./resources/js/Pages/Tool/Selector.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _Carousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Carousel */ "./resources/js/Pages/Tool/Carousel.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 
-
-
-
-var Tool = function Tool() {
-  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.usePage)().props,
-      loadDocs = _usePage$props.loadDocs,
-      entity = _usePage$props.entity;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    children: [entity ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h1", {
+var faqs = function faqs() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
       className: "mb-8 text-3xl font-bold",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.InertiaLink, {
-        href: "/tool",
-        className: "text-indigo-600 hover:text-indigo-700",
-        children: "Buscador"
-      }), " / ".concat(entity)]
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
-      className: "mb-8 text-3xl font-bold",
-      children: "Buscador"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Selector__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
-        className: "flex flex-row flex-wrap",
-        children: loadDocs !== null && loadDocs !== void 0 && loadDocs.data.length ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Carousel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          children: loadDocs.data.map(function (ad, i) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Carousel__WEBPACK_IMPORTED_MODULE_4__.CarouselItem, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                href: "#",
-                className: "block p-6 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-4xl bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 my-4 mr-4",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h5", {
-                    className: "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white truncate",
-                    children: ad.attributes.title
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-                    className: "text-gray-700 dark:text-gray-400 truncate",
-                    children: ad.attributes.description
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
-                    className: "text-gray-700 dark:text-gray-400 mt-4",
-                    children: ["Desde el ", ad.attributes["start-date"], " hasta el ", ad.attributes["end-date"]]
+      children: "Preguntas Frecuentes"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
+      "class": "py-20 2xl:py-40 bg-blue-50",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        "class": "container px-4 mx-auto",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          "class": "max-w-4xl mx-auto",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+              "class": "mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
+                "class": "flex w-full text-left",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  "class": "w-auto mr-8",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                    "class": "flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full",
+                    children: "1"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  "class": "w-full mt-3",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    "class": "flex items-center justify-between",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                      "class": "text-xl font-bold",
+                      children: "\xBFA qui\xE9n debo dirigirme si tengo alguna duda sobre la informaci\xF3n publicada?"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    "class": "mt-6 border-l-2 border-gray-50 pl-10",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                      "class": "mb-5 text-xl",
+                      children: "Los \xF3rganos de contrataci\xF3n son los responsables de la correcci\xF3n y veracidad de la informaci\xF3n publicada en su perfil del contratante. "
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                      "class": "mb-5 text-xl",
+                      children: "Si sus cuestiones se refieren a otra informaci\xF3n publicada deber\xE1 dirigirse a los responsables de la Plataforma de Contrataci\xF3n:"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                      "class": "mb-5 text-xl",
+                      children: "- Subdirecci\xF3n General de Coordinaci\xF3n de la Contrataci\xF3n Electr\xF3nica "
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                      "class": "mb-5 text-xl",
+                      children: "- Direcci\xF3n General del Patrimonio del Estado"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                      "class": "mb-5 text-xl",
+                      children: "- Ministerio de Hacienda y Administraciones P\xFAblicas"
+                    })]
                   })]
-                })
+                })]
               })
-            }, i);
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+              "class": "mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
+                "class": "flex w-full text-left",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  "class": "w-auto mr-8",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                    "class": "flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full",
+                    children: "2"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  "class": "w-full mt-3",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    "class": "flex items-center justify-between",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                      "class": "text-xl font-bold",
+                      children: "\xBFQu\xE9 valor legal tiene la informaci\xF3n publicada en la Plataforma?"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    "class": "mt-6 border-l-2 border-gray-50 pl-10",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                      "class": "mb-5 text-xl",
+                      children: "La informaci\xF3n publicada en la Plataforma tiene plena validez legal de acuerdo con el art\xEDculo 334 del Real Decreto Legislativo, 3/2011 Texto Refundido de Contratos del Sector P\xFAblico"
+                    })
+                  })]
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+              "class": "mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
+                "class": "flex w-full text-left",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  "class": "w-auto mr-8",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                    "class": "flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full",
+                    children: "3"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  "class": "w-full mt-3",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    "class": "flex items-center justify-between",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                      "class": "text-xl font-bold",
+                      children: "\xBFQui\xE9n es el responsable de la Plataforma de Contrataci\xF3n?"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    "class": "mt-6 border-l-2 border-gray-50 pl-10",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                      "class": "mb-5 text-xl",
+                      children: "La Plataforma de Contrataci\xF3n del Sector P\xFAblico es responsabilidad de la Direcci\xF3n General del Patrimonio del Estado, del Ministerio de Hacienda y Administraciones P\xFAblicas, que tiene delegada su gesti\xF3n en la Subdirecci\xF3n General de Coordinaci\xF3n de la Contrataci\xF3n Electr\xF3nica."
+                    })
+                  })]
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+              "class": "mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
+                "class": "flex w-full text-left",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  "class": "w-auto mr-8",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                    "class": "flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full",
+                    children: "4"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  "class": "w-full mt-3",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    "class": "flex items-center justify-between",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                      "class": "text-xl font-bold",
+                      children: "\xBFQu\xE9 tipos de usuarios se pueden dar de alta en un \xF3rgano de contrataci\xF3n?"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    "class": "mt-6 border-l-2 border-gray-50 pl-10",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                      "class": "mb-5 text-xl",
+                      children: "Los usuarios que se pueden dar de alta en un \xF3rgano de contrataci\xF3n son: Responsable del \xD3rgano de Contrataci\xF3n \u2013 ROC: El Responsable del \xD3rgano es el titular del \xF3rgano de contrataci\xF3n unipersonal o el presidente del \xF3rgano de contrataci\xF3n colegiado. Tiene plenos poderes para realizar cualquier operaci\xF3n en su perfil del contratante."
+                    })
+                  })]
+                })]
+              })
+            })]
           })
-        }) : entity ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
-          className: "mt-4",
-          children: ["Lo sentimos, no se han encontrado anuncios para ", entity]
-        }) : ''
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
+      id: "cta",
+      className: "bg-gray-500 padding mt-16 ",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "container flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "max-w-2xl py-2 px-5 m-auto w-full mt-4",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "text-3xl mb-6 text-center ",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+              className: "text-4xl font-bold text-center",
+              children: "Contacto"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "grid grid-cols-2 gap-4 max-w-xl m-auto",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "col-span-2 lg:col-span-1",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                type: "text",
+                className: "border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg",
+                placeholder: "Nombre"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "col-span-2 lg:col-span-1",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                type: "text",
+                className: "border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg",
+                placeholder: "Correo electronico"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "col-span-2",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("textarea", {
+                cols: "30",
+                rows: "8",
+                className: "border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg",
+                placeholder: "Mensaje"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "col-span-2 text-right",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                className: "py-3 px-6 bg-indigo-700 text-white rounded-full font-bold w-full sm:w-32 hover:bg-indigo-500",
+                children: "Enviar"
+              })
+            })]
+          })]
+        })
       })
     })]
   });
-}; // Persistent layout
-// Docs: https://inertiajs.com/pages#persistent-layouts
+}; // const Preguntas = (props) => {
+// 	return (
+//         <div className="contenedor-pregunta">
+//         <p className="pregunta">{props.pregunta} <img src="./imgs/suma.svg" alt="Abrir Respuesta" /></p>
+//         <p className="respuesta">{props.respuesta}</p>
+//     </div>
+// 	);
+// };
 
 
-Tool.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "Buscador",
+faqs.layout = function (page) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    title: "buscador",
     children: page
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Tool);
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Tool/Selector.js":
-/*!*********************************************!*\
-  !*** ./resources/js/Pages/Tool/Selector.js ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-var Selector = function Selector() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(),
-      _useState2 = _slicedToArray(_useState, 2),
-      selected = _useState2[0],
-      setSelected = _useState2[1];
-
-  var _usePage$props$entiti = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.entities,
-      data = _usePage$props$entiti.data,
-      errors = _usePage$props$entiti.errors; // Función para poner la primera letra mayus de un string
-
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  } // Cuando se manda el formulario se usa un hook de react para cambiar de ruta
-
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    var title = document.querySelector("[value^=".concat(selected.value, "]")).innerText;
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.get("/tool/" + selected.value + "?title=" + title);
-  }
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    children: errors ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-      children: errors[0].detail ? 'Web en mantenimiento, en breves estaremos operativos.' : ''
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
-      onSubmit: function onSubmit(e) {
-        return handleSubmit(e);
-      },
-      method: "post",
-      className: "flex flex-wrap",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("select", {
-        className: "form-select w-1/3 mr-2",
-        onChange: function onChange(e) {
-          return setSelected({
-            value: e.target.value
-          });
-        },
-        name: "id",
-        id: "selector",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
-          value: "false",
-          children: "Seleccione una entidad"
-        }), // Se devuelve una etiqueta option por cada entity que nos manda la api
-        data === null || data === void 0 ? void 0 : data.map(function (entity, i) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
-            value: "".concat(entity.id),
-            children: capitalizeFirstLetter(entity.attributes.description)
-          }, i);
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-        className: "px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-500",
-        type: "submit",
-        children: "Buscar"
-      })]
-    })
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Selector);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (faqs);
 
 /***/ }),
 
@@ -2247,319 +2119,6 @@ exports.typeOf = typeOf;
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/react-is/cjs/react-is.development.js");
 }
-
-
-/***/ }),
-
-/***/ "./node_modules/react-swipeable/dist/react-swipeable.umd.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/react-swipeable/dist/react-swipeable.umd.js ***!
-  \******************************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-(function (global, factory) {
-   true ? factory(exports, __webpack_require__(/*! react */ "./node_modules/react/index.js")) :
-  0;
-}(this, (function (exports, React) {
-  function _interopNamespace(e) {
-    if (e && e.__esModule) return e;
-    var n = Object.create(null);
-    if (e) {
-      Object.keys(e).forEach(function (k) {
-        if (k !== 'default') {
-          var d = Object.getOwnPropertyDescriptor(e, k);
-          Object.defineProperty(n, k, d.get ? d : {
-            enumerable: true,
-            get: function () {
-              return e[k];
-            }
-          });
-        }
-      });
-    }
-    n['default'] = e;
-    return n;
-  }
-
-  var React__namespace = /*#__PURE__*/_interopNamespace(React);
-
-  function _extends() {
-    _extends = Object.assign || function (target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-
-      return target;
-    };
-
-    return _extends.apply(this, arguments);
-  }
-
-  var LEFT = "Left";
-  var RIGHT = "Right";
-  var UP = "Up";
-  var DOWN = "Down";
-
-  var defaultProps = {
-    delta: 10,
-    preventDefaultTouchmoveEvent: false,
-    rotationAngle: 0,
-    trackMouse: false,
-    trackTouch: true
-  };
-  var initialState = {
-    first: true,
-    initial: [0, 0],
-    start: 0,
-    swiping: false,
-    xy: [0, 0]
-  };
-  var mouseMove = "mousemove";
-  var mouseUp = "mouseup";
-  var touchEnd = "touchend";
-  var touchMove = "touchmove";
-  var touchStart = "touchstart";
-
-  function getDirection(absX, absY, deltaX, deltaY) {
-    if (absX > absY) {
-      if (deltaX > 0) {
-        return RIGHT;
-      }
-
-      return LEFT;
-    } else if (deltaY > 0) {
-      return DOWN;
-    }
-
-    return UP;
-  }
-
-  function rotateXYByAngle(pos, angle) {
-    if (angle === 0) return pos;
-    var angleInRadians = Math.PI / 180 * angle;
-    var x = pos[0] * Math.cos(angleInRadians) + pos[1] * Math.sin(angleInRadians);
-    var y = pos[1] * Math.cos(angleInRadians) - pos[0] * Math.sin(angleInRadians);
-    return [x, y];
-  }
-
-  function getHandlers(set, handlerProps) {
-    var onStart = function onStart(event) {
-      if (event && "touches" in event && event.touches.length > 1) return;
-      set(function (state, props) {
-        if (props.trackMouse) {
-          document.addEventListener(mouseMove, onMove);
-          document.addEventListener(mouseUp, onUp);
-        }
-
-        var _ref = "touches" in event ? event.touches[0] : event,
-            clientX = _ref.clientX,
-            clientY = _ref.clientY;
-
-        var xy = rotateXYByAngle([clientX, clientY], props.rotationAngle);
-        return _extends({}, state, initialState, {
-          initial: [].concat(xy),
-          xy: xy,
-          start: event.timeStamp || 0
-        });
-      });
-    };
-
-    var onMove = function onMove(event) {
-      set(function (state, props) {
-        if ("touches" in event && event.touches.length > 1) {
-          return state;
-        }
-
-        var _ref2 = "touches" in event ? event.touches[0] : event,
-            clientX = _ref2.clientX,
-            clientY = _ref2.clientY;
-
-        var _rotateXYByAngle = rotateXYByAngle([clientX, clientY], props.rotationAngle),
-            x = _rotateXYByAngle[0],
-            y = _rotateXYByAngle[1];
-
-        var deltaX = x - state.xy[0];
-        var deltaY = y - state.xy[1];
-        var absX = Math.abs(deltaX);
-        var absY = Math.abs(deltaY);
-        var time = (event.timeStamp || 0) - state.start;
-        var velocity = Math.sqrt(absX * absX + absY * absY) / (time || 1);
-        var vxvy = [deltaX / (time || 1), deltaY / (time || 1)];
-        var dir = getDirection(absX, absY, deltaX, deltaY);
-        var delta = typeof props.delta === "number" ? props.delta : props.delta[dir.toLowerCase()] || defaultProps.delta;
-        if (absX < delta && absY < delta && !state.swiping) return state;
-        var eventData = {
-          absX: absX,
-          absY: absY,
-          deltaX: deltaX,
-          deltaY: deltaY,
-          dir: dir,
-          event: event,
-          first: state.first,
-          initial: state.initial,
-          velocity: velocity,
-          vxvy: vxvy
-        };
-        eventData.first && props.onSwipeStart && props.onSwipeStart(eventData);
-        props.onSwiping && props.onSwiping(eventData);
-        var cancelablePageSwipe = false;
-
-        if (props.onSwiping || props.onSwiped || "onSwiped" + dir in props) {
-          cancelablePageSwipe = true;
-        }
-
-        if (cancelablePageSwipe && props.preventDefaultTouchmoveEvent && props.trackTouch && event.cancelable) event.preventDefault();
-        return _extends({}, state, {
-          first: false,
-          eventData: eventData,
-          swiping: true
-        });
-      });
-    };
-
-    var onEnd = function onEnd(event) {
-      set(function (state, props) {
-        var eventData;
-
-        if (state.swiping && state.eventData) {
-          eventData = _extends({}, state.eventData, {
-            event: event
-          });
-          props.onSwiped && props.onSwiped(eventData);
-          var onSwipedDir = props["onSwiped" + eventData.dir];
-          onSwipedDir && onSwipedDir(eventData);
-        } else {
-          props.onTap && props.onTap({
-            event: event
-          });
-        }
-
-        return _extends({}, state, initialState, {
-          eventData: eventData
-        });
-      });
-    };
-
-    var cleanUpMouse = function cleanUpMouse() {
-      document.removeEventListener(mouseMove, onMove);
-      document.removeEventListener(mouseUp, onUp);
-    };
-
-    var onUp = function onUp(e) {
-      cleanUpMouse();
-      onEnd(e);
-    };
-
-    var attachTouch = function attachTouch(el, passive) {
-      var cleanup = function cleanup() {};
-
-      if (el && el.addEventListener) {
-        var tls = [[touchStart, onStart], [touchMove, onMove], [touchEnd, onEnd]];
-        tls.forEach(function (_ref3) {
-          var e = _ref3[0],
-              h = _ref3[1];
-          return el.addEventListener(e, h, {
-            passive: passive
-          });
-        });
-
-        cleanup = function cleanup() {
-          return tls.forEach(function (_ref4) {
-            var e = _ref4[0],
-                h = _ref4[1];
-            return el.removeEventListener(e, h);
-          });
-        };
-      }
-
-      return cleanup;
-    };
-
-    var onRef = function onRef(el) {
-      if (el === null) return;
-      set(function (state, props) {
-        if (state.el === el) return state;
-        var addState = {};
-
-        if (state.el && state.el !== el && state.cleanUpTouch) {
-          state.cleanUpTouch();
-          addState.cleanUpTouch = void 0;
-        }
-
-        if (props.trackTouch && el) {
-          addState.cleanUpTouch = attachTouch(el, !props.preventDefaultTouchmoveEvent);
-        }
-
-        return _extends({}, state, {
-          el: el
-        }, addState);
-      });
-    };
-
-    var output = {
-      ref: onRef
-    };
-
-    if (handlerProps.trackMouse) {
-      output.onMouseDown = onStart;
-    }
-
-    return [output, attachTouch];
-  }
-
-  function updateTransientState(state, props, attachTouch) {
-    var addState = {};
-
-    if (!props.trackTouch && state.cleanUpTouch) {
-      state.cleanUpTouch();
-      addState.cleanUpTouch = void 0;
-    } else if (props.trackTouch && !state.cleanUpTouch) {
-      if (state.el) {
-        addState.cleanUpTouch = attachTouch(state.el, !props.preventDefaultTouchmoveEvent);
-      }
-    }
-
-    return _extends({}, state, addState);
-  }
-
-  function useSwipeable(options) {
-    var trackMouse = options.trackMouse;
-    var transientState = React__namespace.useRef(_extends({}, initialState));
-    var transientProps = React__namespace.useRef(_extends({}, defaultProps));
-    transientProps.current = _extends({}, defaultProps, options, {
-      delta: options.delta === void 0 ? defaultProps.delta : options.delta,
-      rotationAngle: options.rotationAngle === void 0 ? defaultProps.rotationAngle : options.rotationAngle,
-      trackTouch: options.trackTouch === void 0 ? defaultProps.trackTouch : options.trackTouch
-    });
-
-    var _React$useMemo = React__namespace.useMemo(function () {
-      return getHandlers(function (stateSetter) {
-        return transientState.current = stateSetter(transientState.current, transientProps.current);
-      }, {
-        trackMouse: trackMouse
-      });
-    }, [trackMouse]),
-        handlers = _React$useMemo[0],
-        attachTouch = _React$useMemo[1];
-
-    transientState.current = updateTransientState(transientState.current, transientProps.current, attachTouch);
-    return handlers;
-  }
-
-  exports.DOWN = DOWN;
-  exports.LEFT = LEFT;
-  exports.RIGHT = RIGHT;
-  exports.UP = UP;
-  exports.useSwipeable = useSwipeable;
-
-})));
-//# sourceMappingURL=react-swipeable.umd.js.map
 
 
 /***/ })
