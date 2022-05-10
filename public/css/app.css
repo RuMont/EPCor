@@ -783,9 +783,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-8 {
   margin-right: 2rem;
 }
-.mr-6 {
-  margin-right: 1.5rem;
-}
 .mt-16 {
   margin-top: 4rem;
 }
@@ -930,9 +927,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-w-xs {
   max-width: 20rem;
 }
-.max-w-4xl {
-  max-width: 56rem;
-}
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -947,6 +941,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .max-w-lg {
   max-width: 32rem;
+}
+.max-w-4xl {
+  max-width: 56rem;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -1369,10 +1366,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
-}
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
 }
 .text-xl {
   font-size: 1.25rem;
