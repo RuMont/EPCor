@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../../Shared/Layout';
+import Form from './Form';
 
 const faqs = () => {
 	return (
@@ -7,24 +8,28 @@ const faqs = () => {
 			<h1 className="mb-8 text-3xl font-bold">Preguntas Frecuentes</h1>
             <section class="py-20 2xl:py-40 bg-blue-50">
   <div class="container px-4 mx-auto">
-    <div class="max-w-4xl mx-auto">
+    <div>
       <ul>
-        <li class="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl">
+      <li class="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl">
           <button class="flex w-full text-left">
             <div class="w-auto mr-8">
               <span class="flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full">1</span>
             </div>
             <div class="w-full mt-3">
               <div class="flex items-center justify-between">
-                <h3 class="text-xl font-bold">¿A quién debo dirigirme si tengo alguna duda sobre la información publicada?</h3>
+                <details>
+                  <summary class="text-lg font-bold">¿Qué es la contratación administrativa o la contratación del sector público?</summary>
+                  <div class="mt-6 border-l-2 border-gray-50 pl-10">
+                <p class="mb-5 text-xl">Son los contratos del sector público cualquiera que sea su naturaleza jurídica que se celebren las entidades del sector público,
+                                         entre ellas las entidades que integran la Administración local.</p>
+
+                <p class="mb-5 text-xl">La contratación del sector público debe garantizar los principios básicos de libertad de acceso a las licitaciones, publicidad y
+                                         transparencia de los procedimientos y no discriminación e igualdad de trato entre los licitadores, garantizando además el objetivo
+                                          de estabilidad presupuestaria y control de gasto, el principio de integridad y una eficiente utilización de los fondos públicos (artículo 1 LCSP).</p>
               </div>
-              <div class="mt-6 border-l-2 border-gray-50 pl-10">
-                <p class="mb-5 text-xl">Los órganos de contratación son los responsables de la corrección y veracidad de la información publicada en su perfil del contratante. </p>
-                <p class="mb-5 text-xl">Si sus cuestiones se refieren a otra información publicada deberá dirigirse a los responsables de la Plataforma de Contratación:</p>
-                <p class="mb-5 text-xl">- Subdirección General de Coordinación de la Contratación Electrónica </p>
-                <p class="mb-5 text-xl">- Dirección General del Patrimonio del Estado</p>
-                <p class="mb-5 text-xl">- Ministerio de Hacienda y Administraciones Públicas</p>
+                </details>
               </div>
+              
             </div>
           </button>
         </li>
@@ -36,11 +41,18 @@ const faqs = () => {
             </div>
             <div class="w-full mt-3">
               <div class="flex items-center justify-between">
-                <h3 class="text-xl font-bold">¿Qué valor legal tiene la información publicada en la Plataforma?</h3>
+                <details>
+                  <summary class="text-lg font-bold">¿Qué es el perfil del contratante?</summary>
+                  <div class="mt-6 border-l-2 border-gray-50 pl-10">
+                <p class="mb-5 text-xl">El perfil del contratante es el espacio en el que se agrupa toda la información y documentos relativos a la activad contractual de los órganos de contratación
+                                       con objeto de asegurar su transparencia y acceso público. Su difusión es exclusivamente a través de Internet. La forma de acceso al perfil de contratante deberá
+                                        hacerse constar en los pliegos y documentos equivalentes, así como en los anuncios de licitación en todos los casos. (Artículo 63 de la LCAP).</p>
+
+                <p class="mb-5 text-xl">El contenido de lo que debe publicarse en el perfil de contratante de los órganos de contratación en relación a cada contrato se recoge en el artículo 63.3 de la LCSP.</p>
               </div>
-              <div class="mt-6 border-l-2 border-gray-50 pl-10">
-                <p class="mb-5 text-xl">La información publicada en la Plataforma tiene plena validez legal de acuerdo con el artículo 334 del Real Decreto Legislativo, 3/2011 Texto Refundido de Contratos del Sector Público</p>
+                </details>
               </div>
+              
             </div>
           </button>
         </li>
@@ -52,11 +64,32 @@ const faqs = () => {
             </div>
             <div class="w-full mt-3">
               <div class="flex items-center justify-between">
-                <h3 class="text-xl font-bold">¿Quién es el responsable de la Plataforma de Contratación?</h3>
+                <details>
+                  <summary class="text-lg font-bold">¿Qué clase de contratos existen?</summary>
+                  <div class="mt-6 border-l-2 border-gray-50 pl-10">
+                <p class="mb-5 text-xl font-bold">Contratos administrativos</p>
+                <ul>
+                  <li>
+                    <p class="mb-5 text-xl">Los contratos de obra, concesión de obra pública, concesión de servicios, suministro, y servicios.</p>
+                  </li>
+                  <li>
+                  <p class="mb-5 text-xl">Los contratos administrativos especiales son aquellos que están vinculados al giro  o tráfico específico de la administración contratante.</p>
+                  </li>
+                </ul>
+                <p class="mb-5 text-xl font-bold">Contratos privados</p>
+                <ul>
+                  <li>
+                    <p class="mb-5 text-xl">Los contratos que celebren las Administraciones Públicas distintos de los contratos anteriores (artículo 26.1 LCSP)</p>
+                  </li>
+                  <li>
+                  <p class="mb-5 text-xl">Los contratos de servicios financieros, los de creación e interpretación artística y literaria y los de espectáculos que específicamente 
+                  determina la Ley y los contratos  cuyo objeto sea la suscripción a revistas, publicaciones periódicas y bases de datos. (Artículo 25.1 a) de la LCSP).</p>
+                  </li>
+                </ul>
               </div>
-              <div class="mt-6 border-l-2 border-gray-50 pl-10">
-                <p class="mb-5 text-xl">La Plataforma de Contratación del Sector Público es responsabilidad de la Dirección General del Patrimonio del Estado, del Ministerio de Hacienda y Administraciones Públicas, que tiene delegada su gestión en la Subdirección General de Coordinación de la Contratación Electrónica.</p>
+                </details>
               </div>
+              
             </div>
           </button>
         </li>
@@ -68,83 +101,126 @@ const faqs = () => {
             </div>
             <div class="w-full mt-3">
               <div class="flex items-center justify-between">
-                <h3 class="text-xl font-bold">¿Qué tipos de usuarios se pueden dar de alta en un órgano de contratación?</h3>
+                <details>
+                  <summary class="text-lg font-bold">¿A quién debo dirigirme si tengo alguna duda sobre la información publicada?</summary>
+                  <div class="mt-6 border-l-2 border-gray-50 pl-10">
+                <p class="mb-5 text-xl">Los órganos de contratación son los responsables de la corrección y veracidad de la información publicada en su perfil del contratante. </p>
+                <p class="mb-5 text-xl">Si sus cuestiones se refieren a otra información publicada deberá dirigirse a los responsables de la Plataforma de Contratación:</p>
+                <p class="mb-5 text-xl">- Subdirección General de Coordinación de la Contratación Electrónica </p>
+                <p class="mb-5 text-xl">- Dirección General del Patrimonio del Estado</p>
+                <p class="mb-5 text-xl">- Ministerio de Hacienda y Administraciones Públicas</p>
               </div>
-              <div class="mt-6 border-l-2 border-gray-50 pl-10">
-                <p class="mb-5 text-xl">Los usuarios que se pueden dar de alta en un órgano de contratación son:
-                Responsable del Órgano de Contratación – ROC:
-
-El Responsable del Órgano es el titular del órgano de contratación unipersonal o el presidente del órgano de contratación colegiado. Tiene plenos poderes para realizar cualquier operación en su perfil del contratante.
-                </p>
+                </details>
               </div>
+              
             </div>
           </button>
         </li>
+        
+        <li class="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl">
+          <button class="flex w-full text-left">
+            <div class="w-auto mr-8">
+              <span class="flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full">5</span>
+            </div>
+            <div class="w-full mt-3">
+              <div class="flex items-center justify-between">
+                <details>
+                  <summary class="text-lg font-bold">¿Qué valor legal tiene la información publicada en la Plataforma?</summary>
+                  <div class="mt-6 border-l-2 border-gray-50 pl-10">
+                <p class="mb-5 text-xl">La información publicada en la Plataforma tiene plena validez legal de acuerdo con el artículo 334 del Real Decreto Legislativo, 3/2011 Texto Refundido de Contratos del Sector Público </p>
+              </div>
+                </details>
+              </div>
+              
+            </div>
+          </button>
+        </li>
+
+        <li class="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl">
+          <button class="flex w-full text-left">
+            <div class="w-auto mr-8">
+              <span class="flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full">6</span>
+            </div>
+            <div class="w-full mt-3">
+              <div class="flex items-center justify-between">
+                <details>
+                  <summary class="text-lg font-bold">¿Quién es el responsable de la Plataforma de Contratación?</summary>
+                  <div class="mt-6 border-l-2 border-gray-50 pl-10">
+                <p class="mb-5 text-xl">La Plataforma de Contratación del Sector Público es responsabilidad de la Dirección General del Patrimonio del Estado, del Ministerio de Hacienda y Administraciones Públicas, que tiene delegada su gestión en la Subdirección General de Coordinación de la Contratación Electrónica. </p>
+              </div>
+                </details>
+              </div>
+              
+            </div>
+          </button>
+        </li>
+
+        <li class="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl">
+          <button class="flex w-full text-left">
+            <div class="w-auto mr-8">
+              <span class="flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full">7</span>
+            </div>
+            <div class="w-full mt-3">
+              <div class="flex items-center justify-between">
+                <details>
+                  <summary class="text-lg font-bold">¿Qué tipos de usuarios se pueden dar de alta en un órgano de contratación?</summary>
+                  <div class="mt-6 border-l-2 border-gray-50 pl-10">
+                <p class="mb-5 text-xl">Los usuarios que se pueden dar de alta en un órgano de contratación son:</p>
+                <p class="mb-5 text-xl font-bold">Responsable del Órgano de Contratación – ROC:</p>
+                <p class="mb-5 text-xl">El Responsable del Órgano es el titular del órgano de contratación unipersonal o el presidente del órgano de contratación colegiado.
+                 Tiene plenos poderes para realizar cualquier operación en su perfil del contratante.</p>
+
+                <p class="mb-5 text-xl font-bold">Administrador del Órgano de Contratación - AOC:</p>
+                <p class="mb-5 text-xl">El Administrador del Órgano puede gestionar los aspectos de la Plataforma relacionados con el Órgano y su ámbito de actuación.
+                 Tiene plenos poderes para realizar cualquier operación en su perfil del contratante, pudiendo gestionar los usuarios, publicar información y hacer uso de todos
+                  los servicios que la plataforma ofrece a los órgano de contratación.</p>
+
+                  <p class="mb-5 text-xl font-bold">Personal del Órgano de Contratación Publicador – POC-PUB:</p>
+                <p class="mb-5 text-xl">Puede publicar información y documentación sobre las licitaciones que tengan asignadas.</p>
+
+                  <p class="mb-5 text-xl font-bold">Personal del Órgano de Contratación  Editor – POC-ED:</p>
+                <p class="mb-5 text-xl">Puede editar la información de las licitaciones que les asigenen los publicadores, pero no pueden publicar.</p>
+
+              </div>
+                </details>
+              </div>
+              
+            </div>
+          </button>
+        </li>
+
+        <li class="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl">
+          <button class="flex w-full text-left">
+            <div class="w-auto mr-8">
+              <span class="flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full">8</span>
+            </div>
+            <div class="w-full mt-3">
+              <div class="flex items-center justify-between">
+                <details>
+                  <summary class="text-lg font-bold">¿Qué clase de procedimientos de adjudicación existen?</summary>
+                  <div class="mt-6 border-l-2 border-gray-50 pl-10">
+                <p class="mb-5 text-xl">Los contratos que celebren las Administraciones Públicas se  adjudicarán, por regla general, utilizando o bien el procedimiento abierto o bien el procedimiento restringido.</p>
+                <p class="mb-5 text-xl">Además de estos dos procedimientos, podrán utilizarse en los supuestos taxativos que la Ley señala, el procedimiento negociado o licitación con negociación, el procedimiento de 
+                                        dialogo competitivo y el procedimiento de asociación para la innovación. (Artículo 131 de la LCSP)</p>
+              </div>
+                </details>
+              </div>
+              
+            </div>
+          </button>
+        </li>
+
       </ul>
     </div>
   </div>
 </section>
 
 <section id="cta" className="bg-gray-500 padding mt-16 ">
-                <div
-                    className="container flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0">
-                    <div className="max-w-2xl py-2 px-5 m-auto w-full mt-4">
-
-                        <div className="text-3xl mb-6 text-center ">
-                            <h1 className="text-4xl font-bold text-center">Contacto</h1>
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-4 max-w-xl m-auto">
-
-                            <div className="col-span-2 lg:col-span-1">
-                                <input type="text" className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg" placeholder="Nombre" />
-                            </div>
-
-                            <div className="col-span-2 lg:col-span-1">
-                                <input type="text" className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg" placeholder="Correo electronico" />
-                            </div>
-
-                            <div className="col-span-2">
-                                <textarea cols="30" rows="8" className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg" placeholder="Mensaje"></textarea>
-                            </div>
-
-                            <div className="col-span-2 text-right">
-                                <button className="py-3 px-6 bg-indigo-700 text-white rounded-full font-bold w-full sm:w-32 hover:bg-indigo-500">
-                                    Enviar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Form/>
             </section>
-	{/* <script >
-		const preguntas = document.querySelectorAll('.preguntas .contenedor-pregunta');
-    preguntas.forEach((pregunta) => {
-	pregunta.addEventListener('click', (e) => {
-		e.currentTarget.classList.toggle('activa');
-
-		const respuesta = pregunta.querySelector('.respuesta');
-		const alturaRealRespuesta = respuesta.scrollHeight;
-		
-		if(!respuesta.style.maxHeight){
-			respuesta.style.maxHeight = alturaRealRespuesta + 'px';
-		} else {
-			respuesta.style.maxHeight = null;
-		}
-
-	});
-});
-	</script> */}
 		</div>
 	);
 };
-// const Preguntas = (props) => {
-// 	return (
-//         <div className="contenedor-pregunta">
-//         <p className="pregunta">{props.pregunta} <img src="./imgs/suma.svg" alt="Abrir Respuesta" /></p>
-//         <p className="respuesta">{props.respuesta}</p>
-//     </div>
-// 	);
-// };
+
 faqs.layout = (page) => <Layout title="buscador">{page}</Layout>;
 export default faqs;
