@@ -11,12 +11,13 @@ import josema from '../../../imgs/josema.png';
 import ruben from '../../../imgs/ruben.png';
 import juanan from '../../../imgs/juanan.png';
 import Form from './Form';
-import { Link } from '@inertiajs/inertia-react';
+import { Head, Link, usePage } from '@inertiajs/inertia-react';
 
 const Index = () => {
-
+    const {appName} = usePage().props
     return (
         <div>
+            <Head title={appName}/>
             <nav className=" bg-white container mx-auto p-6 px-5">
                 <div className="flex items-center">
                     <div className="pt-2">
@@ -195,12 +196,12 @@ const Index = () => {
                     </div>
                 </div>
             </section>
-
-            <section id="cta" className="bg-gray-500 padding mt-16 ">
+{/* 
+            <section id="cta" className="bg-gray-500 padding  ">
                 <Form/>
-            </section>
+            </section> */}
 
-            <footer className="bg-indigo-700">
+            <footer className="bg-indigo-700 mt-16">
                 <div
                     className="container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0">
                     <div
@@ -227,19 +228,7 @@ const Index = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="flex justify-around space-x-32">
-                        <div className="flex flex-col space-y-3 text-white">
-                            <a href="#" className="hover:text-orange-500">Link_1</a>
-                            <a href="#" className="hover:text-orange-500">Link_2</a>
-                            <a href="#" className="hover:text-orange-500">Link_3</a>
-                            <a href="#" className="hover:text-orange-500">Link_4</a>
-                        </div>
-                        <div className="flex flex-col space-y-3 text-white">
-                            <a href="#" className="hover:text-orange-500">Link_5</a>
-                            <a href="#" className="hover:text-orange-500">Link_6</a>
-                            <a href="#" className="hover:text-orange-500">Privacy Policy</a>
-                        </div>
-                    </div>
+                   
                     <div className="hidden text-white md:block">
                         Copyright &copy; 2022, All Rights Reserved
                     </div>

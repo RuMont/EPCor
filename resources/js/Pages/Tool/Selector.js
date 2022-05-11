@@ -15,7 +15,7 @@ const Selector = () => {
     function handleSubmit(e) {
         e.preventDefault();
         const title = document.querySelector(`[value^=${selected.value}]`).innerText;
-        Inertia.get("/tool/"+ selected.value+"?title="+title);
+        Inertia.get("/tool/e"+ selected.value+"?title="+title);
     }
 
     return (

@@ -53,5 +53,6 @@ Route::controller(UsersController::class)->prefix('users')->group(function () {
 // Controlador principal de la aplicación de empleo
 Route::controller(ToolController::class)->prefix('tool')->group(function () {
     Route::middleware('auth')->get('/', 'index')->name('tool');
-    Route::middleware('auth')->get('/{site}', 'index')->name('tool');
+    Route::middleware('auth')->get('/e{site}', 'index');
+    Route::middleware('auth')->get('docs', 'fetchDocuments'); // AJAX
 });
