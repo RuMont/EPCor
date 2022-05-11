@@ -52,7 +52,7 @@ var Selector = function Selector() {
   function handleSubmit(e) {
     e.preventDefault();
     var title = document.querySelector("[value^=".concat(selected.value, "]")).innerText;
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.get("/tool/" + selected.value + "?title=" + title);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.get("/tool/e" + selected.value + "?title=" + title);
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {

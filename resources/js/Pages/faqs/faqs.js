@@ -1,16 +1,27 @@
-import React from 'react';
+import { Head, usePage } from '@inertiajs/inertia-react';
+import React, { useState } from 'react';
 import Layout from '../../Shared/Layout';
 import Form from './Form';
 
 const faqs = () => {
+	const { appName } = usePage().props
+	const [info, setInfo] = useState(false);
+
+	const setAndGo = () => {
+		setInfo(true);
+		setTimeout(() => location.href = '#cta', 0);
+	}
+
 	return (
 		<div>
+			<Head title={appName} />
 			<h1 className="mb-8 text-3xl font-bold">Preguntas Frecuentes</h1>
-			<section className="py-20 2xl:py-40 bg-blue-50">
-				<div className="container px-4 mx-auto">
+			<p>Aquí se encuentran una serie de preguntas ya respondidas</p>
+			<section className="py-4 2xl:py-8 bg-blue-50">
+				<div className="container mx-auto">
 					<div>
 						<ul>
-							<li className="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl">
+							<li className="mb-4 py-8 bg-white rounded-2xl">
 								<button className="flex w-full text-left">
 									<div className="w-auto mr-8">
 										<span className="flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full">1</span>
@@ -34,7 +45,7 @@ const faqs = () => {
 								</button>
 							</li>
 
-							<li className="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl">
+							<li className="mb-4 py-8 bg-white rounded-2xl">
 								<button className="flex w-full text-left">
 									<div className="w-auto mr-8">
 										<span className="flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full">2</span>
@@ -57,7 +68,7 @@ const faqs = () => {
 								</button>
 							</li>
 
-							<li className="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl">
+							<li className="mb-4 py-8 bg-white rounded-2xl">
 								<button className="flex w-full text-left">
 									<div className="w-auto mr-8">
 										<span className="flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full">3</span>
@@ -94,7 +105,7 @@ const faqs = () => {
 								</button>
 							</li>
 
-							<li className="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl">
+							<li className="mb-4 py-8 bg-white rounded-2xl">
 								<button className="flex w-full text-left">
 									<div className="w-auto mr-8">
 										<span className="flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full">4</span>
@@ -117,7 +128,7 @@ const faqs = () => {
 								</button>
 							</li>
 
-							<li className="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl">
+							<li className="mb-4 py-8 bg-white rounded-2xl">
 								<button className="flex w-full text-left">
 									<div className="w-auto mr-8">
 										<span className="flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full">5</span>
@@ -136,7 +147,7 @@ const faqs = () => {
 								</button>
 							</li>
 
-							<li className="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl">
+							<li className="mb-4 py-8 bg-white rounded-2xl">
 								<button className="flex w-full text-left">
 									<div className="w-auto mr-8">
 										<span className="flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full">6</span>
@@ -155,7 +166,7 @@ const faqs = () => {
 								</button>
 							</li>
 
-							<li className="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl">
+							<li className="mb-4 py-8 bg-white rounded-2xl">
 								<button className="flex w-full text-left">
 									<div className="w-auto mr-8">
 										<span className="flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full">7</span>
@@ -189,7 +200,7 @@ const faqs = () => {
 								</button>
 							</li>
 
-							<li className="mb-4 px-4 lg:px-12 py-8 bg-white rounded-2xl">
+							<li className="mb-4 py-8 bg-white rounded-2xl">
 								<button className="flex w-full text-left">
 									<div className="w-auto mr-8">
 										<span className="flex items-center justify-center w-12 h-12 text-lg font-bold bg-blue-100 rounded-full">8</span>
@@ -209,15 +220,20 @@ const faqs = () => {
 									</div>
 								</button>
 							</li>
-
 						</ul>
 					</div>
 				</div>
 			</section>
 
-			<section id="cta" className="bg-gray-500 padding mt-16 ">
-				<Form />
-			</section>
+
+			{!info ? <button onClick={setAndGo} type='button' className='rounded bg-indigo-900 p-2 text-white hover:bg-orange-500 hover:text-indigo-900'>
+				¿No encuentras lo que buscas? Contáctanos
+			</button> :
+				<section id="cta" className="mt-4">
+					<Form />
+				</section>
+			}
+
 		</div>
 	);
 };

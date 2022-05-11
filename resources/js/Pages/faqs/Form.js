@@ -1,5 +1,6 @@
 import React from 'react'
 import emailjs from '@emailjs/browser';
+import { usePage } from '@inertiajs/inertia-react';
 
 const sendEmail = (event) => {
 	event.preventDefault();
@@ -13,12 +14,13 @@ const sendEmail = (event) => {
 };
 
 const Form = () => {
+	const {user} = usePage().props;
 
 	return (
 		<form onSubmit={sendEmail}>
 			<div
-				className="container flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0">
-				<div className="max-w-2xl py-2 px-5 m-auto w-full mt-4">
+				className="container flex flex-col items-center justify-between px-6 py-6 mx-auto space-y-12 md:py-0 md:flex-row md:space-y-0">
+				<div className="max-w-2xl py-2 px-5 w-full mt-4">
 
 					<div className="text-3xl mb-6 text-center ">
 						<h1 className="text-4xl font-bold text-center">Contacto</h1>
@@ -27,11 +29,11 @@ const Form = () => {
 					<div className="grid grid-cols-2 gap-4 max-w-xl m-auto">
 
 						<div className="col-span-2 lg:col-span-1">
-							<input type="text" className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg" placeholder="Nombre" />
+							<input defaultValue={user && user.nombre} type="text" className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg" placeholder="Nombre" />
 						</div>
 
 						<div className="col-span-2 lg:col-span-1">
-							<input type="text" className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg" placeholder="Correo electrónico" />
+							<input defaultValue={user && user.email} type="text" className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg" placeholder="Correo electrónico" />
 						</div>
 
 						<div className="col-span-2">

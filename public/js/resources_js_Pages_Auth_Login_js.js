@@ -60,7 +60,6 @@ var Login = function Login() {
       setValues = _useState2[1];
 
   var props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props;
-  console.log(props);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -144,9 +143,9 @@ var Login = function Login() {
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "flex items-center justify-between px-10 py-4 bg-gray-100 border-t border-gray-200",
+          className: "flex flex-col md:flex-row items-center justify-between px-10 py-4 bg-gray-100 border-t border-gray-200",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
-            className: "hover:underline",
+            className: "hover:underline text-center mb-4 md:mb-0",
             tabIndex: "-1",
             href: "#reset-password",
             children: "\xBFHas olvidado la contrase\xF1a?"
@@ -156,6 +155,12 @@ var Login = function Login() {
             children: "Ingresar"
           })]
         })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+        href: "./register",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+          className: "text-center text-white mt-4",
+          children: "\xBFNo tienes una cuenta?"
+        })
       })]
     })]
   });

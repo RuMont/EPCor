@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import { Head, usePage } from "@inertiajs/inertia-react";
+import { Head, Link, usePage } from "@inertiajs/inertia-react";
 import Logo from "../../Shared/Logo";
 import TextInput from "../../Shared/TextInput";
 import LoadingButton from "../../Shared/LoadingButton";
@@ -15,8 +15,6 @@ const Login = () => {
     });
 
     const props = usePage().props;
-
-    console.log(props)
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -97,9 +95,9 @@ const Login = () => {
 
                     </div>
 
-                    <div className="flex items-center justify-between px-10 py-4 bg-gray-100 border-t border-gray-200">
+                    <div className="flex flex-col md:flex-row items-center justify-between px-10 py-4 bg-gray-100 border-t border-gray-200">
                         <a
-                            className="hover:underline"
+                            className="hover:underline text-center mb-4 md:mb-0"
                             tabIndex="-1"
                             href="#reset-password"
                         >
@@ -113,6 +111,9 @@ const Login = () => {
                         </LoadingButton>
                     </div>
                 </form>
+                <Link href="./register">
+                    <p className="text-center text-white mt-4">¿No tienes una cuenta?</p>
+                </Link>
             </div>
         </div>
     );

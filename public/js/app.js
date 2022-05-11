@@ -60901,6 +60901,14 @@ var map = {
 		"./resources/js/Pages/Home/Index.js",
 		"resources_js_Pages_Home_Index_js"
 	],
+	"./Tool/Card": [
+		"./resources/js/Pages/Tool/Card.js",
+		"resources_js_Pages_Tool_Card_js-resources_js_Pages_Tool_Index_js"
+	],
+	"./Tool/Card.js": [
+		"./resources/js/Pages/Tool/Card.js",
+		"resources_js_Pages_Tool_Card_js-resources_js_Pages_Tool_Index_js"
+	],
 	"./Tool/Carousel": [
 		"./resources/js/Pages/Tool/Carousel.js",
 		"resources_js_Pages_Tool_Carousel_js"
@@ -60911,11 +60919,11 @@ var map = {
 	],
 	"./Tool/Index": [
 		"./resources/js/Pages/Tool/Index.js",
-		"resources_js_Pages_Tool_Index_js"
+		"resources_js_Pages_Tool_Card_js-resources_js_Pages_Tool_Index_js"
 	],
 	"./Tool/Index.js": [
 		"./resources/js/Pages/Tool/Index.js",
-		"resources_js_Pages_Tool_Index_js"
+		"resources_js_Pages_Tool_Card_js-resources_js_Pages_Tool_Index_js"
 	],
 	"./Tool/Selector": [
 		"./resources/js/Pages/Tool/Selector.js",
@@ -60948,6 +60956,14 @@ var map = {
 	"./Users/Index.js": [
 		"./resources/js/Pages/Users/Index.js",
 		"resources_js_Pages_Users_Index_js"
+	],
+	"./faqs/Form": [
+		"./resources/js/Pages/faqs/Form.js",
+		"resources_js_Pages_faqs_Form_js"
+	],
+	"./faqs/Form.js": [
+		"./resources/js/Pages/faqs/Form.js",
+		"resources_js_Pages_faqs_Form_js"
 	],
 	"./faqs/faqs": [
 		"./resources/js/Pages/faqs/faqs.js",
@@ -61106,7 +61122,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Auth_Login_js":1,"resources_js_Pages_Auth_Register_js":1,"resources_js_Pages_Dashboard_Index_js":1,"resources_js_Pages_Error_js":1,"resources_js_Pages_Home_Form_js":1,"resources_js_Pages_Home_Index_js":1,"resources_js_Pages_Tool_Carousel_js":1,"resources_js_Pages_Tool_Index_js":1,"resources_js_Pages_Tool_Selector_js":1,"resources_js_Pages_Users_Create_js":1,"resources_js_Pages_Users_Edit_js":1,"resources_js_Pages_Users_Index_js":1,"resources_js_Pages_faqs_faqs_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Auth_Login_js":1,"resources_js_Pages_Auth_Register_js":1,"resources_js_Pages_Dashboard_Index_js":1,"resources_js_Pages_Error_js":1,"resources_js_Pages_Home_Form_js":1,"resources_js_Pages_Home_Index_js":1,"resources_js_Pages_Tool_Card_js-resources_js_Pages_Tool_Index_js":1,"resources_js_Pages_Tool_Carousel_js":1,"resources_js_Pages_Tool_Selector_js":1,"resources_js_Pages_Users_Create_js":1,"resources_js_Pages_Users_Edit_js":1,"resources_js_Pages_Users_Index_js":1,"resources_js_Pages_faqs_Form_js":1,"resources_js_Pages_faqs_faqs_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

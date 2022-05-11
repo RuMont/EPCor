@@ -1,5 +1,15 @@
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_Tool_Index_js"],{
 
+/***/ "./resources/js/Pages/Tool/Card.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/Tool/Card.js ***!
+  \*****************************************/
+/***/ (() => {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\xampp\\htdocs\\EPCor\\resources\\js\\Pages\\Tool\\Card.js: Unexpected token, expected \"}\" (49:62)\n\n\u001b[0m \u001b[90m 47 |\u001b[39m             \u001b[33m<\u001b[39m\u001b[33mp\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"text-gray-700 dark:text-gray-400 truncate\"\u001b[39m\u001b[33m>\u001b[39m{attributes\u001b[33m.\u001b[39mdescription}\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mp\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 48 |\u001b[39m             {\u001b[90m/* <button onClick={getDocs} className=\"text-gray-700 dark:text-gray-400 truncate\">{doc[0].id}</button> */\u001b[39m}\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 49 |\u001b[39m             \u001b[33m<\u001b[39m\u001b[33mbutton\u001b[39m onClick\u001b[33m=\u001b[39m{() \u001b[33m=>\u001b[39m setDocument(\u001b[32m'calzoncillos'\u001b[39m))} className\u001b[33m=\u001b[39m\u001b[32m\"text-gray-700 dark:text-gray-400 truncate\"\u001b[39m\u001b[33m>\u001b[39m{id}\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mbutton\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 50 |\u001b[39m             \u001b[33m<\u001b[39m\u001b[33mp\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"text-gray-700 dark:text-gray-400 mt-4\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33mDesde\u001b[39m el {attributes[\u001b[32m\"start-date\"\u001b[39m]} hasta el {attributes[\u001b[32m\"end-date\"\u001b[39m]}\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mp\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 51 |\u001b[39m         \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 52 |\u001b[39m     )\u001b[0m\n    at instantiate (C:\\xampp\\htdocs\\EPCor\\node_modules\\@babel\\parser\\lib\\index.js:72:32)\n    at constructor (C:\\xampp\\htdocs\\EPCor\\node_modules\\@babel\\parser\\lib\\index.js:358:12)\n    at Object.raise (C:\\xampp\\htdocs\\EPCor\\node_modules\\@babel\\parser\\lib\\index.js:3334:19)\n    at Object.unexpected (C:\\xampp\\htdocs\\EPCor\\node_modules\\@babel\\parser\\lib\\index.js:3372:16)\n    at Object.expect (C:\\xampp\\htdocs\\EPCor\\node_modules\\@babel\\parser\\lib\\index.js:4001:28)\n    at Object.jsxParseExpressionContainer (C:\\xampp\\htdocs\\EPCor\\node_modules\\@babel\\parser\\lib\\index.js:7866:10)\n    at Object.jsxParseAttributeValue (C:\\xampp\\htdocs\\EPCor\\node_modules\\@babel\\parser\\lib\\index.js:7823:21)\n    at Object.jsxParseAttribute (C:\\xampp\\htdocs\\EPCor\\node_modules\\@babel\\parser\\lib\\index.js:7884:38)\n    at Object.jsxParseOpeningElementAfterName (C:\\xampp\\htdocs\\EPCor\\node_modules\\@babel\\parser\\lib\\index.js:7904:28)\n    at Object.jsxParseOpeningElementAt (C:\\xampp\\htdocs\\EPCor\\node_modules\\@babel\\parser\\lib\\index.js:7897:17)");
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Tool/Carousel.js":
 /*!*********************************************!*\
   !*** ./resources/js/Pages/Tool/Carousel.js ***!
@@ -180,6 +190,7 @@ Carousel.propTypes = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DocContext": () => (/* binding */ DocContext),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
@@ -188,7 +199,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Selector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Selector */ "./resources/js/Pages/Tool/Selector.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _Carousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Carousel */ "./resources/js/Pages/Tool/Carousel.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Card */ "./resources/js/Pages/Tool/Card.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
@@ -196,50 +219,52 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+var DocContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)();
 
 var Tool = function Tool() {
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.usePage)().props,
       loadDocs = _usePage$props.loadDocs,
-      entity = _usePage$props.entity;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    children: [entity ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h1", {
+      entity = _usePage$props.entity,
+      entity2 = _usePage$props.entity2;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+      _useState2 = _slicedToArray(_useState, 2),
+      context = _useState2[0],
+      setContext = _useState2[1];
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    children: [entity ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("h1", {
       className: "mb-8 text-3xl font-bold",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.InertiaLink, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.InertiaLink, {
         href: "/tool",
         className: "text-indigo-600 hover:text-indigo-700",
         children: "Buscador"
       }), " / ".concat(entity)]
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
       className: "mb-8 text-3xl font-bold",
       children: "Buscador"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Selector__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Selector__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("ul", {
         className: "flex flex-row flex-wrap",
-        children: loadDocs !== null && loadDocs !== void 0 && loadDocs.data.length ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Carousel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          children: loadDocs.data.map(function (ad, i) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Carousel__WEBPACK_IMPORTED_MODULE_4__.CarouselItem, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                href: "#",
-                className: "block p-6 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-4xl bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 my-4 mr-4",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h5", {
-                    className: "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white truncate",
-                    children: ad.attributes.title
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-                    className: "text-gray-700 dark:text-gray-400 truncate",
-                    children: ad.attributes.description
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
-                    className: "text-gray-700 dark:text-gray-400 mt-4",
-                    children: ["Desde el ", ad.attributes["start-date"], " hasta el ", ad.attributes["end-date"]]
-                  })]
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(DocContext.Provider, {
+          value: [context, setContext],
+          children: loadDocs !== null && loadDocs !== void 0 && loadDocs.data.length ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Carousel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: loadDocs.data.map(function (ad, i) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Carousel__WEBPACK_IMPORTED_MODULE_4__.CarouselItem, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Card__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                  attributes: ad.attributes,
+                  doc: ad.relationships.documents.data,
+                  entity: entity2
                 })
-              })
-            }, i);
-          })
-        }) : entity ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
-          className: "mt-4",
-          children: ["Lo sentimos, no se han encontrado anuncios para ", entity]
-        }) : ''
+              }, i);
+            })
+          }) : entity ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
+            className: "mt-4",
+            children: ["Lo sentimos, no se han encontrado anuncios para ", entity]
+          }) : ''
+        })
       })
     })]
   });
@@ -248,7 +273,7 @@ var Tool = function Tool() {
 
 
 Tool.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "Buscador",
     children: page
   });
@@ -310,7 +335,7 @@ var Selector = function Selector() {
   function handleSubmit(e) {
     e.preventDefault();
     var title = document.querySelector("[value^=".concat(selected.value, "]")).innerText;
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.get("/tool/" + selected.value + "?title=" + title);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.get("/tool/e" + selected.value + "?title=" + title);
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -919,7 +944,7 @@ function MainMenu(_ref) {
       link: "/tool",
       icon: "book"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MainMenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      text: "Preguntas frecuentes",
+      text: "F.A.Q",
       link: "/faqs",
       icon: "printer"
     })]
