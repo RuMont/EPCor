@@ -1,6 +1,6 @@
 import { Head, usePage } from '@inertiajs/inertia-react';
 import React, { useState } from 'react';
-import Layout from '../../Shared/Layout';
+import Layout from '../../../Shared/Layout';
 import Form from './Form';
 
 const faqs = () => {

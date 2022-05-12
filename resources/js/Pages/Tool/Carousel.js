@@ -77,9 +77,9 @@ const Carousel = ({ children }) => {
 					return React.cloneElement(child, { width: "100%" });
 				})}
 			</div>
-			<div className="indicators flex flex-wrap">
+			<div className="indicators flex flex-wrap justify-between sm:justify-start">
 				<button
-					className="mt-2 mr-1 px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-50"
+					className="w-5/12 sm:w-fit mt-2 mr-1 px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-50"
 					onClick={() => {
 						updateIndex(activeIndex - 1);
 					}}
@@ -103,7 +103,7 @@ const Carousel = ({ children }) => {
 				</div>
 
 				<button
-					className="mt-2 mr-1 px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-500"
+					className="w-5/12 sm:w-fit mt-2 mr-1 px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-500"
 					onClick={() => {
 						updateIndex(activeIndex + 1);
 					}}
