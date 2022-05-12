@@ -378,6 +378,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Index = function Index() {
+  var appName = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_13__.usePage)().props.appName;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_13__.Head, {
+      title: appName
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("nav", {
       className: " bg-white container mx-auto p-6 px-5",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
         className: "flex items-center",
@@ -580,6 +585,9 @@ var Index = function Index() {
           })]
         })]
       })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("footer", {
+      className: "bg-indigo-700 mt-16",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
         className: "container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
           className: "flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start",
@@ -618,6 +626,7 @@ var Index = function Index() {
               })
             })]
           })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
           className: "hidden text-white md:block",
           children: "Copyright \xA9 2022, All Rights Reserved"
         })]

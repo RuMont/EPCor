@@ -10,7 +10,7 @@ export default function Feed() {
     
     //Buscar la manera de obtener el RSS de dos sitios distintos
     
-    const res = await fetch(`https://api.allorigins.win/get?url=https://cordopolis.eldiario.es/rss/`);
+    const res = await fetch(`https://api.allorigins.win/get?url=https://www.eldiadecordoba.es/rss/cordoba/`);
 
     const data = await res.json();
 
@@ -26,6 +26,7 @@ export default function Feed() {
 
     setItems(filteredItems);
 
+    console.log(filteredItems);
 
     //Ver por que no funcionan los estilos de la card
     }
