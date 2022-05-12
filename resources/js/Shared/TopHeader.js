@@ -8,7 +8,7 @@ export default function TopHeader () {
   return (
     <div className="flex items-center justify-between px-6 py-1 bg-indigo-900 md:flex-shrink-0 md:w-56 md:justify-center">
       <InertiaLink href="/dashboard">
-        <Logo className="block w-2/5 mx-auto"/>
+        <Logo className="block w-1/6 py-4 md:w-2/5 md:mx-auto"/>
       </InertiaLink>
       <div className="relative md:hidden">
         <svg

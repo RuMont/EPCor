@@ -54,5 +54,4 @@ Route::controller(UsersController::class)->prefix('users')->group(function () {
 Route::controller(ToolController::class)->prefix('tool')->group(function () {
     Route::middleware('auth')->get('/', 'index')->name('tool');
     Route::middleware('auth')->get('/e{site}', 'index');
-    Route::middleware('auth')->get('docs', 'fetchDocuments'); // AJAX
 });

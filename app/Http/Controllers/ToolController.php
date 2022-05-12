@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 
@@ -58,7 +59,8 @@ class ToolController extends Controller
                 'entities' => json_decode($response),
                 'entity' => $_GET["title"],
                 'entity2' => $entity,
-                'loadDocs' => json_decode($response2)
+                'loadDocs' => json_decode($response2),
+                'urls' => $this->fetchDocuments()
             ]);
         }
 
@@ -70,7 +72,7 @@ class ToolController extends Controller
     /**
      * Devuelve los documentos relacionados con los anuncios de la entidad
      */
-    public function fetchDocuments()
+    private function fetchDocuments()
     {
         $curl = curl_init();
 
@@ -94,6 +96,6 @@ class ToolController extends Controller
         $response = curl_exec($curl);
 
         curl_close($curl);
-        echo $response;
+        return $response;
     }
 }

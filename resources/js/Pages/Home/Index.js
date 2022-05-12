@@ -10,7 +10,6 @@ import facebook from '../../../imgs/icon-facebook.svg';
 import josema from '../../../imgs/josema.png';
 import ruben from '../../../imgs/ruben.png';
 import juanan from '../../../imgs/juanan.png';
-import Form from './Form';
 import { Head, Link, usePage } from '@inertiajs/inertia-react';
 
 const Index = () => {
@@ -152,7 +151,7 @@ const Index = () => {
                             </p>
                         </div>
 
-                        <div className="hidden md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
+                        <div className="mt-8 md:mt-0 flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
                             <img src={ruben} style={{
                                 width: '33%',
                                 height: 'auto'
@@ -166,7 +165,7 @@ const Index = () => {
                             </p>
                         </div>
 
-                        <div className="hidden md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
+                        <div className="mt-8 md:mt-0 flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
                             <img src={juanan} style={{
                                 width: '48%',
                                 height: 'auto'
@@ -179,7 +178,7 @@ const Index = () => {
                                 ahorrándonos el coste de personal extra..”
                             </p>
                         </div>
-                        <div className="hidden md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
+                        <div className="mt-8 md:mt-0 flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
                             <img src={josema} style={{
                                 width: '35%',
                                 height: 'auto'

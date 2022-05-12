@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React from 'react';
 import Layout from '../../Shared/Layout';
 import Selector from './Selector';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
@@ -6,34 +6,8 @@ import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import Carousel, { CarouselItem } from './Carousel';
 import Card from './Card';
 
-export const DocContext = createContext();
-
 const Tool = () => {
-    const { loadDocs, entity, entity2 } = usePage().props;
-    const [context, setContext] = useState({})
-
-    const getDocs = async () => {
-        if (!context.data) {
-            var requestOptions = {
-                method: 'GET',
-                headers: {
-                    'entity': entity
-                },
-                redirect: 'follow'
-            };
-
-            const response = await fetch("./docs", requestOptions);
-            const json = await response.json();
-            setContext(await json);
-        }
-    }
-
-    useEffect(() => {
-      return () => {
-        getDocs()
-      }
-    }, [])
-    
+    const { loadDocs, entity, entity2, urls, user } = usePage().props;
 
     return (
         <div>
@@ -42,18 +16,30 @@ const Tool = () => {
             ) : (
                 <h1 className="mb-8 text-3xl font-bold">Buscador</h1>
             )}
-            
+
             <Selector />
             <div>
                 <ul className='flex flex-row flex-wrap'>
-                    <DocContext.Provider value={[context, setContext]}>
                     {
                         loadDocs?.data.length ? (
                             <Carousel>
                                 {loadDocs.data.map((ad, i) => {
+                                    const array = JSON.parse(urls).data;
+                                    let link;
+                                    array.forEach(element => {
+                                        if (element.id === ad.relationships.documents.data[0].id) {
+                                            link = element.attributes.url;
+                                        }
+                                    });
                                     return (
                                         <CarouselItem key={i}>
-                                            <Card attributes={ad.attributes} doc={ad.relationships.documents.data} entity={entity2}/>
+                                            <Card
+                                                attributes={ad.attributes}
+                                                docId={ad.relationships.documents.data[0].id}
+                                                entity={entity2}
+                                                url={link}
+                                                user={user}
+                                            />
                                         </CarouselItem>
                                     );
                                 })
@@ -62,7 +48,6 @@ const Tool = () => {
                             </Carousel>
                         ) : entity ? <p className='mt-4'>Lo sentimos, no se han encontrado anuncios para {entity}</p> : ''
                     }
-                    </DocContext.Provider>
                 </ul>
 
             </div>
