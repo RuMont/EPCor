@@ -7,7 +7,7 @@ import Carousel, { CarouselItem } from './Carousel';
 import Card from './Card';
 
 const Tool = () => {
-    const { loadDocs, entity, entity2, urls, user } = usePage().props;
+    const { loadDocs, entity, urls, user } = usePage().props;
 
     return (
         <div>
@@ -35,8 +35,6 @@ const Tool = () => {
                                         <CarouselItem key={i}>
                                             <Card
                                                 attributes={ad.attributes}
-                                                docId={ad.relationships.documents.data[0].id}
-                                                entity={entity2}
                                                 url={link}
                                                 user={user}
                                             />

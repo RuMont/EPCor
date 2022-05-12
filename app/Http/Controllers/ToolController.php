@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use \Spatie\GoogleCalendar\Event;
+use \Spatie\GoogleCalendar\GoogleCalendarFactory;
 use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 
@@ -58,7 +62,6 @@ class ToolController extends Controller
             return Inertia::render('Tool/Index', [
                 'entities' => json_decode($response),
                 'entity' => $_GET["title"],
-                'entity2' => $entity,
                 'loadDocs' => json_decode($response2),
                 'urls' => $this->fetchDocuments()
             ]);
@@ -98,4 +101,33 @@ class ToolController extends Controller
         curl_close($curl);
         return $response;
     }
+    
+    public function createEvent(Request $request)
+    {
+        $startDate = date('Y-m-d H:i:s.u', strtotime($request->startDate));
+        $endDate = date('Y-m-d H:i:s.u', strtotime($request->endDate));
+
+        try {
+            Event::create([
+                'name' => 'EPCor: ' . $request->title,
+                'startDateTime' => new Carbon($startDate, 'Europe/Madrid'),
+                'endDateTime' => new Carbon($endDate, 'Europe/Madrid'),
+            ], Auth::user()->email);
+    
+            echo 1;
+        } catch (\Throwable $th) {
+            echo $th;
+        }
+    }
+
+    // public function createEvent(string $title, string $startDate, string $endDate)
+    // {
+    //     $event = new Event;
+
+    //     $event->name = $title;
+    //     $event->startDateTime = new Carbon($startDate, 'Europe/Madrid');
+    //     $event->endDateTime = new Carbon($endDate, 'Europe/Madrid');
+
+    //     $event->save();
+    // }
 }

@@ -24,6 +24,8 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('register', 'register')->name('register');
     Route::get('login', 'index')->name('login');
     Route::get('faqs', 'faqs')->name('faqs');
+    Route::middleware('auth')->post('setlastlink', 'saveLink')->name('lastlink');
+    Route::get('calendarhelp', 'calendarhelp')->name('calendarhelp');
     Route::get('error/{status}', 'status')->name('status');
     Route::middleware('auth')->get('dashboard', 'dashboard')->name('dashboard');
     Route::middleware('auth')->get('admin', 'admin')->name('admin');
@@ -54,4 +56,5 @@ Route::controller(UsersController::class)->prefix('users')->group(function () {
 Route::controller(ToolController::class)->prefix('tool')->group(function () {
     Route::middleware('auth')->get('/', 'index')->name('tool');
     Route::middleware('auth')->get('/e{site}', 'index');
+    Route::middleware('auth')->post('insert', 'createEvent');
 });
