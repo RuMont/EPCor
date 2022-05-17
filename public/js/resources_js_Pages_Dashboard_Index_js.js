@@ -181,7 +181,7 @@ var Dashboard = function Dashboard() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: " shadow-lg p-3 mb-5 bg-white rounded",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Shared_Feed__WEBPACK_IMPORTED_MODULE_4__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {})]
+        })]
       })]
     })]
   });
@@ -369,7 +369,7 @@ function Feed() {
               filteredItems = items.filter(function (item) {
                 return item.includes("empleo" || 0);
               });
-              setItems(filteredItems); //Ver por que no funcionan los estilos de la card
+              setItems(filteredItems);
 
             case 10:
             case "end":
@@ -389,8 +389,8 @@ function Feed() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ul", {
       children: items.map(function (item, index) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
             style: {
               backgroundColor: "#f5f5f5",
               borderRadius: "10px",
@@ -400,33 +400,22 @@ function Feed() {
               boxShadow: "0 0 10px #ccc",
               alignItems: "center"
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-              src: item.split("<enclosure url=\"")[1].split("\"")[0],
-              alt: "",
-              style: {
-                width: "350px",
-                height: "250px",
-                borderRadius: "10px",
-                margin: "10px",
-                border: "1px solid #ccc",
-                boxShadow: "0 0 10px #ccc",
-                backgroundColor: "#fff",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center"
-              }
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "text-center",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                src: item.split("<enclosure url=\"")[1].split("\"")[0],
+                alt: "",
+                style: {
+                  width: "350px",
+                  height: "250px"
+                }
+              })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
               style: {
                 fontSize: "20px",
                 fontWeight: "bold",
                 color: "black",
-                textAlign: "center",
-                margin: "10px",
-                padding: "10px",
-                border: "1px solid black",
-                borderRadius: "10px",
-                backgroundColor: "white",
-                boxShadow: "0px 0px 10px black"
+                textAlign: "center"
               },
               children: item.split("<title>")[1].split("</title>")[0].replace("<![CDATA[", "").replace("]]>", "")
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
@@ -434,16 +423,22 @@ function Feed() {
                 fontSize: "15px",
                 color: "black",
                 textAlign: "center",
-                margin: "10px",
-                padding: "10px",
-                border: "1px solid black",
-                borderRadius: "10px",
-                backgroundColor: "white",
-                boxShadow: "0px 0px 10px black"
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                display: "-webkit-box",
+                WebkitLineClamp: "3",
+                WebkitBoxOrient: "vertical"
               },
               children: item.split("<p>")[2].split("</p>")[0].replace("<![CDATA[", "").replace("]]>", "")
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+              href: item.split("<link>")[1].split("</link>")[0].replace("<![CDATA[", "").replace("]]>", ""),
+              style: {
+                fontSize: "15px",
+                color: "blue"
+              },
+              children: "Ver m\xE1s..."
             })]
-          }, index), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {})]
+          }, index)
         });
       })
     })

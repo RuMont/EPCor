@@ -25,9 +25,6 @@ export default function Feed() {
 
 
     setItems(filteredItems);
-
-
-    //Ver por que no funcionan los estilos de la card
     }
 
     //En cuanto se cargue la pagina aparece el rss
@@ -53,58 +50,55 @@ export default function Feed() {
                         }
                     } key={index}>
                         
-                        
+                        <div className="text-center">
                         <img src={item.split("<enclosure url=\"")[1].split("\"")[0]} alt="" style={
                             {
                                 width: "350px",
                                 height: "250px",
-                                borderRadius: "10px",
-                                margin: "10px",
-                                border: "1px solid #ccc",
-                                boxShadow: "0 0 10px #ccc",
-                                backgroundColor: "#fff",
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                
                                 
                             }
                         }/>
+                        </div>
                         <h2 style={
                             {
                                 fontSize: "20px",
                                 fontWeight: "bold",
                                 color: "black",
                                 textAlign: "center",
-                                margin: "10px",
-                                padding: "10px",
-                                border: "1px solid black",
-                                borderRadius: "10px",
-                                backgroundColor: "white",
-                                boxShadow: "0px 0px 10px black"
+                                
                             }
                         }>{item.split("<title>")[1].split("</title>")[0].replace("<![CDATA[", "").replace("]]>", "")}</h2>
-
+                        {/* add ellipsis when there is more than 100 characters */}
                         <p style={
                             {
                                 fontSize: "15px",
                                 color: "black",
                                 textAlign: "center",
-                                margin: "10px",
-                                padding: "10px",
-                                border: "1px solid black",
-                                borderRadius: "10px",
-                                backgroundColor: "white",
-                                boxShadow: "0px 0px 10px black"
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                display: "-webkit-box",
+                                WebkitLineClamp: "3",
+                                WebkitBoxOrient: "vertical",
                             }
+
                         }>{item.split("<p>")[2].split("</p>")[0].replace("<![CDATA[", "").replace("]]>", "")}</p>
+                        {/* add see more link */}
+                        <a href={item.split("<link>")[1].split("</link>")[0].replace("<![CDATA[", "").replace("]]>", "")} style={
+                            {
+                                fontSize: "15px",
+                                color: "blue",
+                                
+                            }
+                        }>Ver más...</a>
                         
                     </li>
-                    <br/> 
-                    </div>
 
+                    </div>
                 ))}
             </ul>
         </div>
     );
 }
+
+                        
+                  

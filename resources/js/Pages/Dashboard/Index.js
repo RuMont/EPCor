@@ -155,9 +155,9 @@ const Dashboard = () => {
 			
 				{/* RSS */}
 
-				<div>
-				
-				</div>
+				{/* <div className=" shadow-lg p-3 mb-5 bg-white rounded">
+				<Feed2 />
+				</div> */}
 				
 		
 	</div>
