@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Users;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -36,8 +37,14 @@ class UsersController extends Controller
     public function storeFromUsers(Request $request)
     {
         if (Hash::needsRehash($request->password))
-            Hash::make($request->password);
-        $this->usersModel->insertarUsuario($request->all());
+        $password = Hash::make($request->password);
+        $this->usersModel->insertarUsuario([
+            "nombre" => $request->nombre,
+            "email" => $request->email,
+            "password" => $password,
+            "created_at" => Carbon::now(),
+            "updated_at" => Carbon::now()
+        ]);
         return Redirect::route('users')->with('success', 'Usuario creado');
     }
 
@@ -52,8 +59,14 @@ class UsersController extends Controller
     public function update(int $id, Request $request)
     {
         if (Hash::needsRehash($request->password))
-            Hash::make($request->password);
-        $this->usersModel->actualizarUsuario($id, $request->all());
+        $password = Hash::make($request->password);
+        $this->usersModel->actualizarUsuario($id, [
+            "nombre" => $request->nombre,
+            "email" => $request->email,
+            "password" => $password,
+            "created_at" => Carbon::now(),
+            "updated_at" => Carbon::now()
+        ]);
         return Redirect::back()->with('success', 'Usuario actualizado');
     }
 

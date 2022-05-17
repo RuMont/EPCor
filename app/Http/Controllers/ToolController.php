@@ -119,15 +119,4 @@ class ToolController extends Controller
             echo $th;
         }
     }
-
-    // public function createEvent(string $title, string $startDate, string $endDate)
-    // {
-    //     $event = new Event;
-
-    //     $event->name = $title;
-    //     $event->startDateTime = new Carbon($startDate, 'Europe/Madrid');
-    //     $event->endDateTime = new Carbon($endDate, 'Europe/Madrid');
-
-    //     $event->save();
-    // }
 }
