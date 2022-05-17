@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Users;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -108,19 +109,28 @@ class AuthController extends Controller
     {
         unset($request["confirmPassword"]);
         if (Hash::needsRehash($request->password))
-            Hash::make($request->password);
+            $password = Hash::make($request->password);
         try {
-            $id = $this->usersModel->insertarUsuario($request->all());
+            $id = $this->usersModel->insertarUsuario([
+                "nombre" => $request->nombre,
+                "email" => $request->email,
+                "password" => $password,
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now()
+            ]);
             if (Auth::login($this->usersModel->obtenerUsuarioPorId($id))) {
                 $request->session()->regenerate();
                 return Redirect::route('dashboard')->with('success', 'Usuario creado');
             }
         } catch (Throwable $th) {
-            if ($th->errorInfo[0] == '23000') {
+            if (isset($th->errorInfo[0]) == '23000') {
                 return back()->withErrors([
                     'email' => 'Ya existe una cuenta con ese correo',
                 ]);
             }
+            return back()->withErrors([
+                'unknown' => 'Se ha producido un error',
+            ]);
         }
 
         return Redirect::route('login');
