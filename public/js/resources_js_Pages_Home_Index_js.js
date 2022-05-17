@@ -1,339 +1,6 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_Home_Index_js"],{
 
-/***/ "./node_modules/@emailjs/browser/es/api/sendPost.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/@emailjs/browser/es/api/sendPost.js ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "sendPost": () => (/* binding */ sendPost)
-/* harmony export */ });
-/* harmony import */ var _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../models/EmailJSResponseStatus */ "./node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js");
-/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/store */ "./node_modules/@emailjs/browser/es/store/store.js");
-
-
-const sendPost = (url, data, headers = {}) => {
-    return new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.addEventListener('load', ({ target }) => {
-            const responseStatus = new _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__.EmailJSResponseStatus(target);
-            if (responseStatus.status === 200 || responseStatus.text === 'OK') {
-                resolve(responseStatus);
-            }
-            else {
-                reject(responseStatus);
-            }
-        });
-        xhr.addEventListener('error', ({ target }) => {
-            reject(new _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__.EmailJSResponseStatus(target));
-        });
-        xhr.open('POST', _store_store__WEBPACK_IMPORTED_MODULE_1__.store._origin + url, true);
-        Object.keys(headers).forEach((key) => {
-            xhr.setRequestHeader(key, headers[key]);
-        });
-        xhr.send(data);
-    });
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/@emailjs/browser/es/index.js":
-/*!***************************************************!*\
-  !*** ./node_modules/@emailjs/browser/es/index.js ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "init": () => (/* reexport safe */ _methods_init_init__WEBPACK_IMPORTED_MODULE_0__.init),
-/* harmony export */   "send": () => (/* reexport safe */ _methods_send_send__WEBPACK_IMPORTED_MODULE_1__.send),
-/* harmony export */   "sendForm": () => (/* reexport safe */ _methods_sendForm_sendForm__WEBPACK_IMPORTED_MODULE_2__.sendForm)
-/* harmony export */ });
-/* harmony import */ var _methods_init_init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./methods/init/init */ "./node_modules/@emailjs/browser/es/methods/init/init.js");
-/* harmony import */ var _methods_send_send__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./methods/send/send */ "./node_modules/@emailjs/browser/es/methods/send/send.js");
-/* harmony import */ var _methods_sendForm_sendForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./methods/sendForm/sendForm */ "./node_modules/@emailjs/browser/es/methods/sendForm/sendForm.js");
-
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-    init: _methods_init_init__WEBPACK_IMPORTED_MODULE_0__.init,
-    send: _methods_send_send__WEBPACK_IMPORTED_MODULE_1__.send,
-    sendForm: _methods_sendForm_sendForm__WEBPACK_IMPORTED_MODULE_2__.sendForm,
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/@emailjs/browser/es/methods/init/init.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@emailjs/browser/es/methods/init/init.js ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "init": () => (/* binding */ init)
-/* harmony export */ });
-/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../store/store */ "./node_modules/@emailjs/browser/es/store/store.js");
-
-/**
- * Initiation
- * @param {string} publicKey - set the EmailJS public key
- * @param {string} origin - set the EmailJS origin
- */
-const init = (publicKey, origin = 'https://api.emailjs.com') => {
-    _store_store__WEBPACK_IMPORTED_MODULE_0__.store._userID = publicKey;
-    _store_store__WEBPACK_IMPORTED_MODULE_0__.store._origin = origin;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/@emailjs/browser/es/methods/sendForm/sendForm.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@emailjs/browser/es/methods/sendForm/sendForm.js ***!
-  \***********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "sendForm": () => (/* binding */ sendForm)
-/* harmony export */ });
-/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../store/store */ "./node_modules/@emailjs/browser/es/store/store.js");
-/* harmony import */ var _utils_validateParams__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/validateParams */ "./node_modules/@emailjs/browser/es/utils/validateParams.js");
-/* harmony import */ var _api_sendPost__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../api/sendPost */ "./node_modules/@emailjs/browser/es/api/sendPost.js");
-
-
-
-const findHTMLForm = (form) => {
-    let currentForm;
-    if (typeof form === 'string') {
-        currentForm = document.querySelector(form);
-    }
-    else {
-        currentForm = form;
-    }
-    if (!currentForm || currentForm.nodeName !== 'FORM') {
-        throw 'The 3rd parameter is expected to be the HTML form element or the style selector of form';
-    }
-    return currentForm;
-};
-/**
- * Send a form the specific EmailJS service
- * @param {string} serviceID - the EmailJS service ID
- * @param {string} templateID - the EmailJS template ID
- * @param {string | HTMLFormElement} form - the form element or selector
- * @param {string} publicKey - the EmailJS public key
- * @returns {Promise<EmailJSResponseStatus>}
- */
-const sendForm = (serviceID, templateID, form, publicKey) => {
-    const uID = publicKey || _store_store__WEBPACK_IMPORTED_MODULE_0__.store._userID;
-    const currentForm = findHTMLForm(form);
-    (0,_utils_validateParams__WEBPACK_IMPORTED_MODULE_1__.validateParams)(uID, serviceID, templateID);
-    const formData = new FormData(currentForm);
-    formData.append('lib_version', '3.6.2');
-    formData.append('service_id', serviceID);
-    formData.append('template_id', templateID);
-    formData.append('user_id', uID);
-    return (0,_api_sendPost__WEBPACK_IMPORTED_MODULE_2__.sendPost)('/api/v1.0/email/send-form', formData);
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/@emailjs/browser/es/methods/send/send.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@emailjs/browser/es/methods/send/send.js ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "send": () => (/* binding */ send)
-/* harmony export */ });
-/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../store/store */ "./node_modules/@emailjs/browser/es/store/store.js");
-/* harmony import */ var _utils_validateParams__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/validateParams */ "./node_modules/@emailjs/browser/es/utils/validateParams.js");
-/* harmony import */ var _api_sendPost__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../api/sendPost */ "./node_modules/@emailjs/browser/es/api/sendPost.js");
-
-
-
-/**
- * Send a template to the specific EmailJS service
- * @param {string} serviceID - the EmailJS service ID
- * @param {string} templateID - the EmailJS template ID
- * @param {object} templatePrams - the template params, what will be set to the EmailJS template
- * @param {string} publicKey - the EmailJS public key
- * @returns {Promise<EmailJSResponseStatus>}
- */
-const send = (serviceID, templateID, templatePrams, publicKey) => {
-    const uID = publicKey || _store_store__WEBPACK_IMPORTED_MODULE_0__.store._userID;
-    (0,_utils_validateParams__WEBPACK_IMPORTED_MODULE_1__.validateParams)(uID, serviceID, templateID);
-    const params = {
-        lib_version: '3.6.2',
-        user_id: uID,
-        service_id: serviceID,
-        template_id: templateID,
-        template_params: templatePrams,
-    };
-    return (0,_api_sendPost__WEBPACK_IMPORTED_MODULE_2__.sendPost)('/api/v1.0/email/send', JSON.stringify(params), {
-        'Content-type': 'application/json',
-    });
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js ***!
-  \**************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "EmailJSResponseStatus": () => (/* binding */ EmailJSResponseStatus)
-/* harmony export */ });
-class EmailJSResponseStatus {
-    constructor(httpResponse) {
-        this.status = httpResponse.status;
-        this.text = httpResponse.responseText;
-    }
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/@emailjs/browser/es/store/store.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/@emailjs/browser/es/store/store.js ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "store": () => (/* binding */ store)
-/* harmony export */ });
-const store = {
-    _origin: 'https://api.emailjs.com',
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/@emailjs/browser/es/utils/validateParams.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@emailjs/browser/es/utils/validateParams.js ***!
-  \******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "validateParams": () => (/* binding */ validateParams)
-/* harmony export */ });
-const validateParams = (publicKey, serviceID, templateID) => {
-    if (!publicKey) {
-        throw 'The public key is required. Visit https://dashboard.emailjs.com/admin/account';
-    }
-    if (!serviceID) {
-        throw 'The service ID is required. Visit https://dashboard.emailjs.com/admin';
-    }
-    if (!templateID) {
-        throw 'The template ID is required. Visit https://dashboard.emailjs.com/admin/templates';
-    }
-    return true;
-};
-
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Home/Form.js":
-/*!*****************************************!*\
-  !*** ./resources/js/Pages/Home/Form.js ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _emailjs_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emailjs/browser */ "./node_modules/@emailjs/browser/es/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-var sendEmail = function sendEmail(event) {
-  event.preventDefault();
-  _emailjs_browser__WEBPACK_IMPORTED_MODULE_1__["default"].sendForm('service_ui7ni1e', 'template_qvx5cr7', event.target, 'UGM7bNwu4ewhvkahc').then(function (result) {
-    console.log(result);
-  }, function (error) {
-    console.log(error.text);
-  });
-};
-
-var Form = function Form() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("form", {
-    onSubmit: sendEmail,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "container flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "max-w-2xl py-2 px-5 m-auto w-full mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "text-3xl mb-6 text-center ",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-            className: "text-4xl font-bold text-center",
-            children: "Sugerencias"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "grid grid-cols-2 gap-4 max-w-xl m-auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "col-span-2 lg:col-span-1",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-              type: "text",
-              className: "border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg",
-              placeholder: "Name"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "col-span-2 lg:col-span-1",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-              type: "text",
-              className: "border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg",
-              placeholder: "Email Address"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "col-span-2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("textarea", {
-              cols: "30",
-              rows: "8",
-              className: "border-solid border-gray-400 border-2 p-3 md:text-xl w-full rounded-lg",
-              placeholder: "Message"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "col-span-2 text-right",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-              className: "py-3 px-6 bg-indigo-700 text-white rounded-full font-bold w-full sm:w-32 hover:bg-indigo-500",
-              children: "Send"
-            })
-          })]
-        })]
-      })
-    })
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Form);
-
-/***/ }),
-
 /***/ "./resources/js/Pages/Home/Index.js":
 /*!******************************************!*\
   !*** ./resources/js/Pages/Home/Index.js ***!
@@ -357,10 +24,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _imgs_josema_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../imgs/josema.png */ "./resources/imgs/josema.png");
 /* harmony import */ var _imgs_ruben_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../imgs/ruben.png */ "./resources/imgs/ruben.png");
 /* harmony import */ var _imgs_juanan_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../imgs/juanan.png */ "./resources/imgs/juanan.png");
-/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Form */ "./resources/js/Pages/Home/Form.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -378,129 +43,137 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Index = function Index() {
+  var appName = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_12__.usePage)().props.appName;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_12__.Head, {
+      title: appName
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("nav", {
       className: " bg-white container mx-auto p-6 px-5",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
         className: "flex items-center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
           className: "pt-2",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Shared_Logo__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Shared_Logo__WEBPACK_IMPORTED_MODULE_1__["default"], {
             style: {
               width: "20%",
               height: "auto"
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("h1", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h1", {
             className: "text-black",
             children: "Tridymite S.L"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_13__.Link, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_12__.Link, {
           href: "./login",
           style: {
             marginRight: "1%",
             marginLeft: "60%"
           },
-          className: "hidden md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400",
+          className: " relative md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400",
           children: "Login"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_13__.Link, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_12__.Link, {
           href: "./register",
-          className: "hidden md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400",
+          style: {
+            marginRight: "5%"
+          },
+          className: " relative md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400",
           children: "Register"
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("section", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("section", {
       id: "hero",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
         className: "container flex flex-col-reverse md:flex-row items-center px-6 mx-auto mt-36 space-y-0",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
           className: "flex flex-col mb-32 space-y-12 md:w-1/2",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("h1", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h1", {
             className: "max-w-md text-4xl font-bold text-center md:text-5xl md:text-left",
             children: "EPCor"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("p", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("p", {
             className: "max-w-sm text-center text-black md:text-left",
-            children: ["Aplicaci\xF3n para realizar b\xFAsquedas exahustivas de la provincia de C\xF3rdoba con un s\xF3lo clic.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("br", {}), "Este proyecto est\xE1 destinado a facilitar la b\xFAsqueda de empleo p\xFAblico, e informar al ciudadano sobre los procedimientos que se llevan a cabo en la contrataci\xF3n del estado."]
+            children: ["Aplicaci\xF3n para realizar b\xFAsquedas exahustivas de la provincia de C\xF3rdoba con un s\xF3lo clic.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("br", {}), "Este proyecto est\xE1 destinado a facilitar la b\xFAsqueda de empleo p\xFAblico, e informar al ciudadano sobre los procedimientos que se llevan a cabo en la contrataci\xF3n del estado. Adem\xE1s de crear un evento en un calendario de google con la fecha indicada."]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
           className: "md:w-1/2",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("img", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("img", {
             src: _imgs_1_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
             alt: ""
           })
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("section", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("section", {
       id: "features",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
         className: "container flex flex-col px-4 mx-auto mt-36 space-y-12 md:space-y-0 md:flex-row",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
           className: "flex flex-col space-y-12 md:w-1/2",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("h2", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h2", {
             className: "max-w-md text-4xl font-bold text-center md:text-left",
             children: "\xBFQu\xE9 encontrar\xE1s en nuestra plataforma?"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
             className: "md:w-1/2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("img", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("img", {
               src: _imgs_2_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
               alt: ""
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
           className: "flex flex-col space-y-8 md:w-1/2",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
             className: "flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
               className: "rounded-l-full bg-white md:bg-transparent",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
                 className: "flex items-center space-x-2",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
                   className: "px-4 py-2 bg-indigo-700 rounded-full md:py-1 bg-brightRed text-white",
                   children: "01"
                 })
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("h3", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h3", {
                 className: "hidden mb-4 text-lg font-bold md:block",
                 children: "Buscador de empleo."
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", {
                 className: "text-black",
-                children: "Un buscador de ofertas de empleo p\xFAblico"
+                children: "Un buscador de ofertas de empleo p\xFAblico."
               })]
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
             className: "flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
               className: "rounded-l-full bg-brightRedSupLight md:bg-transparent",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
                 className: "flex items-center space-x-2",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
                   className: "px-4 py-2 bg-indigo-700 rounded-full md:py-1 bg-brightRed text-white",
                   children: "02"
                 })
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("h3", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h3", {
                 className: "hidden mb-4 text-lg font-bold md:block",
                 children: "F\xE1cil de usar"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", {
                 className: "text-black",
                 children: "Est\xE1 pensado para ser utilizado de forma sencilla, por lo que \xFAnicamente tiene un selector de opciones, que son entidades que emiten las ofertas de empleo."
               })]
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
             className: "flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
               className: "rounded-l-full bg-brightRedSupLight md:bg-transparent",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
                 className: "flex items-center space-x-2",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
                   className: "px-4 py-2 bg-indigo-700 rounded-full md:py-1 text-white",
                   children: "03"
                 })
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("h3", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h3", {
                 className: "hidden mb-4 text-lg font-bold md:block",
                 children: "Noticias."
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", {
                 className: "text-black",
                 children: "Actualizaci\xF3n de las \xFAltimas noticias sobre nuevos empleos que se deja ver secci\xF3n Tablero."
               })]
@@ -508,116 +181,120 @@ var Index = function Index() {
           })]
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("section", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("section", {
       id: "testimonials",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
         className: "max-w-6xl px-5 mx-auto mt-32 text-center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("h2", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h2", {
           className: "text-4xl font-bold text-center",
           children: "Sobre nosotros"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
           className: "flex flex-col mt-12 md:flex-row md:space-x-6",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
             className: "flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("img", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("img", {
               src: _imgs_yo_png__WEBPACK_IMPORTED_MODULE_4__["default"],
               style: {
                 width: '70%',
                 height: 'auto'
               }
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("h5", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h5", {
               className: "text-lg font-bold",
-              children: "Antonio Villalba"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("p", {
+              children: "Antonio J. Villalba"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", {
               className: "text-sm text-black",
-              children: "\u201CTiene experiencia de manera autodidacta con todo lo relacionado con el dise\xF1o, adem\xE1s, de haber cursado un grado medio de \u201CExplotaci\xF3n de sistemas inform\xE1ticos\u201D.\u201D"
+              children: "Tiene experiencia de manera autodidacta con todo lo relacionado con el dise\xF1o, adem\xE1s, de haber cursado un grado medio de \u201CExplotaci\xF3n de sistemas inform\xE1ticos."
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
-            className: "hidden md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("img", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+            className: "flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("img", {
               src: _imgs_ruben_png__WEBPACK_IMPORTED_MODULE_10__["default"],
               style: {
                 width: '33%',
                 height: 'auto'
               }
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("h5", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h5", {
               className: "text-lg font-bold",
               children: "Ruben Montoro"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("p", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", {
               className: "text-sm text-black",
-              children: "\u201DAdem\xE1s de los conocimientos inform\xE1ticos, tiene conocimientos sobre creaci\xF3n de empresas ya que curs\xF3 el Grado de Turismo donde se adquiere conocimiento sobre el mundo empresarial, gesti\xF3n de personal y de equipos.\u201D .\u201D"
+              children: "Adem\xE1s de los conocimientos inform\xE1ticos, tiene conocimientos sobre creaci\xF3n de empresas ya que curs\xF3 el Grado de Turismo donde se adquiere conocimiento sobre el mundo empresarial, gesti\xF3n de personal y de equipos. ."
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
-            className: "hidden md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("img", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+            className: "flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("img", {
               src: _imgs_juanan_png__WEBPACK_IMPORTED_MODULE_11__["default"],
               style: {
                 width: '48%',
                 height: 'auto'
               }
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("h5", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h5", {
               className: "text-lg font-bold",
               children: "Juan Antonio Torres"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("p", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", {
               className: "text-sm text-black",
-              children: "\u201CTiene conocimiento sobre todo lo relacionado con el hardware por tanto, al principio de la empresa podr\xE1 encargarse de la gesti\xF3n de las m\xE1quinas que se encarga de montar todo el sistema que tenemos en mente, ahorr\xE1ndonos el coste de personal extra..\u201D"
+              children: "Tiene conocimiento sobre todo lo relacionado con el hardware por tanto, al principio de la empresa podr\xE1 encargarse de la gesti\xF3n de las m\xE1quinas que se encarga de montar todo el sistema que tenemos en mente, ahorr\xE1ndonos el coste de personal extra."
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
-            className: "hidden md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("img", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+            className: "flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("img", {
               src: _imgs_josema_png__WEBPACK_IMPORTED_MODULE_9__["default"],
               style: {
                 width: '35%',
                 height: 'auto'
               }
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("h5", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h5", {
               className: "text-lg font-bold",
-              children: "Jose Manuel"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("p", {
+              children: "Jose Manuel Rubio"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", {
               className: "text-sm text-black",
-              children: "\u201CTiene conocimientos sobre telecomunicaciones, hardware y ha tratado con software de distintos sistemas operativos, ya que curs\xF3 el grado superior en \u201CSistemas de Telecomunicaciones e inform\xE1ticos\u201D, adem\xE1s de autoaprendizaje por inter\xE9s propio en manipulaci\xF3n de smartphones.\u201C \u201D"
+              children: "Tiene conocimientos sobre telecomunicaciones, hardware y ha tratado con software de distintos sistemas operativos, ya que curs\xF3 el grado superior en \u201CSistemas de Telecomunicaciones e inform\xE1ticos\u201D, adem\xE1s de autoaprendizaje por inter\xE9s propio en manipulaci\xF3n de smartphones."
             })]
           })]
         })]
       })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("footer", {
+      className: "bg-indigo-700 mt-16",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
         className: "container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
           className: "flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
             className: "mx-auto my-6 text-center text-white md:hidden",
             children: "Copyright \xA9 2022, All Rights Reserved"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
             className: "flex justify-center space-x-4 ",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("a", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("a", {
               href: "#",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("img", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("img", {
                 src: _imgs_icon_facebook_svg__WEBPACK_IMPORTED_MODULE_8__["default"],
                 alt: "Facebook",
                 className: "h-8"
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("a", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("a", {
               href: "#",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("img", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("img", {
                 src: _imgs_icon_twitter_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
                 alt: "Twitter",
                 className: "h-8"
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("a", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("a", {
               href: "#",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("img", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("img", {
                 src: _imgs_icon_instagram_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
                 alt: "Instagram",
                 className: "h-8"
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("a", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("a", {
               href: "#",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("img", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("img", {
                 src: _imgs_icon_youtube_svg__WEBPACK_IMPORTED_MODULE_7__["default"],
                 alt: "Youtube",
                 className: "h-8"
               })
             })]
           })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
           className: "hidden text-white md:block",
           children: "Copyright \xA9 2022, All Rights Reserved"
         })]
