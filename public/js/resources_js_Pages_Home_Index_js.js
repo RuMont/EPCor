@@ -68,11 +68,14 @@ var Index = function Index() {
             marginRight: "1%",
             marginLeft: "60%"
           },
-          className: "hidden md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400",
+          className: " relative md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400",
           children: "Login"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_12__.Link, {
           href: "./register",
-          className: "hidden md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400",
+          style: {
+            marginRight: "5%"
+          },
+          className: " relative md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400",
           children: "Register"
         })]
       })
@@ -87,7 +90,11 @@ var Index = function Index() {
             children: "EPCor"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("p", {
             className: "max-w-sm text-center text-black md:text-left",
+<<<<<<< HEAD
+            children: ["Aplicaci\xF3n para realizar b\xFAsquedas exahustivas de la provincia de C\xF3rdoba con un s\xF3lo clic.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("br", {}), "Este proyecto est\xE1 destinado a facilitar la b\xFAsqueda de empleo p\xFAblico, e informar al ciudadano sobre los procedimientos que se llevan a cabo en la contrataci\xF3n del estado. Adem\xE1s de crear un evento en un calendario de google con la fecha indicada."]
+=======
             children: ["Aplicaci\xF3n para realizar b\xFAsquedas exahustivas de la provincia de C\xF3rdoba con un s\xF3lo clic.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("br", {}), "Este proyecto est\xE1 destinado a facilitar la b\xFAsqueda de empleo p\xFAblico, e informar al ciudadano sobre los procedimientos que se llevan a cabo en la contrataci\xF3n del estado."]
+>>>>>>> a61c966c83e7c5d30a79a88c792e8ed18d2c5722
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
           className: "md:w-1/2",
@@ -132,7 +139,7 @@ var Index = function Index() {
                 children: "Buscador de empleo."
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", {
                 className: "text-black",
-                children: "Un buscador de ofertas de empleo p\xFAblico"
+                children: "Un buscador de ofertas de empleo p\xFAblico."
               })]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
@@ -197,13 +204,21 @@ var Index = function Index() {
               }
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h5", {
               className: "text-lg font-bold",
+<<<<<<< HEAD
+              children: "Antonio J. Villalba"
+=======
               children: "Antonio Villalba"
+>>>>>>> a61c966c83e7c5d30a79a88c792e8ed18d2c5722
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", {
               className: "text-sm text-black",
-              children: "\u201CTiene experiencia de manera autodidacta con todo lo relacionado con el dise\xF1o, adem\xE1s, de haber cursado un grado medio de \u201CExplotaci\xF3n de sistemas inform\xE1ticos\u201D.\u201D"
+              children: "Tiene experiencia de manera autodidacta con todo lo relacionado con el dise\xF1o, adem\xE1s, de haber cursado un grado medio de \u201CExplotaci\xF3n de sistemas inform\xE1ticos."
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+<<<<<<< HEAD
+            className: "flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg",
+=======
             className: "mt-8 md:mt-0 flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg",
+>>>>>>> a61c966c83e7c5d30a79a88c792e8ed18d2c5722
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("img", {
               src: _imgs_ruben_png__WEBPACK_IMPORTED_MODULE_10__["default"],
               style: {
@@ -215,10 +230,14 @@ var Index = function Index() {
               children: "Ruben Montoro"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", {
               className: "text-sm text-black",
-              children: "\u201DAdem\xE1s de los conocimientos inform\xE1ticos, tiene conocimientos sobre creaci\xF3n de empresas ya que curs\xF3 el Grado de Turismo donde se adquiere conocimiento sobre el mundo empresarial, gesti\xF3n de personal y de equipos.\u201D .\u201D"
+              children: "Adem\xE1s de los conocimientos inform\xE1ticos, tiene conocimientos sobre creaci\xF3n de empresas ya que curs\xF3 el Grado de Turismo donde se adquiere conocimiento sobre el mundo empresarial, gesti\xF3n de personal y de equipos. ."
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+<<<<<<< HEAD
+            className: "flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg",
+=======
             className: "mt-8 md:mt-0 flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg",
+>>>>>>> a61c966c83e7c5d30a79a88c792e8ed18d2c5722
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("img", {
               src: _imgs_juanan_png__WEBPACK_IMPORTED_MODULE_11__["default"],
               style: {
@@ -230,10 +249,14 @@ var Index = function Index() {
               children: "Juan Antonio Torres"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", {
               className: "text-sm text-black",
-              children: "\u201CTiene conocimiento sobre todo lo relacionado con el hardware por tanto, al principio de la empresa podr\xE1 encargarse de la gesti\xF3n de las m\xE1quinas que se encarga de montar todo el sistema que tenemos en mente, ahorr\xE1ndonos el coste de personal extra..\u201D"
+              children: "Tiene conocimiento sobre todo lo relacionado con el hardware por tanto, al principio de la empresa podr\xE1 encargarse de la gesti\xF3n de las m\xE1quinas que se encarga de montar todo el sistema que tenemos en mente, ahorr\xE1ndonos el coste de personal extra."
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+<<<<<<< HEAD
+            className: "flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg",
+=======
             className: "mt-8 md:mt-0 flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg",
+>>>>>>> a61c966c83e7c5d30a79a88c792e8ed18d2c5722
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("img", {
               src: _imgs_josema_png__WEBPACK_IMPORTED_MODULE_9__["default"],
               style: {
@@ -242,10 +265,14 @@ var Index = function Index() {
               }
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h5", {
               className: "text-lg font-bold",
+<<<<<<< HEAD
+              children: "Jose Manuel Rubio"
+=======
               children: "Jose Manuel"
+>>>>>>> a61c966c83e7c5d30a79a88c792e8ed18d2c5722
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", {
               className: "text-sm text-black",
-              children: "\u201CTiene conocimientos sobre telecomunicaciones, hardware y ha tratado con software de distintos sistemas operativos, ya que curs\xF3 el grado superior en \u201CSistemas de Telecomunicaciones e inform\xE1ticos\u201D, adem\xE1s de autoaprendizaje por inter\xE9s propio en manipulaci\xF3n de smartphones.\u201C \u201D"
+              children: "Tiene conocimientos sobre telecomunicaciones, hardware y ha tratado con software de distintos sistemas operativos, ya que curs\xF3 el grado superior en \u201CSistemas de Telecomunicaciones e inform\xE1ticos\u201D, adem\xE1s de autoaprendizaje por inter\xE9s propio en manipulaci\xF3n de smartphones."
             })]
           })]
         })]

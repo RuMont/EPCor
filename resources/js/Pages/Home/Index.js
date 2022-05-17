@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Logo from '../../Shared/Logo';
 import imagen1 from '../../../imgs/1.svg';
 import imagen2 from '../../../imgs/2.svg';
@@ -11,6 +11,7 @@ import josema from '../../../imgs/josema.png';
 import ruben from '../../../imgs/ruben.png';
 import juanan from '../../../imgs/juanan.png';
 import { Head, Link, usePage } from '@inertiajs/inertia-react';
+
 
 const Index = () => {
     const {appName} = usePage().props
@@ -29,11 +30,11 @@ const Index = () => {
                     <Link href="./login"
                         style={{ marginRight: "1%", marginLeft: "60%" }}
 
-                        className="hidden md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400">
+                        className=" relative md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400">
                         Login
                     </Link>
                     <Link href="./register"
-                        className="hidden md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400">
+                        className=" relative md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400">
                         Register
                     </Link>
 
@@ -50,6 +51,7 @@ const Index = () => {
                             Aplicación para realizar búsquedas exahustivas de la provincia de Córdoba con un sólo clic.<br />
                             Este proyecto está destinado a facilitar la búsqueda de empleo público,
                             e informar al ciudadano sobre los procedimientos que se llevan a cabo en la contratación del estado.
+                            Además de crear un evento en un calendario de google con la fecha indicada.
                         </p>
 
                     </div>
@@ -85,7 +87,7 @@ const Index = () => {
                                     Buscador de empleo.
                                 </h3>
                                 <p className="text-black">
-                                    Un buscador de ofertas de empleo público
+                                    Un buscador de ofertas de empleo público. 
                                 </p>
                             </div>
                         </div>
@@ -144,61 +146,58 @@ const Index = () => {
                                 width: '70%',
                                 height: 'auto'
                             }} />
-                            <h5 className="text-lg font-bold">Antonio Villalba</h5>
+                            <h5 className="text-lg font-bold">Antonio J. Villalba</h5>
                             <p className="text-sm text-black">
-                                “Tiene experiencia de manera autodidacta con todo lo relacionado con el diseño, además,
-                                de haber cursado un grado medio de “Explotación de sistemas informáticos”.”
+                                Tiene experiencia de manera autodidacta con todo lo relacionado con el diseño, además,
+                                de haber cursado un grado medio de “Explotación de sistemas informáticos.
                             </p>
                         </div>
 
-                        <div className="mt-8 md:mt-0 flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
+                        <div className="flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
                             <img src={ruben} style={{
                                 width: '33%',
                                 height: 'auto'
                             }} />
                             <h5 className="text-lg font-bold">Ruben Montoro</h5>
                             <p className="text-sm text-black">
-                                ”Además de los conocimientos informáticos, tiene conocimientos sobre creación de empresas
+                                Además de los conocimientos informáticos, tiene conocimientos sobre creación de empresas
                                 ya que cursó el Grado de Turismo donde se adquiere conocimiento sobre el mundo empresarial,
-                                gestión de personal y de equipos.”
-                                .”
+                                gestión de personal y de equipos.
+                                .
                             </p>
                         </div>
 
-                        <div className="mt-8 md:mt-0 flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
+                        <div className="flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
                             <img src={juanan} style={{
                                 width: '48%',
                                 height: 'auto'
                             }} />
                             <h5 className="text-lg font-bold">Juan Antonio Torres</h5>
                             <p className="text-sm text-black">
-                                “Tiene conocimiento sobre todo lo relacionado con el hardware
+                                Tiene conocimiento sobre todo lo relacionado con el hardware
                                 por tanto, al principio de la empresa podrá encargarse de la gestión de las
                                 máquinas que se encarga de montar todo el sistema que tenemos en mente,
-                                ahorrándonos el coste de personal extra..”
+                                ahorrándonos el coste de personal extra.
                             </p>
                         </div>
-                        <div className="mt-8 md:mt-0 flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
+                        <div className="flex flex-col items-center p-6 space-y-6 rounded-lg bg-white md:w-1/3 shadow-lg">
                             <img src={josema} style={{
                                 width: '35%',
                                 height: 'auto'
                             }} />
-                            <h5 className="text-lg font-bold">Jose Manuel</h5>
+                            <h5 className="text-lg font-bold">Jose Manuel Rubio</h5>
                             <p className="text-sm text-black">
-                                “Tiene conocimientos sobre telecomunicaciones, hardware y ha tratado con
+                                Tiene conocimientos sobre telecomunicaciones, hardware y ha tratado con
                                 software de distintos sistemas operativos, ya que cursó el grado superior
                                 en “Sistemas de Telecomunicaciones e informáticos”, además de autoaprendizaje
-                                por interés propio en manipulación de smartphones.“
-                                ”
+                                por interés propio en manipulación de smartphones.
+                                
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
-{/* 
-            <section id="cta" className="bg-gray-500 padding  ">
-                <Form/>
-            </section> */}
+
 
             <footer className="bg-indigo-700 mt-16">
                 <div
