@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 
 class HomeController extends Controller
@@ -42,11 +44,24 @@ class HomeController extends Controller
         return Inertia::render('About');
     }
 
-    public function status($status) {
+    public function status($status)
+    {
         return Inertia::render('Error', ['status' => $status]);
     }
-    
-    public function faqs() {
-        return Inertia::render('faqs/faqs');
+
+    public function faqs()
+    {
+        return Inertia::render('Help/FAQ/faqs');
+    }
+
+    public function saveLink(Request $request)
+    {
+        Log::info($request);
+        Session::put('ad', $request->ad);
+    }
+
+    public function calendarhelp()
+    {
+        return Inertia::render('Help/GoogleCalendar/Index', ['ad' => json_encode(Session::get('ad'))]);
     }
 }

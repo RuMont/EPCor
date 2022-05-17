@@ -12,6 +12,7 @@ class Users extends Authenticatable
 
     protected $table = 'users';
     protected $primaryKey = "id";
+    public $timestamps = true;
     protected $fillable = ['nombre', 'email', 'password', 'avatar', 'external_id', 'external_auth'];
 
     /**
@@ -57,9 +58,7 @@ class Users extends Authenticatable
      */
     public function obtenerUsuarioPorId(int $id)
     {
-        return DB::table($this->table)
-            ->where($this->primaryKey, $id)
-            ->first();
+        return Users::where($this->primaryKey, $id)->first();
     }
 
     /**

@@ -34,7 +34,6 @@ const Index = () => {
                         Login
                     </Link>
                     <Link href="./register"
-                    style={{ marginRight: "5%" }}
                         className=" relative md:block p-3 px-6 pt-2 text-white bg-indigo-700 rounded-full baseline font-bold hover:bg-orange-400">
                         Register
                     </Link>
@@ -198,10 +197,7 @@ const Index = () => {
                     </div>
                 </div>
             </section>
-{/* 
-            <section id="cta" className="bg-gray-500 padding  ">
-                <Form/>
-            </section> */}
+
 
             <footer className="bg-indigo-700 mt-16">
                 <div

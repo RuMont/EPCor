@@ -135,9 +135,9 @@ var Carousel = function Carousel(_ref2) {
         });
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "indicators flex flex-wrap",
+      className: "indicators flex flex-wrap justify-between sm:justify-start",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-        className: "mt-2 mr-1 px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-50",
+        className: "w-5/12 sm:w-fit mt-2 mr-1 px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-50",
         onClick: function onClick() {
           updateIndex(activeIndex - 1);
         },
@@ -154,7 +154,7 @@ var Carousel = function Carousel(_ref2) {
           });
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-        className: "mt-2 mr-1 px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-500",
+        className: "w-5/12 sm:w-fit mt-2 mr-1 px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-500",
         onClick: function onClick() {
           updateIndex(activeIndex + 1);
         },

@@ -65,7 +65,7 @@ var Selector = function Selector() {
       method: "post",
       className: "flex flex-wrap",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("select", {
-        className: "form-select w-1/3 mr-2",
+        className: "form-select w-3/5 sm:w-3/4 md:w-1/3 mr-2",
         onChange: function onChange(e) {
           return setSelected({
             value: e.target.value

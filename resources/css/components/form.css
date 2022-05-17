@@ -17,9 +17,10 @@
   background-repeat: no-repeat;
   background-position: right 0.7rem center;
 
-  &::-ms-expand {
-    @apply opacity-0;
-  }
+}
+
+.form-select > -ms-expand {
+@apply opacity-0;
 }
 
 .form-error {

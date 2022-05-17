@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use \Spatie\GoogleCalendar\Event;
+use \Spatie\GoogleCalendar\GoogleCalendarFactory;
 use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 
@@ -57,8 +62,8 @@ class ToolController extends Controller
             return Inertia::render('Tool/Index', [
                 'entities' => json_decode($response),
                 'entity' => $_GET["title"],
-                'entity2' => $entity,
-                'loadDocs' => json_decode($response2)
+                'loadDocs' => json_decode($response2),
+                'urls' => $this->fetchDocuments()
             ]);
         }
 
@@ -70,7 +75,7 @@ class ToolController extends Controller
     /**
      * Devuelve los documentos relacionados con los anuncios de la entidad
      */
-    public function fetchDocuments()
+    private function fetchDocuments()
     {
         $curl = curl_init();
 
@@ -94,6 +99,24 @@ class ToolController extends Controller
         $response = curl_exec($curl);
 
         curl_close($curl);
-        echo $response;
+        return $response;
+    }
+    
+    public function createEvent(Request $request)
+    {
+        $startDate = date('Y-m-d H:i:s.u', strtotime($request->startDate));
+        $endDate = date('Y-m-d H:i:s.u', strtotime($request->endDate));
+
+        try {
+            Event::create([
+                'name' => 'EPCor: ' . $request->title,
+                'startDateTime' => new Carbon($startDate, 'Europe/Madrid'),
+                'endDateTime' => new Carbon($endDate, 'Europe/Madrid'),
+            ], Auth::user()->email);
+    
+            echo 1;
+        } catch (\Throwable $th) {
+            echo $th;
+        }
     }
 }
