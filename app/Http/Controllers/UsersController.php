@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Redirect;
 
 class UsersController extends Controller
 {
-    public function __construct(Users $user) {
+    public function __construct(Users $user)
+    {
         $this->usersModel = $user;
     }
 
@@ -37,7 +38,7 @@ class UsersController extends Controller
     public function storeFromUsers(Request $request)
     {
         if (Hash::needsRehash($request->password))
-        $password = Hash::make($request->password);
+            $password = Hash::make($request->password);
         $this->usersModel->insertarUsuario([
             "nombre" => $request->nombre,
             "email" => $request->email,
@@ -59,14 +60,23 @@ class UsersController extends Controller
     public function update(int $id, Request $request)
     {
         if (Hash::needsRehash($request->password))
-        $password = Hash::make($request->password);
-        $this->usersModel->actualizarUsuario($id, [
-            "nombre" => $request->nombre,
-            "email" => $request->email,
-            "password" => $password,
-            "created_at" => Carbon::now(),
-            "updated_at" => Carbon::now()
-        ]);
+            $password = Hash::make($request->password);
+        if (isset($password)) {
+            $this->usersModel->actualizarUsuario($id, [
+                "nombre" => $request->nombre,
+                "email" => $request->email,
+                "password" => $password,
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now()
+            ]);
+        } else {
+            $this->usersModel->actualizarUsuario($id, [
+                "nombre" => $request->nombre,
+                "email" => $request->email,
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now()
+            ]);
+        }
         return Redirect::back()->with('success', 'Usuario actualizado');
     }
 

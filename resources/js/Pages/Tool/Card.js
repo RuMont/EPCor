@@ -17,7 +17,7 @@ const Card = ({ attributes, url, user }) => {
 			startDate: parseDate(attributes["start-date"]),
 			endDate: parseDate(attributes["end-date"]),
 		});
-		if (resp == 1) {
+		if (resp.data == 1) {
 			return alert('Evento creado, puedes verlo en tu app de Google Calendar');
 		} else {
 			await axios.post('../setlastlink', {

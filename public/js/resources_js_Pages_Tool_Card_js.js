@@ -71,7 +71,7 @@ var Card = function Card(_ref) {
             case 2:
               resp = _context.sent;
 
-              if (!(resp == 1)) {
+              if (!(resp.data == 1)) {
                 _context.next = 7;
                 break;
               }
