@@ -1,61 +1,88 @@
 import React, { useState } from "react";
+import ReactHtmlParser, {
+    processNodes,
+    convertNodeToElement,
+    htmlparser2,
+} from "react-html-parser";
 
 export default function Feed() {
-  
-  const [items, setItems] = useState([]);
+    const [items, setItems] = useState([]);
 
-  const getRss = async (e) => {
-    e.preventDefault();
-    
-    //Buscar la manera de obtener el RSS de dos sitios distintos
-    
-    const res = await fetch(`https://api.allorigins.win/get?url=https://cordopolis.eldiario.es/rss/`);
+    const getRss = async (e) => {
+        e.preventDefault();
 
-    const data = await res.json();
+        //Buscar la manera de obtener el RSS de dos sitios distintos
 
-    // Separamos en items las noticias
-    const items = data.contents.split("<item>");
+        const res = await fetch(
+            `https://api.allorigins.win/get?url=https://cordopolis.eldiario.es/rss/`
+        );
 
-    // Filtro por keywords
+        const data = await res.json();
 
-    const filteredItems = items.filter((item) => {
-        return item.includes("empleo" || "trabajo");
-    });
+        // Separamos en items las noticias
+        const items = data.contents.split("<item>");
 
-    setItems(filteredItems);
+        // Filtro por keywords
 
-    //Hacer que se muestre el resultado sin necesidad de hacer click, crear un timer para que se recargue cada x segundos
-    //Ver por que no funcionan los estilos de la card
+        const filteredItems = items.filter((item) => {
+            return item.includes("empleo" || "trabajo");
+        });
 
+        setItems(filteredItems);
+    };
 
-    }
+    //En cuanto se cargue la pagina aparece el rss
+    window.onload = getRss;
+
     return (
-        <div>
-            <form onSubmit={getRss}>
-                <input type="submit" value="Get RSS" />
-            </form>
-            <ul>
+        <div className="w-full">
+            <ul className="flex flex-row flex-wrap justify-between">
                 {items.map((item, index) => (
-                    <div className="card">
-                        <div className="card-body">
-                            <h5 className="card-title">{item.split("<title>")[1].split("</title>")[0]}</h5>
-                            <p className="card-text">{item.split("<description>")[1].split("</description>")[0]}</p>
+                    <li
+                        className="box-border border-gray-800 rounded-lg shadow-xl my-4 p-4 w-1/3 min-h-full flex flex-col"
+                        key={index}
+                    >
+                        <div className="w-full">
+                            <img
+                                src={
+                                    item
+                                        .split('<enclosure url="')[1]
+                                        .split('"')[0]
+                                }
+                                alt=""
+                                className="w-full rounded"
+                            />
                         </div>
-                    </div>
+                        <h2 className="font-bold mt-4">
+                            {item
+                                .split("<title>")[1]
+                                .split("</title>")[0]
+                                .replace("<![CDATA[", "")
+                                .replace("]]>", "")}
+                        </h2>
+                        {/* add ellipsis when there is more than 100 characters */}
+                        <p className="my-4 truncate">
+                            {ReactHtmlParser(
+                                item
+                                    .split("<p>")[2]
+                                    .split("</p>")[0]
+                                    .replace("<![CDATA[", "")
+                                    .replace("]]>", "")
+                            )}
+                        </p>
+                        {/* add see more link */}
+                        <a className="text-indigo-600"
+                            href={item
+                                .split("<link>")[1]
+                                .split("</link>")[0]
+                                .replace("<![CDATA[", "")
+                                .replace("]]>", "")}
+                        >
+                            Ver más...
+                        </a>
+                    </li>
                 ))}
             </ul>
         </div>
     );
 }
-
-    // const { contents } = await res.json();
-    // const feed = new window.DOMParser().parseFromString(contents, "text/xml");
-    // const items = feed.querySelectorAll("item");
-    // const feedItems = [...items].map((el) => ({
-    //   link: el.querySelector("link").innerHTML,
-    //   title: el.querySelector("title").innerHTML,
-    //   author: el.querySelector("author").innerHTML
-//     }));
-//     setItems(feedItems);
-//   };
-// }
