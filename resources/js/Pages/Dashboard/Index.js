@@ -7,57 +7,28 @@ import Feed from "../../Shared/Feed";
 import Feed2 from "../../Shared/Feed2";
 import MainMenuItem from "../../Shared/MainMenuItem";
 
-
 const Dashboard = () => {
     return (
         <div className="bg-success">
-            <h1 className="mb-8 text-3xl font-bold">Tablero</h1>
+            {/* <h1 className="mb-8 text-3xl font-bold">Tablero</h1> */}
 
-		{/* Ultimas noticias */}
+            {/* Ultimas noticias */}
 
-		
-			
-					
-		
-		<div className="shadow-lg p-3 mb-5 bg-white rounded col-6">
-			<GoogleChart />
-		</div>
-				
+            {/* <div className="shadow-lg p-3 mb-5 bg-white rounded col-6">
+                <GoogleChart />
+            </div> */}
 
-			
-		
-	
-		{/* Al día */}
-		<div className="mt-10 grid grid-cols-3">
-			<div className="mt-10 ">
-				<h2 className="text-lg font-medium text-gray-900 font-weight-bold">
-					AL DIA
-				</h2>
-				
-					<Feed />
-					
-			</div>
-			
-			<div className="mt-10 ">
-				<h2 className="text-lg font-medium text-gray-900 font-weight-bold">
-					AL DIA
-				</h2>
-				
-					<Feed />
-					
-			</div>
-				
-				
-			
-	</div>
-	{/* add footer */}
-	
-	
-	</div>
+            {/* Al día */}
+            <div className="mt-10 ">
+                <h2 className="text-lg font-medium text-gray-900 font-weight-bold">
+                    NOTICIAS DEL DIA
+                </h2>
 
-	
-	
-	
+                <Feed />
+            </div>
+
+            {/* add footer */}
+        </div>
     );
 };
 

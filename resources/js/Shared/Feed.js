@@ -1,104 +1,88 @@
 import React, { useState } from "react";
-
+import ReactHtmlParser, {
+    processNodes,
+    convertNodeToElement,
+    htmlparser2,
+} from "react-html-parser";
 
 export default function Feed() {
-  
-  const [items, setItems] = useState([]);
+    const [items, setItems] = useState([]);
 
-  const getRss = async (e) => {
-    e.preventDefault();
-    
-    //Buscar la manera de obtener el RSS de dos sitios distintos
-    
-    const res = await fetch(`https://api.allorigins.win/get?url=https://cordopolis.eldiario.es/rss/`);
+    const getRss = async (e) => {
+        e.preventDefault();
 
-    const data = await res.json();
+        //Buscar la manera de obtener el RSS de dos sitios distintos
 
-    // Separamos en items las noticias
-    const items = data.contents.split("<item>");
+        const res = await fetch(
+            `https://api.allorigins.win/get?url=https://cordopolis.eldiario.es/rss/`
+        );
 
-    // Filtro por keywords
+        const data = await res.json();
 
-    const filteredItems = items.filter((item) => {
-        return item.includes("empleo" || "trabajo");
-    });
+        // Separamos en items las noticias
+        const items = data.contents.split("<item>");
 
+        // Filtro por keywords
 
-    setItems(filteredItems);
-    }
+        const filteredItems = items.filter((item) => {
+            return item.includes("empleo" || "trabajo");
+        });
+
+        setItems(filteredItems);
+    };
 
     //En cuanto se cargue la pagina aparece el rss
     window.onload = getRss;
 
-    
-
     return (
-        
-        <div>
-            <ul>
+        <div className="w-full">
+            <ul className="flex flex-row flex-wrap justify-between">
                 {items.map((item, index) => (
-                    <div>
-                    <li style={
-                        {
-                            backgroundColor: "#f5f5f5",
-                            borderRadius: "10px",
-                            padding: "10px",
-                            margin: "10px",
-                            border: "1px solid #ccc",
-                            boxShadow: "0 0 10px #ccc",
-                            alignItems: "center",
-                        }
-                    } key={index}>
-                        
-                        <div className="text-center">
-                        <img src={item.split("<enclosure url=\"")[1].split("\"")[0]} alt="" style={
-                            {
-                                width: "350px",
-                                height: "250px",
-                                
-                            }
-                        }/>
+                    <li
+                        className="box-border border-gray-800 rounded-lg shadow-xl my-4 p-4 w-1/3 min-h-full flex flex-col"
+                        key={index}
+                    >
+                        <div className="w-full">
+                            <img
+                                src={
+                                    item
+                                        .split('<enclosure url="')[1]
+                                        .split('"')[0]
+                                }
+                                alt=""
+                                className="w-full rounded"
+                            />
                         </div>
-                        <h2 style={
-                            {
-                                fontSize: "20px",
-                                fontWeight: "bold",
-                                color: "black",
-                                textAlign: "center",
-                                
-                            }
-                        }>{item.split("<title>")[1].split("</title>")[0].replace("<![CDATA[", "").replace("]]>", "")}</h2>
+                        <h2 className="font-bold mt-4">
+                            {item
+                                .split("<title>")[1]
+                                .split("</title>")[0]
+                                .replace("<![CDATA[", "")
+                                .replace("]]>", "")}
+                        </h2>
                         {/* add ellipsis when there is more than 100 characters */}
-                        <p style={
-                            {
-                                fontSize: "15px",
-                                color: "black",
-                                textAlign: "center",
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                display: "-webkit-box",
-                                WebkitLineClamp: "3",
-                                WebkitBoxOrient: "vertical",
-                            }
-
-                        }>{item.split("<p>")[2].split("</p>")[0].replace("<![CDATA[", "").replace("]]>", "")}</p>
+                        <p className="my-4 truncate">
+                            {ReactHtmlParser(
+                                item
+                                    .split("<p>")[2]
+                                    .split("</p>")[0]
+                                    .replace("<![CDATA[", "")
+                                    .replace("]]>", "")
+                            )}
+                        </p>
                         {/* add see more link */}
-                        <a href={item.split("<link>")[1].split("</link>")[0].replace("<![CDATA[", "").replace("]]>", "")} style={
-                            {
-                                fontSize: "15px",
-                                color: "blue",
-                                
-                            }
-                        }>Ver más...</a>
-                        
+                        <a className="text-indigo-600"
+                            href={item
+                                .split("<link>")[1]
+                                .split("</link>")[0]
+                                .replace("<![CDATA[", "")
+                                .replace("]]>", "")}
+                        >
+                            Ver más...
+                        </a>
                     </li>
-
-                    </div>
                 ))}
             </ul>
         </div>
     );
 }
-
-                        
-                  
