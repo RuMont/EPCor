@@ -104,8 +104,8 @@ var Card = function Card(_ref) {
     };
   }();
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "block p-6 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-4xl bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 my-4 mr-4",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("li", {
+    className: "p-6 w-full lg:max-w-3xl bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 my-4 mr-4",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h5", {
       className: "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white truncate",
       children: attributes.title

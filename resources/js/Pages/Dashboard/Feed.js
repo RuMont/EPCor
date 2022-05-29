@@ -1,45 +1,38 @@
-import React, { useState } from "react";
-import ReactHtmlParser, {
-    processNodes,
-    convertNodeToElement,
-    htmlparser2,
-} from "react-html-parser";
+import React, { useEffect, useState } from "react";
+import ReactHtmlParser from "react-html-parser";
 
 export default function Feed() {
     const [items, setItems] = useState([]);
 
-    const getRss = async (e) => {
-        e.preventDefault();
+    useEffect(() => {
+        const getRss = async () => {
+            //Buscar la manera de obtener el RSS de dos sitios distintos
+            const res = await fetch(
+                `https://api.allorigins.win/get?url=https://cordopolis.eldiario.es/rss/`
+            );
 
-        //Buscar la manera de obtener el RSS de dos sitios distintos
+            const data = await res.json();
 
-        const res = await fetch(
-            `https://api.allorigins.win/get?url=https://cordopolis.eldiario.es/rss/`
-        );
+            // Separamos en items las noticias
+            const items = data.contents.split("<item>");
 
-        const data = await res.json();
+            // Filtro por keywords
+            const filteredItems = items.filter((item) => {
+                return item.includes("empleo" || "trabajo");
+            });
 
-        // Separamos en items las noticias
-        const items = data.contents.split("<item>");
+            setItems(filteredItems);
+        };
+        getRss();
+    }, []);
 
-        // Filtro por keywords
-
-        const filteredItems = items.filter((item) => {
-            return item.includes("empleo" || "trabajo");
-        });
-
-        setItems(filteredItems);
-    };
-
-    //En cuanto se cargue la pagina aparece el rss
-    window.onload = getRss;
 
     return (
         <div className="w-full">
-            <ul className="flex flex-row flex-wrap justify-between">
+            <ul className="flex flex-row flex-wrap">
                 {items.map((item, index) => (
                     <li
-                        className="box-border border-gray-800 rounded-lg shadow-xl my-4 p-4 w-1/3 min-h-full flex flex-col"
+                        className="box-border border-gray-800 rounded-lg shadow-xl my-4 p-4 w-1/3 min-h-full flex flex-col justify-between"
                         key={index}
                     >
                         <div className="w-full">

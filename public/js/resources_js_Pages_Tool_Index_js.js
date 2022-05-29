@@ -104,8 +104,8 @@ var Card = function Card(_ref) {
     };
   }();
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "block p-6 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-4xl bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 my-4 mr-4",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("li", {
+    className: "p-6 w-full lg:max-w-3xl bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 my-4 mr-4",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h5", {
       className: "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white truncate",
       children: attributes.title
@@ -340,7 +340,11 @@ var Tool = function Tool() {
       loadDocs = _usePage$props.loadDocs,
       entity = _usePage$props.entity,
       urls = _usePage$props.urls,
-      user = _usePage$props.user;
+      user = _usePage$props.user; // Filtrado por categoría de trabajo
+
+  var docs = loadDocs.data.filter(function (ad) {
+    return ad.relationships.category.data.id == 12;
+  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     children: [entity ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("h1", {
       className: "mb-8 text-3xl font-bold",
@@ -352,26 +356,29 @@ var Tool = function Tool() {
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
       className: "mb-8 text-3xl font-bold",
       children: "Buscador"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Selector__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Selector__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      counter: docs.length
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("ul", {
-        className: "flex flex-row flex-wrap",
-        children: loadDocs !== null && loadDocs !== void 0 && loadDocs.data.length ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Carousel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          children: loadDocs.data.map(function (ad, i) {
-            var array = JSON.parse(urls).data;
-            var link;
-            array.forEach(function (element) {
-              if (element.id === ad.relationships.documents.data[0].id) {
-                link = element.attributes.url;
-              }
-            });
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Carousel__WEBPACK_IMPORTED_MODULE_4__.CarouselItem, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Card__WEBPACK_IMPORTED_MODULE_5__["default"], {
-                attributes: ad.attributes,
-                url: link,
-                user: user
-              })
-            }, i);
-          })
+        className: "flex flex-col",
+        children: docs !== null && docs !== void 0 && docs.length ? docs.map(function (ad, i) {
+          var array = JSON.parse(urls).data;
+          var link;
+          array.forEach(function (element) {
+            if (element.id === ad.relationships.documents.data[0].id) {
+              link = element.attributes.url;
+            }
+          });
+          return (
+            /*#__PURE__*/
+            // <CarouselItem key={i}>
+            (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Card__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              attributes: ad.attributes,
+              url: link,
+              user: user
+            }, i) // </CarouselItem>
+
+          );
         }) : entity ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
           className: "mt-4",
           children: ["Lo sentimos, no se han encontrado anuncios para ", entity]
@@ -422,13 +429,16 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+/* eslint-disable react/prop-types */
 
 
 
 
 
 
-var Selector = function Selector() {
+var Selector = function Selector(_ref) {
+  var counter = _ref.counter;
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(),
       _useState2 = _slicedToArray(_useState, 2),
       selected = _useState2[0],
@@ -449,8 +459,8 @@ var Selector = function Selector() {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.get("/tool/e" + selected.value + "?title=" + title);
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    children: errors ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [errors ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
       children: errors[0].detail ? 'Web en mantenimiento, en breves estaremos operativos.' : ''
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
       onSubmit: function onSubmit(e) {
@@ -482,7 +492,10 @@ var Selector = function Selector() {
         type: "submit",
         children: "Buscar"
       })]
-    })
+    }), counter ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+      className: "mt-4",
+      children: ["Mostrando ", counter, " resultados"]
+    }) : '']
   });
 };
 

@@ -28,13 +28,16 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+/* eslint-disable react/prop-types */
 
 
 
 
 
 
-var Selector = function Selector() {
+var Selector = function Selector(_ref) {
+  var counter = _ref.counter;
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(),
       _useState2 = _slicedToArray(_useState, 2),
       selected = _useState2[0],
@@ -55,8 +58,8 @@ var Selector = function Selector() {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.get("/tool/e" + selected.value + "?title=" + title);
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    children: errors ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [errors ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
       children: errors[0].detail ? 'Web en mantenimiento, en breves estaremos operativos.' : ''
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
       onSubmit: function onSubmit(e) {
@@ -88,7 +91,10 @@ var Selector = function Selector() {
         type: "submit",
         children: "Buscar"
       })]
-    })
+    }), counter ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+      className: "mt-4",
+      children: ["Mostrando ", counter, " resultados"]
+    }) : '']
   });
 };
 

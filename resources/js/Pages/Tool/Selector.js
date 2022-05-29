@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import { Inertia } from '@inertiajs/inertia';
 import { usePage } from '@inertiajs/inertia-react';
 import React, { useState } from 'react'
 
-const Selector = () => {
+const Selector = ({ counter }) => {
     const [selected, setSelected] = useState();
     const { data, errors } = usePage().props.entities;
-    
+
     // Función para poner la primera letra mayus de un string
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -15,7 +16,7 @@ const Selector = () => {
     function handleSubmit(e) {
         e.preventDefault();
         const title = document.querySelector(`[value^=${selected.value}]`).innerText;
-        Inertia.get("/tool/e"+ selected.value+"?title="+title);
+        Inertia.get("/tool/e" + selected.value + "?title=" + title);
     }
 
     return (
@@ -25,8 +26,8 @@ const Selector = () => {
                 errors ? (
                     <p>{errors[0].detail ? 'Web en mantenimiento, en breves estaremos operativos.' : ''}</p>
                 ) : (
-                    <form onSubmit={(e) => handleSubmit(e) } method="post" className='flex flex-wrap'>
-                        <select className="form-select w-3/5 sm:w-3/4 md:w-1/3 mr-2" onChange={(e) => setSelected({value: e.target.value}) } name="id" id="selector">
+                    <form onSubmit={(e) => handleSubmit(e)} method="post" className='flex flex-wrap'>
+                        <select className="form-select w-3/5 sm:w-3/4 md:w-1/3 mr-2" onChange={(e) => setSelected({ value: e.target.value })} name="id" id="selector">
                             <option value="false">Seleccione una entidad</option>
                             {
                                 // Se devuelve una etiqueta option por cada entity que nos manda la api
@@ -46,6 +47,7 @@ const Selector = () => {
                     </form>
                 )
             }
+            {counter ? <p className='mt-4'>Mostrando {counter} resultados</p>: ''}
         </div>
 
     )
