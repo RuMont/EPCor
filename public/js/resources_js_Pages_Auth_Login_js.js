@@ -82,7 +82,7 @@ var Login = function Login() {
     console.log(response.profileObj); // save user to database
     // redirect to dashboard
 
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__.Inertia.post("/storeGoogle", response);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__.Inertia.post("/storeGoogle", response.profileObj);
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {

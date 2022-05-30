@@ -37,7 +37,7 @@ const Login = () => {
         
         // save user to database
         // redirect to dashboard
-        Inertia.post("/storeGoogle", response);
+        Inertia.post("/storeGoogle", response.profileObj);
         
     };
 

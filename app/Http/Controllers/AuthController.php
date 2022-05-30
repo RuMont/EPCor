@@ -78,9 +78,22 @@ class AuthController extends Controller
      * Recibe los parámetros que devuelve el login de Google y los almacena en 
      * la base de datos
      */
-    public function storeFromGoogle()
+    public function storeFromGoogle(Request $request)
     {
-        echo "hola";
+        
+        $user = $this->usersModel->where('email', $request->email)->first();
+
+        if (!$user) {
+            $user = $this->usersModel->create([
+                'nombre' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->email),
+            ]);
+        }
+
+        Auth::login($user);
+
+        return redirect('dashboard');
     }
 
     public function storeFromRegister(Request $request)
