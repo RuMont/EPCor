@@ -143,7 +143,9 @@ var Login = function Login() {
               buttonText: "Iniciar sesi\xF3n con Google",
               onSuccess: responseGoogle,
               onFailure: responseGoogle,
-              cookiePolicy: "single_host_origin"
+              cookiePolicy: "single_host_origin",
+              accessType: "offline",
+              scope: "https://www.googleapis.com/auth/calendar"
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
