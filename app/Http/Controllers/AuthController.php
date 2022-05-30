@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Redis;
 use Laravel\Socialite\Facades\Socialite;
 use Throwable;
 
@@ -72,37 +73,14 @@ class AuthController extends Controller
         return redirect('dashboard')->with('status', 'Sesión cerrada');
     }
 
-    /**
-     * Abre la ventana de logeo de Google al usuario
-     */
-    public function loginGoogle()
-    {
-        return Socialite::driver('google')
-            ->scopes(['profile', 'email'])
-            ->redirect();
-    }
 
     /**
      * Recibe los parámetros que devuelve el login de Google y los almacena en 
      * la base de datos
      */
-    public function googleCallback()
+    public function storeFromGoogle()
     {
-        $googleUser = Socialite::driver('google')->stateless()->user();
-
-        $user = Users::updateOrCreate(
-            ['email' => $googleUser->email],
-            [
-                'nombre' => $googleUser->name,
-                'avatar' => $googleUser->avatar,
-                'external_id' => $googleUser->id,
-                'external_auth' => 'google',
-            ]
-        );
-
-        Auth::login($user);
-
-        return redirect()->route('dashboard');
+        echo "hola";
     }
 
     public function storeFromRegister(Request $request)
