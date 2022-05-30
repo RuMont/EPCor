@@ -34,11 +34,11 @@ const Login = () => {
     const responseGoogle = (response) => {
         console.log(response);
         console.log(response.profileObj);
-        
+
         // save user to database
         // redirect to dashboard
         Inertia.post("/storeGoogle", response.profileObj);
-        
+
     };
 
     return (
@@ -91,15 +91,15 @@ const Login = () => {
                             <span className="text-sm">Recuérdame</span>
                         </label>
 
-                        <div className="mt-10">
+                        <div className="w-full flex justify-center">
                             <GoogleLogin
                                 clientId="683578408872-18g07ruk8nugoi2bpncpiln9a303faan.apps.googleusercontent.com"
                                 buttonText="Iniciar sesión con Google"
                                 onSuccess={responseGoogle}
                                 onFailure={responseGoogle}
                                 cookiePolicy={"single_host_origin"}
+                                className={"mt-10"}
                             />
-
                         </div>
 
 

@@ -7,7 +7,7 @@ const Card = ({ attributes, url, user }) => {
 
 	const parseDate = (string) => {
 		const array = string.split('/');
-		array[2] = '20'+array[2];
+		array[2] = '20' + array[2];
 		return `${array[2]}-${array[1]}-${array[0]}`;
 	}
 
@@ -44,11 +44,9 @@ const Card = ({ attributes, url, user }) => {
 				>
 					Acceder al texto del edicto
 				</button>
-				{user.external_auth &&
-					<button onClick={createEvent} className="mt-2 mr-1 sm:px-3 lg:px-6 py-3 rounded bg-blue-600 text-white text-sm font-bold whitespace-nowrap hover:bg-blue-400 focus:bg-blue-300">
-						Añadir a Google Calendar
-					</button>
-				}
+				<button onClick={createEvent} className="mt-2 mr-1 sm:px-3 lg:px-6 py-3 rounded bg-blue-600 text-white text-sm font-bold whitespace-nowrap hover:bg-blue-400 focus:bg-blue-300">
+					Añadir a Google Calendar
+				</button>
 
 			</div>
 		</li>

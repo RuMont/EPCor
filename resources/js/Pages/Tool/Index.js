@@ -2,17 +2,13 @@ import React from 'react';
 import Layout from '../../Shared/Layout';
 import Selector from './Selector';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
-
-import Carousel, { CarouselItem } from './Carousel';
 import Card from './Card';
 
 const Tool = () => {
     const { loadDocs, entity, urls, user } = usePage().props;
 
-    
-
     // Filtrado por categoría de trabajo
-    const docs = loadDocs.data.filter(ad => ad.relationships.category.data.id == 12);
+    const docs = loadDocs?.data.filter(ad => ad.relationships.category.data.id == 12);
 
     return (
         <div>
@@ -25,7 +21,7 @@ const Tool = () => {
                 <h1 className="mb-8 text-3xl font-bold">Buscador</h1>
             )}
 
-            <Selector counter={docs.length}/>
+            <Selector counter={docs?.length} />
             <div>
                 <ul className='flex flex-col'>
                     {

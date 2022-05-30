@@ -137,13 +137,14 @@ var Login = function Login() {
               children: "Recu\xE9rdame"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-            className: "mt-10",
+            className: "w-full flex justify-center",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_google_login__WEBPACK_IMPORTED_MODULE_7__.GoogleLogin, {
               clientId: "683578408872-18g07ruk8nugoi2bpncpiln9a303faan.apps.googleusercontent.com",
               buttonText: "Iniciar sesi\xF3n con Google",
               onSuccess: responseGoogle,
               onFailure: responseGoogle,
-              cookiePolicy: "single_host_origin"
+              cookiePolicy: "single_host_origin",
+              className: "mt-10"
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {

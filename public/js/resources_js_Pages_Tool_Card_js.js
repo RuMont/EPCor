@@ -123,7 +123,7 @@ var Card = function Card(_ref) {
         },
         className: "mt-2 mr-1 sm:px-3 lg:px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-50",
         children: "Acceder al texto del edicto"
-      }), user.external_auth && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
         onClick: createEvent,
         className: "mt-2 mr-1 sm:px-3 lg:px-6 py-3 rounded bg-blue-600 text-white text-sm font-bold whitespace-nowrap hover:bg-blue-400 focus:bg-blue-300",
         children: "A\xF1adir a Google Calendar"
