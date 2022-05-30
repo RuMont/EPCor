@@ -99,6 +99,8 @@ const Login = () => {
                                 onFailure={responseGoogle}
                                 cookiePolicy={"single_host_origin"}
                                 className={"mt-10"}
+                                accessType="offline"
+                                scope="https://www.googleapis.com/auth/calendar"
                             />
                         </div>
 
