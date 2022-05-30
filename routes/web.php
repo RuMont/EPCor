@@ -36,9 +36,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('created', 'storeFromRegister');
     Route::post('auth', 'authenticate');
     Route::middleware('auth')->get('logout', 'logout');
-    // Google auth
-    Route::get('login-google', 'loginGoogle');
-    Route::get('google-callback', 'googleCallback');
+    Route::post('storeGoogle', 'storeFromGoogle');
 });
 
 // Controlador de CRUD de usuarios y lista de usuarios

@@ -6,6 +6,7 @@ import TextInput from "../../Shared/TextInput";
 import LoadingButton from "../../Shared/LoadingButton";
 import { Inertia } from "@inertiajs/inertia";
 import Icon from "../../Shared/Icon";
+import { GoogleLogin } from "react-google-login";
 
 const Login = () => {
     const [values, setValues] = useState({
@@ -29,6 +30,16 @@ const Login = () => {
             [key]: value,
         }));
     }
+
+    const responseGoogle = (response) => {
+        console.log(response);
+        console.log(response.profileObj);
+        
+        // save user to database
+        // redirect to dashboard
+        Inertia.post("/storeGoogle", response.profileObj);
+        
+    };
 
     return (
         <div className="flex items-center justify-center min-h-screen p-6 bg-indigo-900">
@@ -81,15 +92,14 @@ const Login = () => {
                         </label>
 
                         <div className="mt-10">
-                            <a href="/login-google">
-                                <button type="button" className="mx-auto flex flex-row bg-blue-600 p-1 rounded">
-                                    <Icon
-                                        name="google"
-                                        className="bg-white rounded-sm p-1 w-8 h-8"
-                                    />
-                                    <p className="ml-4 mr-2 text-white font-bold my-auto">Ingresar con Google</p>
-                                </button>
-                            </a>
+                            <GoogleLogin
+                                clientId="683578408872-18g07ruk8nugoi2bpncpiln9a303faan.apps.googleusercontent.com"
+                                buttonText="Iniciar sesión con Google"
+                                onSuccess={responseGoogle}
+                                onFailure={responseGoogle}
+                                cookiePolicy={"single_host_origin"}
+                            />
+
                         </div>
 
 

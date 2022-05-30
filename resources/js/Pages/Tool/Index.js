@@ -9,6 +9,8 @@ import Card from './Card';
 const Tool = () => {
     const { loadDocs, entity, urls, user } = usePage().props;
 
+    
+
     // Filtrado por categoría de trabajo
     const docs = loadDocs.data.filter(ad => ad.relationships.category.data.id == 12);
 
