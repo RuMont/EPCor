@@ -66,6 +66,7 @@ class Users extends Authenticatable
      */
     public function insertarUsuario(array $data)
     {
+        dd($data);
         return DB::table($this->table)
             ->insertGetId($data);
     }

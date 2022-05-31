@@ -80,7 +80,9 @@ class AuthController extends Controller
      */
     public function storeFromGoogle(Request $request)
     {
+
         
+
         $user = $this->usersModel->where('email', $request->email)->first();
 
         if (!$user) {
@@ -88,6 +90,7 @@ class AuthController extends Controller
                 'nombre' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->email),
+                'avatar' => $request->imageUrl,
             ]);
         }
 
@@ -98,6 +101,9 @@ class AuthController extends Controller
 
     public function storeFromRegister(Request $request)
     {
+
+        
+        
         unset($request["confirmPassword"]);
         if (Hash::needsRehash($request->password))
             $password = Hash::make($request->password);

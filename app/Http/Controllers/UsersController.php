@@ -43,6 +43,7 @@ class UsersController extends Controller
             "nombre" => $request->nombre,
             "email" => $request->email,
             "password" => $password,
+            "avatar" => $request->imageUrl,
             "created_at" => Carbon::now(),
             "updated_at" => Carbon::now()
         ]);
