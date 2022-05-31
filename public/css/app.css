@@ -815,6 +815,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex {
   display: flex;
 }
+.inline-flex {
+  display: inline-flex;
+}
 .table {
   display: table;
 }
@@ -908,6 +911,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-5\/6 {
   width: 83.333333%;
 }
+.w-8 {
+  width: 2rem;
+}
 .max-w-md {
   max-width: 28rem;
 }
@@ -997,9 +1003,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .justify-between {
   justify-content: space-between;
-}
-.justify-items-center {
-  justify-items: center;
 }
 .gap-4 {
   gap: 1rem;
@@ -1130,6 +1133,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-indigo-700 {
   --tw-border-opacity: 1;
   border-color: rgb(14 116 144 / var(--tw-border-opacity));
+}
+.border-transparent {
+  border-color: transparent;
+}
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 .bg-indigo-800 {
   --tw-bg-opacity: 1;
@@ -1430,9 +1440,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .opacity-40 {
   opacity: 0.4;
-}
-.opacity-100 {
-  opacity: 1;
 }
 .shadow-xl {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);

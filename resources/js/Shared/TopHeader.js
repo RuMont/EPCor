@@ -26,9 +26,11 @@ export default function TopHeader () {
               setMenuOpened(false);
             }}
             className="fixed inset-0 z-10 bg-black opacity-25"
-          ></div>
+          >
+          </div>
         </div>
       </div>
+      
     </div>
   );
 };
