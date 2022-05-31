@@ -25,7 +25,7 @@ export default function BottomHeader() {
             {/* <span className="hidden ml-1 md:inline">{user.last_name}</span> */}
           </div>
           <Icon
-            className="w-5 h-5 text-gray-800 fill-current group-hover:text-indigo-600 focus:text-indigo-600"
+            className="w-5 h-5 mt-1 text-gray-800 fill-current group-hover:text-indigo-600 focus:text-indigo-600"
             name="cheveron-down"
           />
         </div>

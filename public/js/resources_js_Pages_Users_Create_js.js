@@ -179,7 +179,7 @@ function BottomHeader() {
             children: [user.email, " "]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          className: "w-5 h-5 text-gray-800 fill-current group-hover:text-indigo-600 focus:text-indigo-600",
+          className: "w-5 h-5 mt-1 text-gray-800 fill-current group-hover:text-indigo-600 focus:text-indigo-600",
           name: "cheveron-down"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
