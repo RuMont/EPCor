@@ -21,7 +21,7 @@ export default function BottomHeader() {
           <div className="mr-1 text-gray-800 whitespace-nowrap group-hover:text-indigo-600 focus:text-indigo-600 inline-flex">
             
             <img src={user.avatar} className="w-8 h-8 rounded-full" />
-            <span className='ml-2 mt-2'>{user.email}</span>
+            <span className='ml-2 mt-2'>{user.email} </span>
             {/* <span className="hidden ml-1 md:inline">{user.last_name}</span> */}
           </div>
           <Icon
