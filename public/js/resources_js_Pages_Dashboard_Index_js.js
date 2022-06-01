@@ -101,7 +101,7 @@ function Feed() {
     className: "w-full",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
       className: "flex flex-row flex-wrap",
-      children: items.map(function (item, index) {
+      children: items.length ? items.map(function (item, index) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
           className: "box-border border-gray-800 rounded-lg shadow-xl my-4 p-4 w-1/3 min-h-full flex flex-col justify-between",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -123,6 +123,8 @@ function Feed() {
             children: "Ver m\xE1s..."
           })]
         }, index);
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        children: "Cargando noticias..."
       })
     })
   });

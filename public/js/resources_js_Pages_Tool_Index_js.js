@@ -107,13 +107,13 @@ var Card = function Card(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("li", {
     className: "p-6 w-full lg:max-w-3xl bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 my-4 mr-4",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h5", {
-      className: "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white truncate",
+      className: "mb-2 text-2xl font-bold tracking-tight text-gray-900 truncate",
       children: attributes.title
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-      className: "text-gray-700 dark:text-gray-400 truncate",
+      className: "text-gray-700 truncate",
       children: attributes.description
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-      className: "text-gray-700 dark:text-gray-400 mt-4",
+      className: "text-gray-700 mt-4",
       children: ["Desde el ", attributes["start-date"], " hasta el ", attributes["end-date"]]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "flex flex-col md:flex-row",

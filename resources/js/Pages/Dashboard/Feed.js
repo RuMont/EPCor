@@ -30,7 +30,7 @@ export default function Feed() {
     return (
         <div className="w-full">
             <ul className="flex flex-row flex-wrap">
-                {items.map((item, index) => (
+                {items.length ? items.map((item, index) => (
                     <li
                         className="box-border border-gray-800 rounded-lg shadow-xl my-4 p-4 w-1/3 min-h-full flex flex-col justify-between"
                         key={index}
@@ -74,7 +74,7 @@ export default function Feed() {
                             Ver más...
                         </a>
                     </li>
-                ))}
+                )) : <span>Cargando noticias...</span>}
             </ul>
         </div>
     );
