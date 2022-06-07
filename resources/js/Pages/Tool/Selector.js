@@ -6,7 +6,6 @@ import React, { useState } from 'react'
 const Selector = ({ counter }) => {
     const [selected, setSelected] = useState();
     const { data, errors } = usePage().props.entities;
-
     // Función para poner la primera letra mayus de un string
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);

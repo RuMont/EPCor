@@ -38,12 +38,12 @@ const Card = ({ attributes, url, user }) => {
 			<p className="text-gray-700 truncate">{attributes.description}</p>
 			<p className="text-gray-700 mt-4">Desde el {attributes["start-date"]} hasta el {attributes["end-date"]}</p>
 			<div className='flex flex-col md:flex-row'>
-				<button
+				{/* <button
 					onClick={() => open(url)}
 					className="mt-2 mr-1 sm:px-3 lg:px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-50"
 				>
 					Acceder al texto del edicto
-				</button>
+				</button> */}
 				<button onClick={createEvent} className="mt-2 mr-1 sm:px-3 lg:px-6 py-3 rounded bg-blue-600 text-white text-sm font-bold whitespace-nowrap hover:bg-blue-400 focus:bg-blue-300">
 					Añadir a Google Calendar
 				</button>

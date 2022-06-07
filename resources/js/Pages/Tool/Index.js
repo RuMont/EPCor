@@ -3,9 +3,22 @@ import Layout from '../../Shared/Layout';
 import Selector from './Selector';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import Card from './Card';
+import { Inertia } from '@inertiajs/inertia';
 
 const Tool = () => {
     const { loadDocs, entity, urls, user } = usePage().props;
+
+    if (loadDocs?.errors) {
+        return (
+            <>
+                <p>Ha ocurrido un error en el servidor, inténtelo más tarde</p>
+                <button
+                    className="bg-indigo-700 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
+                    onClick={() => Inertia.get('/tool')}
+                >Volver</button>
+            </>
+        )
+    }
 
     // Filtrado por categoría de trabajo
     const docs = loadDocs?.data.filter(ad => ad.relationships.category.data.id == 12);
@@ -27,19 +40,19 @@ const Tool = () => {
                     {
                         docs?.length ? (
                             docs.map((ad, i) => {
-                                const array = JSON.parse(urls).data;
-                                let link;
-                                array.forEach(element => {
-                                    if (element.id === ad.relationships.documents.data[0].id) {
-                                        link = element.attributes.url;
-                                    }
-                                });
+                                // const array = JSON.parse(urls).data;
+                                // let link;
+                                // array.forEach(element => {
+                                //     if (element.id === ad.relationships.documents.data[0].id) {
+                                //         link = element.attributes.url;
+                                //     }
+                                // });
                                 return (
                                     // <CarouselItem key={i}>
                                     <Card
                                         key={i}
                                         attributes={ad.attributes}
-                                        url={link}
+                                        // url={link}
                                         user={user}
                                     />
                                     // </CarouselItem>

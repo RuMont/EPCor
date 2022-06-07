@@ -115,19 +115,13 @@ var Card = function Card(_ref) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
       className: "text-gray-700 mt-4",
       children: ["Desde el ", attributes["start-date"], " hasta el ", attributes["end-date"]]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "flex flex-col md:flex-row",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-        onClick: function onClick() {
-          return open(url);
-        },
-        className: "mt-2 mr-1 sm:px-3 lg:px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-50",
-        children: "Acceder al texto del edicto"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
         onClick: createEvent,
         className: "mt-2 mr-1 sm:px-3 lg:px-6 py-3 rounded bg-blue-600 text-white text-sm font-bold whitespace-nowrap hover:bg-blue-400 focus:bg-blue-300",
         children: "A\xF1adir a Google Calendar"
-      })]
+      })
     })]
   });
 };
@@ -153,7 +147,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Selector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Selector */ "./resources/js/Pages/Tool/Selector.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Card */ "./resources/js/Pages/Tool/Card.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
@@ -167,46 +164,61 @@ var Tool = function Tool() {
       loadDocs = _usePage$props.loadDocs,
       entity = _usePage$props.entity,
       urls = _usePage$props.urls,
-      user = _usePage$props.user; // Filtrado por categoría de trabajo
+      user = _usePage$props.user;
+
+  if (loadDocs !== null && loadDocs !== void 0 && loadDocs.errors) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+        children: "Ha ocurrido un error en el servidor, int\xE9ntelo m\xE1s tarde"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+        className: "bg-indigo-700 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4",
+        onClick: function onClick() {
+          return _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__.Inertia.get('/tool');
+        },
+        children: "Volver"
+      })]
+    });
+  } // Filtrado por categoría de trabajo
+
 
   var docs = loadDocs === null || loadDocs === void 0 ? void 0 : loadDocs.data.filter(function (ad) {
     return ad.relationships.category.data.id == 12;
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    children: [entity ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h1", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    children: [entity ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("h1", {
       className: "mb-8 text-3xl font-bold",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.InertiaLink, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.InertiaLink, {
         href: "/tool",
         className: "text-indigo-600 hover:text-indigo-700",
         children: "Buscador"
       }), " / ".concat(entity)]
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
       className: "mb-8 text-3xl font-bold",
       children: "Buscador"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Selector__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Selector__WEBPACK_IMPORTED_MODULE_2__["default"], {
       counter: docs === null || docs === void 0 ? void 0 : docs.length
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("ul", {
         className: "flex flex-col",
         children: docs !== null && docs !== void 0 && docs.length ? docs.map(function (ad, i) {
-          var array = JSON.parse(urls).data;
-          var link;
-          array.forEach(function (element) {
-            if (element.id === ad.relationships.documents.data[0].id) {
-              link = element.attributes.url;
-            }
-          });
+          // const array = JSON.parse(urls).data;
+          // let link;
+          // array.forEach(element => {
+          //     if (element.id === ad.relationships.documents.data[0].id) {
+          //         link = element.attributes.url;
+          //     }
+          // });
           return (
             /*#__PURE__*/
             // <CarouselItem key={i}>
-            (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Card__WEBPACK_IMPORTED_MODULE_4__["default"], {
-              attributes: ad.attributes,
-              url: link,
+            (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Card__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              attributes: ad.attributes // url={link}
+              ,
               user: user
             }, i) // </CarouselItem>
 
           );
-        }) : entity ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
+        }) : entity ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
           className: "mt-4",
           children: ["Lo sentimos, no se han encontrado anuncios para ", entity]
         }) : ''
@@ -218,7 +230,7 @@ var Tool = function Tool() {
 
 
 Tool.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "Buscador",
     children: page
   });

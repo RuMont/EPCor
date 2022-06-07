@@ -6,7 +6,6 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use \Spatie\GoogleCalendar\Event;
-use \Spatie\GoogleCalendar\GoogleCalendarFactory;
 use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 
@@ -21,7 +20,8 @@ class ToolController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://apis2.dipucordoba.es/apisede/entities',
+            // CURLOPT_URL => 'https://apis2.dipucordoba.es/apisede/entities',
+            CURLOPT_URL => 'http://localhost:8000/entities',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -43,7 +43,8 @@ class ToolController extends Controller
             $curl2 = curl_init();
 
             curl_setopt_array($curl2, array(
-                CURLOPT_URL => 'https://apis2.dipucordoba.es/apisede/bulletins',
+                // CURLOPT_URL => 'https://apis2.dipucordoba.es/apisede/bulletins',
+                CURLOPT_URL => 'http://localhost:8000/bulletins',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
@@ -62,9 +63,9 @@ class ToolController extends Controller
 
             return Inertia::render('Tool/Index', [
                 'entities' => json_decode($response),
-                'entity' => $_GET["title"],
+                'entity' => isset($_GET["title"]) ? $_GET["title"] : '',
                 'loadDocs' => json_decode($response2),
-                'urls' => $this->fetchDocuments()
+                // 'urls' => $this->fetchDocuments()
             ]);
         }
 
