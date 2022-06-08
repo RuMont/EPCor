@@ -21,7 +21,7 @@ class ToolController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://apis2.dipucordoba.es/apisede/entities',
+            CURLOPT_URL => 'https://apis2.dipucordoba.es/apigeneral/entities',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
