@@ -1,3 +1,5 @@
+No preview available for this project
+
 ## Instalación
 
 Creamos la carpeta donde vayamos a poner el proyecto y entramos en ella.
